@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+}
+
+h1, h2, h3, h4{
+    color: black;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    color: #838383;
+    font-size: 14px;
+    line-height: 2;
+    font-weight: 400;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+ul li, ol li {
+      list-style: none;
+}
+
+footer, header{
+    display: block;
+}
+
+.headerLena {
+    position: absolute;
+    z-index: 100;
+    height: 85px;
+    width: 100%;
+    top: 30px;
+    left: 0;
+}
+.containerLena{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    width: 100%;
+    max-width: 1140px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.menuLena{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+}
+
+.headerLena .menuLena {
+    position: relative;
+    width: 100%;
+    height: 85px;
+    background-color: transparent;
+}
+
+.menuLena ul li {
+    display: inline-block;
+    clear: both;
+    position: inherit;
+    z-index: 10;
+}
+
+.menuLena ul li a {
+    padding: 0 12px;
+    display: block;
+    height: 35px;
+    font-size: 14px;
+    line-height: 34px;
+    transition-duration: 500ms;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.headerLena .menuLena ul li a {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff; }
+
+.headerLena .menuLena ul li a:hover, .headerLena .menuLena ul li a:focus {
+    color: #38b143;
+}
+
+::after, ::before {
+    box-sizing: border-box;
+
+}
+
+.mainTitleLena {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 325px;
+
+}
+
+.mainTitleLena::after {
+    background-color: rgba(5, 11, 37, 0.8);
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    content: "";
+}
+
+.mainTitleLena .containerLena{
+    position: absolute;
+    bottom: 0;
+}
+
+.mainTitleLena .containerLena .titlesLena{
+    margin-bottom: 20px;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    align-items: center;
+}
+
+.mainTitleLena .containerLena .itemsLena{
+    display: flex;
+}
+
+
+.mainTitleLena .containeLena h2{
+    font-size: 30px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.mainTitleLena .containerLena .itemsLena li{
+    margin-right: 20px;
+    font-size: 11px;
+    color: #38b143;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient(to right, #b3e258, #39b143);
+    background: linear-gradient(to right, #b3e258, #39b143);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.basic-infoLena{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.basic-infoLena .containerLena{
+    display: block;
+}
+
+.basic-infoLena .columnsLena{
+    display: flex;
+}
+
+.basic-infoLena .columnsLena .all-textLena{
+    flex: 0 0 58%;
+    max-width: 58%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.basic-infoLena .columnsLena .all-textLena .titleLena{
+    position: relative;
+    z-index: 1;
+    margin-bottom: 60px;
+}
+.basic-infoLena .titleLena h6{
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    background: -webkit-linear-gradient(to right, #b3e258, #39b143);
+    background: linear-gradient(to right, #b3e258, #39b143);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.basic-infoLena h2{
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.basic-infoLena .columnsLena .about-fotoLena{
+    flex: 0 0 41%;
+    max-width: 41%;
+    box-shadow: 0 0 8px 8px white inset;
+}
+
+.basic-infoLena .emojiLena{
+    margin-top: 70px;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.basic-infoLena .emojiLena img{
+    margin-top: 20px;
+    width: 60%;
+}
+
+.commentsLena{
+    height: 500px;
+    position: relative;
+    z-index: 2;
+    background-position: center center;
+    background-size: cover;
+}
+
+.commentsLena::after{
+    background-color: rgba(5, 11, 37, 0.85);
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+}
+
+.commentsLena .titleLena{
+    position: relative;
+    top: 30px;
+    padding-bottom: 50px;
+}
+
+.commentsLena .titleLena h2{
+    color: white;
+}
+
+.commentsLena .containerLena{
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.commentsLena .responsLena{
+    display: flex;
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.commentsLena .responsLena .avatarLena{
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.commentsLena .responsLena h3{
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    background: -webkit-linear-gradient(to right, #b3e258, #39b143);
+    background: linear-gradient(to right, #b3e258, #39b143);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.commentsLena .responsLena p{
+    color: white;
+}
+
+footer{
+    background-color: white;
+}
