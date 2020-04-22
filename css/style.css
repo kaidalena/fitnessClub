@@ -1223,3 +1223,10 @@ img {
   justify-content: space-around;
   align-items: center;
 }
+
+/*Галерея*/
+.subheading{
+padding-left: 3rem;
+align: top;  
+}
+/*Галерея*/
