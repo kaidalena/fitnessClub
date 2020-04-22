@@ -1,13 +1,108 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
 /* :: 2.0 Import All CSS */
-@import url(css/bootstrap.min.css);
 @import url(css/classy-nav.css);
-@import url(css/owl.carousel.min.css);
 
 /* :: 3.0 Base CSS */
 * {
   margin: 0;
   padding: 0;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto
+}
+
+@media (min-width:576px) {
+  .container {
+    max-width: 540px
+  }
+}
+
+@media (min-width:768px) {
+  .container {
+    max-width: 720px
+  }
+}
+
+@media (min-width:992px) {
+  .container {
+    max-width: 960px
+  }
+}
+
+@media (min-width:1400px) {
+  .container {
+    max-width: 1340px
+  }
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px
+}
+
+.col-12 {
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%
+}
+
+@media (min-width:992px) {
+  .col-lg-9 {
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%
+  }
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+}
+
+@media screen and (prefers-reduced-motion:reduce) {
+  .btn {
+    transition: none
+  }
+}
+
+.justify-content-between {
+  -ms-flex-pack: justify !important;
+  justify-content: space-between !important
+}
+
+.align-items-center {
+  -ms-flex-align: center !important;
+  align-items: center !important
+}
+
+.h-100 {
+  height: 100% !important
 }
 
 body {
@@ -204,6 +299,263 @@ img {
   box-shadow: 0 5px 50px 15px rgba(0, 0, 0, 0.2);
 }
 
+.bg-img {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.classy-navbar {
+  width: 100%;
+  height: 70px;
+  padding: 0.5em 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
+}
+
+.classy-navbar .nav-brand {
+  font-size: 26px;
+  font-weight: 500;
+  color: #565656;
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.classy-navbar .nav-brand:focus, .classy-navbar .nav-brand:hover {
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.classynav ul li {
+  display: inline-block;
+  clear: both;
+  position: inherit;
+  z-index: 10;
+}
+
+.classynav ul li.cn-dropdown-item {
+  position: relative;
+  z-index: 10;
+}
+
+.classynav ul li.cn-dropdown-item ul li {
+  position: relative;
+  z-index: 10;
+}
+
+.classynav ul li ul li {
+  display: block;
+}
+
+.classynav ul li ul li a {
+  padding: 0 20px;
+}
+
+.classynav ul li a {
+  padding: 0 12px;
+  display: block;
+  height: 35px;
+  font-size: 14px;
+  line-height: 34px;
+}
+
+.classynav ul li .megamenu li a {
+  padding: 0 12px;
+}
+
+.classynav ul li div.single-mega a {
+  height: auto;
+  line-height: 1;
+}
+
+/* Down Arrow Icon for Megamenu */
+.classynav ul li ul li.has-down>a::after {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  position: absolute;
+  top: 0;
+  right: 10px;
+  z-index: 3;
+}
+
+/* Dropdown Toggle */
+.dd-trigger {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 500;
+  border-radius: 0;
+  display: none;
+}
+
+/* Close Icon */
+.classycloseIcon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 12;
+  display: none;
+}
+
+.classycloseIcon .cross-wrap {
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  position: relative;
+}
+
+.classycloseIcon .cross-wrap span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 6px;
+  background: #232323;
+}
+
+.classycloseIcon .cross-wrap span.top {
+  top: 12px;
+  left: 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.classycloseIcon .cross-wrap span.bottom {
+  bottom: 12px;
+  left: 0;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+/* navbarToggler */
+.classy-navbar-toggler {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: none;
+}
+
+.classy-navbar-toggler .navbarToggler {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.classy-navbar-toggler .navbarToggler span {
+  position: relative;
+  background-color: #858585;
+  border-radius: 3px;
+  display: block;
+  height: 3px;
+  margin-top: 5px;
+  padding: 0;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  width: 30px;
+  cursor: pointer;
+}
+
+/* Desktop Area CSS */
+.breakpoint-off .classynav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
+}
+
+.breakpoint-off .classynav ul li .dropdown {
+  width: 235px;
+  position: absolute;
+  background-color: #ffffff;
+  top: 120%;
+  left: 0;
+  z-index: 100;
+  height: auto;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  opacity: 0;
+  visibility: hidden;
+  padding: 10px 0;
+}
+
+.breakpoint-off .classynav ul li:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  top: 100%;
+}
+
+.breakpoint-on .classy-navbar-toggler {
+  display: block;
+}
+
+.breakpoint-on .classy-navbar .classy-menu {
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: -310px;
+  z-index: 1000;
+  width: 300px;
+  height: 100%;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+  padding: 0;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  display: block;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.breakpoint-on .classy-navbar .classy-menu.menu-on {
+  left: 0;
+}
+
+.breakpoint-on .classynav ul li {
+  display: block;
+  position: relative;
+  clear: both;
+  z-index: 10;
+}
+
+.breakpoint-on .classynav ul li.megamenu-item {
+  position: relative;
+  z-index: 10;
+}
+
+.breakpoint-on .dd-trigger {
+  height: 38px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+}
+
+.breakpoint-on .classynav ul li .dropdown,
+.breakpoint-on .classynav ul li .megamenu {
+  display: none;
+}
+
+.breakpoint-on .classynav {
+  padding-top: 70px;
+}
+
+.breakpoint-on .classynav>ul>li>a {
+  background-color: #f2f4f8;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .breakpoint-on .classy-navbar .classy-menu {
     background-color: #101214;
@@ -322,6 +674,40 @@ img {
   opacity: 0;
   visibility: hidden;
   transition-duration: 500ms;
+}
+
+.owl-carousel {
+  display: none;
+  width: 100%;
+  z-index: 1
+}
+
+.owl-carousel .owl-stage-outer {
+  position: relative;
+  overflow: hidden;
+  -webkit-transform: translate3d(0, 0, 0)
+}
+
+.owl-carousel .owl-item {
+  min-height: 1px;
+  float: left;
+  -webkit-backface-visibility: hidden;
+  -webkit-touch-callout: none
+}
+
+.no-js .owl-carousel, .owl-carousel.owl-loaded {
+  display: block
+}
+
+.owl-carousel .owl-dot, .owl-carousel .owl-nav .owl-next, .owl-carousel .owl-nav .owl-prev {
+  cursor: pointer;
+  cursor: hand;
+  user-select: none
+}
+
+.owl-carousel.owl-loading {
+  opacity: 0;
+  display: block;
 }
 
 @media only screen and (max-width: 767px) {
