@@ -81,68 +81,6 @@
   }
 
   // :: 4.0 ScrollUp Active Code
-  if ($.fn.scrollUp) {
-    browserWindow.scrollUp({
-      scrollSpeed: 1500,
-      scrollText: '<i class="fa fa-angle-up"></i>'
-    });
-  }
 
-  // :: 5.0 CounterUp Active Code
-  if ($.fn.counterUp) {
-    $('.counter').counterUp({
-      delay: 10,
-      time: 2000
-    });
-  }
-
-  // :: 6.0 Sticky Active Code
-  if ($.fn.sticky) {
-    $(".fitness-main-menu").sticky({
-      topSpacing: 0
-    });
-  }
-
-  // :: 7.0 Progress Bar Active Code
-  if ($.fn.circleProgress) {
-    $('#circle').circleProgress({
-      size: 200,
-      emptyFill: "rgba(0, 0, 0, .0)",
-      fill: '#34af42',
-      thickness: '6',
-      reverse: true
-    });
-    $('#circle2').circleProgress({
-      size: 200,
-      emptyFill: "rgba(0, 0, 0, .0)",
-      fill: '#34af42',
-      thickness: '6',
-      reverse: true
-    });
-    $('#circle3').circleProgress({
-      size: 200,
-      emptyFill: "rgba(0, 0, 0, .0)",
-      fill: '#34af42',
-      thickness: '6',
-      reverse: true
-    });
-    $('#circle4').circleProgress({
-      size: 200,
-      emptyFill: "rgba(0, 0, 0, .0)",
-      fill: '#34af42',
-      thickness: '6',
-      reverse: true
-    });
-  }
-
-  // :: 8.0 prevent default a click
-  $('a[href="#"]').click(function($) {
-    $.preventDefault()
-  });
-
-  // :: 9.0 wow Active Code
-  if (browserWindow.width() > 767) {
-    new WOW().init();
-  }
 
 })(jQuery);
