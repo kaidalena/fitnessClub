@@ -166,8 +166,7 @@ footer, header{
     margin-bottom: 5px;
 }
 
-.mainTitleLena .containerLena .itemsLena li{
-    margin-right: 20px;
+.mainTitleLena .containerLena .itemsLena li, .mainTitleLena .containerLena .tabsLena input{
     font-size: 11px;
     color: #38b143;
     font-weight: 700;
@@ -178,9 +177,30 @@ footer, header{
     -webkit-text-fill-color: transparent;
 }
 
+.mainTitleLena .containerLena .tabsLena{
+    display: flex;
+    width: 100%;
+}
+
+.mainTitleLena .containerLena .tabsLena input{
+    color: #38b143;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    width: 250px;
+    background-color: rgba(1, 1, 1, 0.01);
+}
+
+.mainTitleLena .containerLena .itemsLena li{
+    margin-right: 20px;
+}
+
 .basic-infoLena{
     padding-top: 100px;
     padding-bottom: 100px;
+    margin: 0;
 }
 
 .basic-infoLena .containerLena{
@@ -304,4 +324,22 @@ footer, header{
 
 footer{
     background-color: white;
+}
+
+.paragraphLena{
+    background-image: url(img/bg-img/breadcumb.jpg);
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 325px;
+    position: relative;
+    z-index: 2;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.paragraphTitle{
+
 }
