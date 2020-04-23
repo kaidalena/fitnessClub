@@ -4,12 +4,12 @@
   padding: 0;
 }
 
-body{
-font-family: "Open Sans", sans-serif;
-font-size: 14px;
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
 }
 
-h1, h2, h3, h4{
+h1, h2, h3, h4 {
   color: black;
 }
 
@@ -46,10 +46,10 @@ li {
 }
 
 ul li, ol li {
-    list-style: none;
+  list-style: none;
 }
 
-footer, header{
+footer, header {
   display: block;
 }
 
@@ -61,7 +61,8 @@ footer, header{
   top: 30px;
   left: 0;
 }
-.containerLena{
+
+.containerLena {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -71,10 +72,9 @@ footer, header{
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-
 }
 
-.menuLena{
+.menuLena {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -113,7 +113,8 @@ footer, header{
 .headerLena .menuLena ul li a {
   font-weight: 700;
   text-transform: uppercase;
-  color: #ffffff; }
+  color: #ffffff;
+}
 
 .headerLena .menuLena ul li a:hover, .headerLena .menuLena ul li a:focus {
   color: #38b143;
@@ -121,7 +122,6 @@ footer, header{
 
 ::after, ::before {
   box-sizing: border-box;
-
 }
 
 .mainTitleLena {
@@ -143,15 +143,15 @@ footer, header{
   content: "";
 }
 
-.mainTitleLena .brand{
+.mainTitleLena .brand {
   position: absolute;
-width: 100%;
-bottom: 0;
-left: 0;
-z-index: 100;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
 }
 
-.mainTitleLena .containerLena{
+.mainTitleLena .containerLena {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -159,7 +159,7 @@ z-index: 100;
   margin-left: auto;
 }
 
-.mainTitleLena .containerLena .titlesLena{
+.mainTitleLena .containerLena .titlesLena {
   margin-bottom: 20px;
   position: relative;
   width: 100%;
@@ -169,26 +169,25 @@ z-index: 100;
   align-items: center;
 }
 
-.mainTitleLena .containerLena .titlesLena.tabs{
+.mainTitleLena .containerLena .titlesLena.tabs {
   margin-bottom: 0;
 }
 
-.tabsLena input:hover{
+.tabsLena input:hover {
   background-color: rgb(0, 0, 0);
 }
 
-.mainTitleLena .containerLena .itemsLena{
+.mainTitleLena .containerLena .itemsLena {
   display: flex;
 }
 
-
-.mainTitleLena .containerLena h2{
+.mainTitleLena .containerLena h2 {
   font-size: 30px;
   color: #ffffff;
   margin-bottom: 5px;
 }
 
-.mainTitleLena .containerLena .itemsLena li, .mainTitleLena .containerLena .tabsLena input{
+.mainTitleLena .containerLena .itemsLena li, .mainTitleLena .containerLena .tabsLena input {
   bottom: 0;
   font-size: 11px;
   color: #38b143;
@@ -200,12 +199,12 @@ z-index: 100;
   -webkit-text-fill-color: transparent;
 }
 
-.mainTitleLena .containerLena .tabsLena{
+.mainTitleLena .containerLena .tabsLena {
   display: flex;
   width: 100%;
 }
 
-.mainTitleLena .containerLena .tabsLena input{
+.mainTitleLena .containerLena .tabsLena input {
   color: #38b143;
   border: none;
   outline: none;
@@ -216,25 +215,25 @@ z-index: 100;
   background-color: rgba(1, 1, 1, 0.01);
 }
 
-.mainTitleLena .containerLena .itemsLena li{
+.mainTitleLena .containerLena .itemsLena li {
   margin-right: 20px;
 }
 
-.basic-infoLena{
+.basic-infoLena {
   padding-top: 100px;
   padding-bottom: 100px;
   margin: 0;
 }
 
-.basic-infoLena .containerLena{
+.basic-infoLena .containerLena {
   display: block;
 }
 
-.basic-infoLena .columnsLena{
+.basic-infoLena .columnsLena {
   display: flex;
 }
 
-.basic-infoLena .columnsLena .all-textLena{
+.basic-infoLena .columnsLena .all-textLena {
   flex: 0 0 58%;
   max-width: 58%;
   position: relative;
@@ -244,12 +243,13 @@ z-index: 100;
   padding-left: 15px;
 }
 
-.basic-infoLena .columnsLena .all-textLena .titleLena{
+.basic-infoLena .columnsLena .all-textLena .titleLena {
   position: relative;
   z-index: 1;
   margin-bottom: 60px;
 }
-.basic-infoLena .titleLena h6{
+
+.basic-infoLena .titleLena h6 {
   font-size: 14px;
   text-transform: uppercase;
   margin-bottom: 0;
@@ -259,31 +259,31 @@ z-index: 100;
   -webkit-text-fill-color: transparent;
 }
 
-.basic-infoLena h2{
+.basic-infoLena h2 {
   font-size: 36px;
   font-weight: 600;
   margin-bottom: 0;
 }
 
-.basic-infoLena .columnsLena .about-fotoLena{
+.basic-infoLena .columnsLena .about-fotoLena {
   flex: 0 0 41%;
   max-width: 41%;
   box-shadow: 0 0 8px 8px white inset;
 }
 
-.basic-infoLena .emojiLena{
+.basic-infoLena .emojiLena {
   margin-top: 70px;
   align-content: center;
   text-align: center;
   align-items: center;
 }
 
-.basic-infoLena .emojiLena img{
+.basic-infoLena .emojiLena img {
   margin-top: 20px;
   width: 60%;
 }
 
-.commentsLena{
+.commentsLena {
   height: 500px;
   position: relative;
   z-index: 2;
@@ -291,7 +291,7 @@ z-index: 100;
   background-size: cover;
 }
 
-.commentsLena::after{
+.commentsLena::after {
   background-color: rgba(5, 11, 37, 0.85);
   position: absolute;
   z-index: -1;
@@ -302,36 +302,36 @@ z-index: 100;
   content: "";
 }
 
-.commentsLena .titleLena{
+.commentsLena .titleLena {
   position: relative;
   top: 30px;
   padding-bottom: 50px;
 }
 
-.commentsLena .titleLena h2{
+.commentsLena .titleLena h2 {
   color: white;
 }
 
-.commentsLena .containerLena{
+.commentsLena .containerLena {
   display: block;
   box-sizing: border-box;
   position: relative;
 }
 
-.commentsLena .responsLena{
+.commentsLena .responsLena {
   display: flex;
   position: relative;
   margin-top: 40px;
   margin-bottom: 10px;
 }
 
-.commentsLena .responsLena .avatarLena{
+.commentsLena .responsLena .avatarLena {
   width: 100px;
   height: 100px;
   margin-right: 20px;
 }
 
-.commentsLena .responsLena h3{
+.commentsLena .responsLena h3 {
   font-size: 12px;
   text-transform: uppercase;
   margin-bottom: 0;
@@ -341,7 +341,7 @@ z-index: 100;
   -webkit-text-fill-color: transparent;
 }
 
-.commentsLena .responsLena p{
+.commentsLena .responsLena p {
   color: white;
 }
 
@@ -368,13 +368,11 @@ h5 {
   margin: auto;
   max-width: 1200px;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
-
 .cell {
-  
   padding: 4px;
   text-align: center;
   position: relative;
@@ -393,6 +391,7 @@ h5 {
   -webkit-transition: 0.8s ease 600ms;
   transition: 0.8s ease 600ms;
 }
+
 .cell .info {
   font: 700 20px/1.3 "Poppins", sans-serif;
   text-align: center;
@@ -401,13 +400,11 @@ h5 {
   transition: 0.8s ease 600ms;
 }
 
-
-.cell:hover{
+.cell:hover {
   -webkit-transform: scale(1.12);
-          transform: scale(1.12);
+  transform: scale(1.12);
   z-index: 10;
 }
-
 
 .cell:hover .mark {
   background: -webkit-linear-gradient(#e7e7e7, #e9eb9d);
@@ -420,31 +417,28 @@ h5 {
   opacity: 1;
 }
 
-.cell.yellow{
+.cell.yellow {
   background: linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%);
 }
 
-.cell.red{
+.cell.red {
   background: linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%);
 }
 
-.cell.blue{
+.cell.blue {
   background: linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%);
 }
 
-.cell.green{
+.cell.green {
   background: linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%);
 }
 
-.cell.entry{
+.cell.entry {
   background: rgba(255, 255, 255, 0);
 }
+
 /*----------------------------------------------------------*/
-
 /* далее ккод Рафа */
-
-
-
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
 
 /* :: 3.0 Base CSS */
@@ -632,7 +626,7 @@ img {
   .fitness-btn.menu-btn {
     margin-top: 30px;
   }
-}
+}с
 
 @media only screen and (max-width: 767px) {
   .fitness-btn.menu-btn {
@@ -1360,11 +1354,13 @@ img {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-top: auto;
 }
 
 /*Галерея*/
-.subheading{
-padding-left: 3rem;
-align: top;  
+.subheading {
+  padding-left: 3rem;
+  align: top;
 }
+
 /*Галерея*/
