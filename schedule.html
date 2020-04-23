@@ -10,6 +10,7 @@
   <title>Fitness Gym - A Modern Fitness Gym Template</title>
   <link rel="icon" href="img/core-img/favicon.ico">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/scheduleTabs.js"></script>
 
 </head>
 
@@ -90,11 +91,12 @@
         <div class="containerLena">
             <div class="titlesLena tabs">
                 <h2>Расписание</h2>
-                <div class="tabsLena">
-                    <input type="button" value="все занятия">
-                    <input type="button" value="силовые">
-                    <input type="button" value="кардио">
-                    <input type="button" value="аэробные">
+                <p></p>
+                <div class="tabsLena" id="divTabs">
+                    <p class="input checked" id="0" onclick=checkTabs(this)><input type="button" id=0 value="все занятия" ></p>
+                    <p class="input" id=1 onclick=checkTabs(this)><input type="button" id=1 value="силовые" ></p>
+                    <p class="input" id=2 onclick=checkTabs(this)><input type="button" id=2 value="кардио" ></p>
+                    <p class="input" id=3 onclick=checkTabs(this)><input type="button" id=3 value="аэробные" ></p>
                 </div>
             </div>
         </div>
@@ -102,7 +104,7 @@
     </div>
 
   <!-- Первая часть страницы "Основная информация" -->
-  <div class="basic-infoLena" style="background-image: url(img/bg-img/bg-3.jpg);">
+  <div class="basic-infoLena table" >
     <div class="containerLena">
       <div class="tableSchedule">
             <!-- <table>-->
@@ -145,7 +147,7 @@
         <div class="cell entry"></div>
 
         <div class="cell entry">
-            <div class="title">11:00-13:00</div>
+            <div class="mark">11:00-13:00</div>
         </div>
         <div class="cell red">
             <div class="info">two</div>
