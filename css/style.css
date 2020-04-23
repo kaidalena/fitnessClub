@@ -172,7 +172,7 @@ footer, header {
   margin-bottom: 0;
 }
 
-.mainTitleLena .containerLena .itemsLena{
+.mainTitleLena .containerLena .itemsLena {
   display: flex;
 }
 
@@ -199,11 +199,11 @@ footer, header {
   width: 100%;
 }
 
-.mainTitleLena .containerLena .tabsLena p{
+.mainTitleLena .containerLena .tabsLena p {
   margin: 0;
 }
 
-.mainTitleLena .containerLena .tabsLena input{
+.mainTitleLena .containerLena .tabsLena input {
   color: #38b143;
   border: none;
   outline: none;
@@ -214,26 +214,26 @@ footer, header {
   background-color: rgba(1, 1, 1, 0.01);
 }
 
-.mainTitleLena .containerLena .tabsLena p:hover{
+.mainTitleLena .containerLena .tabsLena p:hover {
   background-color: rgba(146, 145, 145, 0.3);
 }
-.tabsLena .checked, .tabsLena p.input.checked:hover{
+
+.tabsLena .checked, .tabsLena p.input.checked:hover {
   background-color: rgb(236, 236, 236);
 }
 
-.mainTitleLena .containerLena .itemsLena li{
+.mainTitleLena .containerLena .itemsLena li {
   margin-right: 20px;
 }
 
-.basic-infoLena{
+.basic-infoLena {
   background-color: rgb(236, 236, 236);
   padding-top: 100px;
   padding-bottom: 100px;
   margin: 0;
 }
 
-
-.basic-infoLena .containerLena{
+.basic-infoLena .containerLena {
   display: block;
 }
 
@@ -1788,9 +1788,279 @@ img {
 }
 
 /*Галерея*/
-.subheading {
-  padding-left: 3rem;
-  align: top;
+.single-teachers-area {
+  position: relative;
+  z-index: 1;
+}
+
+.single-teachers-area .teachers-bg-gradients {
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  background: #b6e358;
+  background: -webkit-linear-gradient(to right, #b6e358, #38b143);
+  background: linear-gradient(to right, #b6e358, #38b143);
+  top: 0;
+  left: 0;
+  z-index: -5;
+}
+
+.single-teachers-area .teachers-thumbnail {
+  width: 100%;
+}
+
+.single-teachers-area .teachers-info {
+  position: relative;
+  padding: 15px 20px;
+  background-color: #000000;
+  width: 80%;
+  overflow: hidden;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+}
+
+.single-teachers-area .teachers-info:after {
+  content: '';
+  width: 24px;
+  height: 120%;
+  background-color: #ffffff;
+  top: -2px;
+  right: -10px;
+  position: absolute;
+  z-index: 10;
+  -webkit-transform: rotate(18deg);
+  transform: rotate(18deg);
+}
+
+.single-teachers-area .teachers-info h6 {
+  margin-bottom: 0;
+  color: #ffffff;
+  font-style: italic;
+  text-transform: uppercase;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+}
+
+.single-teachers-area .teachers-info span {
+  color: #38b143;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 700;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+}
+
+.single-teachers-area:hover .teachers-info {
+  background-color: #38b143;
+}
+
+.single-teachers-area:hover .teachers-info span {
+  color: #ffffff;
+}
+
+.section-padding-100-0 {
+  padding-top: 100px;
+  padding-bottom: 0;
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px
+}
+
+.section-heading {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 60px;
+}
+
+.section-heading h6 {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  background: -webkit-linear-gradient(to right, #b3e258, #39b143);
+  background: linear-gradient(to right, #b3e258, #39b143);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-heading h2 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .section-heading h2 {
+    font-size: 24px;
+  }
+}
+
+.section-heading.white h2 {
+  color: #ffffff;
+}
+
+.col-sm-6 {
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  max-width: 50%
+}
+
+.col-lg-3 {
+  -ms-flex: 0 0 25%;
+  flex: 0 0 25%;
+  max-width: 25%
+}
+
+.single-teachers-area {
+  position: relative;
+  z-index: 1;
+}
+
+.single-teachers-area .teachers-bg-gradients {
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  background: #b6e358;
+  background: -webkit-linear-gradient(to right, #b6e358, #38b143);
+  background: linear-gradient(to right, #b6e358, #38b143);
+  top: 0;
+  left: 0;
+  z-index: -5;
+}
+
+.single-teachers-area .teachers-thumbnail {
+  width: 100%;
+}
+
+.single-teachers-area .teachers-info {
+  position: relative;
+  padding: 15px 20px;
+  background-color: #000000;
+  width: 80%;
+  overflow: hidden;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+}
+
+.single-teachers-area .teachers-info:after {
+  content: '';
+  width: 24px;
+  height: 120%;
+  background-color: #ffffff;
+  top: -2px;
+  right: -10px;
+  position: absolute;
+  z-index: 10;
+  -webkit-transform: rotate(18deg);
+  transform: rotate(18deg);
+}
+
+.single-teachers-area .teachers-info h6 {
+  margin-bottom: 0;
+  color: #ffffff;
+  font-style: italic;
+  text-transform: uppercase;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+}
+
+.single-teachers-area .teachers-info span {
+  color: #38b143;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 700;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+}
+
+.single-teachers-area:hover .teachers-info {
+  background-color: #38b143;
+}
+
+.single-teachers-area:hover .teachers-info span {
+  color: #ffffff;
+}
+
+.mb-100 {
+  margin-bottom: 100px !important;
+}
+
+.Foon1 {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  width: 100%;
+  max-width: 1140px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.commentsLenaR .responsLena .LenaBoom {
+  width: 475px;
+  height: 387px;
+  margin-right: 20px;
+  display: flex;
+}
+
+.commentsLenaR .titleHow {
+  position: relative;
+  top: 30px;
+  margin-bottom: 70px;
+}
+
+.commentsLenaR {
+  height: 500px;
+  position: relative;
+  z-index: 2;
+  background-position: center center;
+  background-size: cover;
+}
+
+.commentsLenaR::after {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+}
+
+.commentsLenaR .containerLena {
+  display: block;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.commentsLenaR .responsLena {
+  display: flex;
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.commentsLenaR .responsLena h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  background: -webkit-linear-gradient(to right, #b3e258, #39b143);
+  background: linear-gradient(to right, #b3e258, #39b143);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.titleFoto {
+  color: black;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 0;
 }
 
 /*Галерея*/
