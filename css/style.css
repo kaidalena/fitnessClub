@@ -4,12 +4,12 @@
   padding: 0;
 }
 
-body {
-  font-family: "Open Sans", sans-serif;
-  font-size: 14px;
+body{
+font-family: "Open Sans", sans-serif;
+font-size: 14px;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4{
   color: black;
 }
 
@@ -46,10 +46,10 @@ li {
 }
 
 ul li, ol li {
-  list-style: none;
+    list-style: none;
 }
 
-footer, header {
+footer, header{
   display: block;
 }
 
@@ -61,8 +61,7 @@ footer, header {
   top: 30px;
   left: 0;
 }
-
-.containerLena {
+.containerLena{
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -72,9 +71,10 @@ footer, header {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+
 }
 
-.menuLena {
+.menuLena{
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -113,8 +113,7 @@ footer, header {
 .headerLena .menuLena ul li a {
   font-weight: 700;
   text-transform: uppercase;
-  color: #ffffff;
-}
+  color: #ffffff; }
 
 .headerLena .menuLena ul li a:hover, .headerLena .menuLena ul li a:focus {
   color: #38b143;
@@ -122,6 +121,7 @@ footer, header {
 
 ::after, ::before {
   box-sizing: border-box;
+
 }
 
 .mainTitleLena {
@@ -129,6 +129,9 @@ footer, header {
   z-index: 10;
   width: 100%;
   height: 325px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .mainTitleLena::after {
@@ -140,12 +143,23 @@ footer, header {
   content: "";
 }
 
-.mainTitleLena .containerLena {
+.mainTitleLena .brand{
   position: absolute;
-  bottom: 0;
+width: 100%;
+bottom: 0;
+left: 0;
+z-index: 100;
 }
 
-.mainTitleLena .containerLena .titlesLena {
+.mainTitleLena .containerLena{
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.mainTitleLena .containerLena .titlesLena{
   margin-bottom: 20px;
   position: relative;
   width: 100%;
@@ -155,18 +169,27 @@ footer, header {
   align-items: center;
 }
 
-.mainTitleLena .containerLena .itemsLena {
+.mainTitleLena .containerLena .titlesLena.tabs{
+  margin-bottom: 0;
+}
+
+.tabsLena input:hover{
+  background-color: rgb(0, 0, 0);
+}
+
+.mainTitleLena .containerLena .itemsLena{
   display: flex;
 }
 
-.mainTitleLena .containeLena h2 {
+
+.mainTitleLena .containerLena h2{
   font-size: 30px;
   color: #ffffff;
   margin-bottom: 5px;
 }
 
-.mainTitleLena .containerLena .itemsLena li {
-  margin-right: 20px;
+.mainTitleLena .containerLena .itemsLena li, .mainTitleLena .containerLena .tabsLena input{
+  bottom: 0;
   font-size: 11px;
   color: #38b143;
   font-weight: 700;
@@ -177,20 +200,41 @@ footer, header {
   -webkit-text-fill-color: transparent;
 }
 
-.basic-infoLena {
-  padding-top: 100px;
-  padding-bottom: 100px;
+.mainTitleLena .containerLena .tabsLena{
+  display: flex;
+  width: 100%;
 }
 
-.basic-infoLena .containerLena {
+.mainTitleLena .containerLena .tabsLena input{
+  color: #38b143;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  width: 250px;
+  background-color: rgba(1, 1, 1, 0.01);
+}
+
+.mainTitleLena .containerLena .itemsLena li{
+  margin-right: 20px;
+}
+
+.basic-infoLena{
+  padding-top: 100px;
+  padding-bottom: 100px;
+  margin: 0;
+}
+
+.basic-infoLena .containerLena{
   display: block;
 }
 
-.basic-infoLena .columnsLena {
+.basic-infoLena .columnsLena{
   display: flex;
 }
 
-.basic-infoLena .columnsLena .all-textLena {
+.basic-infoLena .columnsLena .all-textLena{
   flex: 0 0 58%;
   max-width: 58%;
   position: relative;
@@ -200,13 +244,12 @@ footer, header {
   padding-left: 15px;
 }
 
-.basic-infoLena .columnsLena .all-textLena .titleLena {
+.basic-infoLena .columnsLena .all-textLena .titleLena{
   position: relative;
   z-index: 1;
   margin-bottom: 60px;
 }
-
-.basic-infoLena .titleLena h6 {
+.basic-infoLena .titleLena h6{
   font-size: 14px;
   text-transform: uppercase;
   margin-bottom: 0;
@@ -216,31 +259,31 @@ footer, header {
   -webkit-text-fill-color: transparent;
 }
 
-.basic-infoLena h2 {
+.basic-infoLena h2{
   font-size: 36px;
   font-weight: 600;
   margin-bottom: 0;
 }
 
-.basic-infoLena .columnsLena .about-fotoLena {
+.basic-infoLena .columnsLena .about-fotoLena{
   flex: 0 0 41%;
   max-width: 41%;
   box-shadow: 0 0 8px 8px white inset;
 }
 
-.basic-infoLena .emojiLena {
+.basic-infoLena .emojiLena{
   margin-top: 70px;
   align-content: center;
   text-align: center;
   align-items: center;
 }
 
-.basic-infoLena .emojiLena img {
+.basic-infoLena .emojiLena img{
   margin-top: 20px;
   width: 60%;
 }
 
-.commentsLena {
+.commentsLena{
   height: 500px;
   position: relative;
   z-index: 2;
@@ -248,7 +291,7 @@ footer, header {
   background-size: cover;
 }
 
-.commentsLena::after {
+.commentsLena::after{
   background-color: rgba(5, 11, 37, 0.85);
   position: absolute;
   z-index: -1;
@@ -259,36 +302,36 @@ footer, header {
   content: "";
 }
 
-.commentsLena .titleLena {
+.commentsLena .titleLena{
   position: relative;
   top: 30px;
   padding-bottom: 50px;
 }
 
-.commentsLena .titleLena h2 {
+.commentsLena .titleLena h2{
   color: white;
 }
 
-.commentsLena .containerLena {
+.commentsLena .containerLena{
   display: block;
   box-sizing: border-box;
   position: relative;
 }
 
-.commentsLena .responsLena {
+.commentsLena .responsLena{
   display: flex;
   position: relative;
   margin-top: 40px;
   margin-bottom: 10px;
 }
 
-.commentsLena .responsLena .avatarLena {
+.commentsLena .responsLena .avatarLena{
   width: 100px;
   height: 100px;
   margin-right: 20px;
 }
 
-.commentsLena .responsLena h3 {
+.commentsLena .responsLena h3{
   font-size: 12px;
   text-transform: uppercase;
   margin-bottom: 0;
@@ -298,15 +341,110 @@ footer, header {
   -webkit-text-fill-color: transparent;
 }
 
-.commentsLena .responsLena p {
+.commentsLena .responsLena p{
   color: white;
 }
 
-footer {
-  background-color: white;
+/*--------- таблица на странице Расписание ---------*/
+h1 {
+  margin: 2em auto 0;
+  font: 700 3em "Georgia", sans-serif;
+  color: #f1f5f6;
+  text-align: center;
 }
 
-/* */
+h5 {
+  margin: 0 auto 2em;
+  font: 400 1.3em "Georgia", sans-serif;
+  color: #f1f5f6;
+  text-align: center;
+}
+
+.tableSchedule {
+  display: grid;
+  grid-template-columns: repeat(7, 140px);
+  grid-template-rows: repeat(4, 80px);
+  grid-gap: 10px;
+  margin: auto;
+  max-width: 1200px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+
+.cell {
+  
+  padding: 4px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  cursor: default;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.cell .mark {
+  font: 700 22px/1.3 "Century Shcoolbook";
+  background: -webkit-linear-gradient(#f3f9a6, #34cb5a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0.3em 0 0;
+  -webkit-transition: 0.8s ease 600ms;
+  transition: 0.8s ease 600ms;
+}
+.cell .info {
+  font: 700 20px/1.3 "Poppins", sans-serif;
+  text-align: center;
+  margin: 0.3em 0 0;
+  -webkit-transition: 0.8s ease 600ms;
+  transition: 0.8s ease 600ms;
+}
+
+
+.cell:hover{
+  -webkit-transform: scale(1.12);
+          transform: scale(1.12);
+  z-index: 10;
+}
+
+
+.cell:hover .mark {
+  background: -webkit-linear-gradient(#e7e7e7, #e9eb9d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cell:hover:after {
+  top: 105%;
+  opacity: 1;
+}
+
+.cell.yellow{
+  background: linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%);
+}
+
+.cell.red{
+  background: linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%);
+}
+
+.cell.blue{
+  background: linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%);
+}
+
+.cell.green{
+  background: linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%);
+}
+
+.cell.entry{
+  background: rgba(255, 255, 255, 0);
+}
+/*----------------------------------------------------------*/
+
+/* далее ккод Рафа */
+
+
+
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
 
 /* :: 3.0 Base CSS */
