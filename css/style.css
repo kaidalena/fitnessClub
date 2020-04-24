@@ -2290,67 +2290,6 @@ img {
   height: 180px;
 }
 
-.fitness-contact-info {
-  position: absolute;
-  z-index: 99;
-  width: 450px;
-  height: 270px;
-  padding: 45px 60px;
-  background-color: #38b143;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  left: 20%;
-}
-
-.fitness-contact-info::after {
-  content: '';
-  width: 0;
-  height: 0;
-  border-bottom: 270px solid #38b143;
-  border-left: 135px solid transparent;
-  border-right: 135px solid transparent;
-  position: absolute;
-  top: 0;
-  right: -135px;
-  z-index: 10;
-}
-
-@media only screen and (max-width: 767px) {
-  .fitness-contact-info::after {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .fitness-contact-info {
-    left: 5%;
-    width: 280px;
-    padding: 45px 30px;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .fitness-contact-info {
-    left: 10%;
-  }
-}
-
-.fitness-contact-info h6 {
-  color: #ffffff;
-  font-weight: 600;
-  margin-bottom: 15px;
-}
-
-.fitness-contact-info h6:last-child {
-  margin-bottom: 0;
-}
-
-@media only screen and (max-width: 767px) {
-  .fitness-contact-info h6 {
-    font-size: 14px;
-  }
-}
 
 /* :: 17.0 Elements Area CSS */
 .elements-title h2 {
