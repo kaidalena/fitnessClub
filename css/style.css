@@ -386,6 +386,7 @@ h5 {
 
 .cell {
   padding: 4px;
+  border-radius: 15%;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -575,6 +576,69 @@ svg {
 }
 
 /*---------------------------------------------------*/
+/*--------------Аккаунт------------------------------*/
+
+.columnsLena.account{
+  position: relative;
+  width: 100%;
+}
+
+.myFoto{
+  position: relative;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.infoAboutMe{
+  position: relative;
+  width: 100%;
+}
+
+.myData{
+  position: relative;
+  display: flex;
+}
+
+.myData .titles, .myData .entry{
+  margin: 0 3% 0 3%;
+}
+
+.myData h2{
+  font-size: 30px;
+  margin: 10px 0 10px 0;
+}
+
+.myData .entry h2{
+  color: #495057;
+}
+
+.infoAboutMe .edit{
+  color: #101214;
+  font-weight: 700;
+  background: #b6e358;
+  background: -webkit-linear-gradient(to right, #b6e358, #38b143);
+  background: linear-gradient(to right, #b6e358, #38b143);
+  border: none;
+  line-height: 45px;
+  text-align: center;
+  min-width: 200px;
+  height: 45px;
+  border-radius: 10px;
+  padding: 0 30px;
+  transition-duration: 500ms;
+  text-decoration: none;
+  outline: none;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  text-transform: uppercase;
+}
+
+
+
+/*---------------------------------------------------*/
+
 /* далее ккод Рафа */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
 @import url(css/classy-nav.css);
