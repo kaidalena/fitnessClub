@@ -427,6 +427,7 @@ h5 {
 
 .cell.yellow {
   background: linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%);
+  /* box-shadow: 0 0 5px 5px rgba(253, 252, 162, 0.5); */
 }
 
 .cell.red {
@@ -443,6 +444,7 @@ h5 {
 
 .cell.entry {
   background: rgba(255, 255, 255, 0);
+  /* box-shadow: 0 0 0 0; */
 }
 
 /*----------------------------------------------------------*/
