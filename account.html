@@ -10,6 +10,7 @@
   <title>Fitness Gym - A Modern Fitness Gym Template</title>
   <link rel="icon" href="img/core-img/favicon.ico">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/calendar.js"></script>
 </head>
 
 <body>
@@ -103,7 +104,7 @@
   <div class="basic-infoLena" >
     <div class="containerLena">
         <div class="columnsLena account">
-            <div class="myFoto" style="background-image: url(img/team-img/1.png);">
+            <div class="myFoto" style="background-image: url(img/YeLs5h1hyP8.jpg);">
 
             </div>
             <div class="infoAboutMe">
@@ -126,14 +127,84 @@
   </div>
 
 
-  <div class="calendar">
-      <div class="containerLena">
+  <div class="timetableBlock" style="background-image: url(img/bg-img/bg-11.jpg);">
+      <div class="containerLena" >
+        <div class="border" id="show">
+          <div class="infoDate" id="infoDate">
+            
+          </div>
+          <script>show(this)</script>
+        </div>
       </div>
   </div>
 
 
     <div class="myCards">
         <div class="containerLena">
+
+          <div class="currentCards">
+            <h2>Действующие абонементы</h2>
+            <div class="containerCards">
+
+              <div class="card red">
+                <h3 class="titleCards">Стандарт</h3>
+                <div class="bar">
+                  <div class="emptybar"></div>
+                  <div class="filledbar"></div>
+                </div>
+                <div class="description">
+                  <h4>Действителен до </h4>
+                  <h4>23.05.20 </h4>
+                  <h4>Количество занятий</h4>
+                  <h4>5</h4>
+                  <p>2200 4433 9988 1177</p>
+                </div>
+              </div>
+
+              <div class="card blue">
+                <h3 class="titleCards">Название карты</h3>
+                <div class="bar">
+                  <div class="emptybar"></div>
+                  <div class="filledbar"></div>
+                </div>
+                <div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+
+          <div class="usedCards">
+            <h2>Истекшие абонементы</h2>
+            <div class="containerCards">
+
+              <div class="card gray">
+                <h3 class="titleCards">Gray</h3>
+                <div class="bar">
+                  <div class="emptybar"></div>
+                  <div class="filledbar"></div>
+                </div>
+                <div>
+
+                </div>
+              </div>
+
+              <div class="card gray">
+                <h3 class="titleCards">Название карты</h3>
+                <div class="bar">
+                  <div class="emptybar"></div>
+                  <div class="filledbar"></div>
+                </div>
+                <div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
     </div>
 

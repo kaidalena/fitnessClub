@@ -280,7 +280,7 @@ footer, header {
 .basic-infoLena .columnsLena .about-fotoLena {
   flex: 0 0 41%;
   max-width: 41%;
-  box-shadow: 0 0 8px 8px white inset;
+  /* box-shadow: 0 0 8px 8px white inset; */
 }
 
 .basic-infoLena .emojiLena {
@@ -430,21 +430,28 @@ h5 {
   opacity: 1;
 }
 
-.cell.yellow {
+.cell.yellow, .card.yellow {
   background: linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%);
-  /* box-shadow: 0 0 5px 5px rgba(253, 252, 162, 0.5); */
+  
 }
 
-.cell.red {
+.cell.red, .card.red {
   background: linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%);
+  
 }
 
-.cell.blue {
+.cell.blue, .card.blue {
   background: linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%);
+  
 }
 
-.cell.green {
+.cell.green, .card.green {
   background: linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%);
+  
+}
+
+.cell.gray, .card.gray{
+  background: linear-gradient(to bottom right, #535353 0%, #b8b7b7 100%);
 }
 
 .cell.entry {
@@ -491,12 +498,6 @@ h5 {
   border: 0;
   background: linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%);
   box-shadow: -1rem 0 3rem #1f6124;
-}
-
-.card.blue {
-  border: 0;
-  background: linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%);
-  box-shadow: -1rem 0 3rem #355886;
 }
 
 .card:not(:first-child) {
@@ -558,23 +559,6 @@ h5 {
   width: 100%;
 }
 
-.stroke {
-  stroke: white;
-  stroke-dasharray: 360;
-  stroke-dashoffset: 360;
-  transition: 0.6s ease-out;
-}
-
-svg {
-  fill: #17141d;
-  stroke-width: 2px;
-}
-
-.card:hover .stroke {
-  stroke-dashoffset: 100;
-  transition: 0.6s ease-out;
-}
-
 /*---------------------------------------------------*/
 /*--------------Аккаунт------------------------------*/
 
@@ -594,11 +578,13 @@ svg {
 .infoAboutMe{
   position: relative;
   width: 100%;
+  text-align: center;
 }
 
 .myData{
   position: relative;
   display: flex;
+  Justify-content: center;
 }
 
 .myData .titles, .myData .entry{
@@ -606,7 +592,7 @@ svg {
 }
 
 .myData h2{
-  font-size: 30px;
+  font-size: 25px;
   margin: 10px 0 10px 0;
 }
 
@@ -615,6 +601,8 @@ svg {
 }
 
 .infoAboutMe .edit{
+  margin-top: 5%;
+  cursor: pointer;
   color: #101214;
   font-weight: 700;
   background: #b6e358;
@@ -635,7 +623,139 @@ svg {
   text-transform: uppercase;
 }
 
+.timetableBlock{
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  padding: 100px 0;
+  z-index: 2;
+}
 
+.timetableBlock::after {
+  background-color: rgba(5, 11, 37, 0.7);
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+}
+
+.timetableBlock .border{
+  display: flex;
+  flex-wrap: wrap;
+  Justify-content: center;
+  width: 100%;
+}
+
+.timetableBlock .infoDate, .timetableBlock .calendar{
+  width: 300px;
+  height: 442px;
+  padding: 2%;
+}
+
+.timetableBlock .infoDate{
+  background-color: #1abc9c;
+  border-top-left-radius: 12%;
+  border-bottom-left-radius: 12%;
+  background: linear-gradient(to right, #b6e358, #38b143);
+}
+
+.timetableBlock .infoDate h1{
+  margin: 5% 0 0 0;
+}
+
+.timetableBlock .calendar{
+  display: flex;
+  text-align: center;
+  background-color: white;
+  border-top-right-radius: 12%;
+  border-bottom-right-radius: 12%;
+  /* background: linear-gradient(#749d9e, #b3a68b)!important; */
+}
+
+.calendar select{
+  border: none;
+  width: 110px;
+  height: 42px;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.calendar select[id="year"]{
+  width: 75px;
+}
+
+.calendar table{
+  margin-top: 7%;
+}
+
+.calendar td{
+  border: none;
+  border-radius: 50%;
+  font-size: 23px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.calendar td.weekday{
+  font-size: 26px;
+  color: #28a745;
+  cursor: default;
+}
+
+.calendar td.selectDay{
+  background-color: #28a745;
+  color: white;
+}
+
+.myCards{
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  padding: 100px 0;
+  z-index: 2;
+}
+
+.myCards .containerLena{
+  display: flex;
+  Justify-content: center;
+}
+
+.myCards .currentCards, .myCards .usedCards{
+
+  width: 45%;
+  text-align: center;
+  margin: 0 2%;
+} 
+
+.myCards .currentCards .card{
+  box-shadow: -1rem 0 3rem rgb(71, 71, 71);
+}
+
+.myCards .card .description{
+  top: 30%;
+}
+
+.myCards .containerCards h4{
+  font-size: 20px;
+  font-family: "Garamond";
+  margin-bottom: 5%;
+}
+
+.myCards .containerCards p{
+  font-size: 20px;
+  font-family: "Garamond";
+}
 
 /*---------------------------------------------------*/
 
