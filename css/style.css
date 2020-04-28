@@ -432,22 +432,22 @@ h5 {
 
 .cell.yellow, .card.yellow {
   background: linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%);
-  
+
 }
 
 .cell.red, .card.red {
   background: linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%);
-  
+
 }
 
 .cell.blue, .card.blue {
   background: linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%);
-  
+
 }
 
 .cell.green, .card.green {
   background: linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%);
-  
+
 }
 
 .cell.gray, .card.gray{
@@ -736,7 +736,7 @@ h5 {
   width: 45%;
   text-align: center;
   margin: 0 2%;
-} 
+}
 
 .myCards .currentCards .card{
   box-shadow: -1rem 0 3rem rgb(71, 71, 71);
@@ -2353,7 +2353,7 @@ img {
 }
 
 .commentsLenaR .responsLena .LenaBoom {
-  width: 475px;
+  width: 353px;
   height: 387px;
   margin-right: 20px;
   display: flex;
