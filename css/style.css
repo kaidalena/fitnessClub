@@ -2357,6 +2357,11 @@ img {
   height: 387px;
   margin-right: 20px;
   display: flex;
+  bottom: 0;
+}
+
+.responsLena .LenaBoom{
+  bottom: 0;
 }
 
 .commentsLenaR .titleHow {
@@ -2393,7 +2398,7 @@ img {
   display: flex;
   position: relative;
   margin-top: 40px;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 
 .commentsLenaR .responsLena h3 {
