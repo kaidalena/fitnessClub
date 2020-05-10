@@ -37,6 +37,10 @@ Route::get('/cards', function () {
     return view('cards');
 });
 
+Route::get('/service', function () {
+    return view('service');
+});
+
 Route::get('/account', function () {
     return view('account');
 });
