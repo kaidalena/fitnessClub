@@ -44,13 +44,6 @@
           <img src="img/bg-img/bg-12.jpg" alt="">
         </div>
       </div>
-      <div class="emojiLena">
-        <h2>
-          Преимущества занятия фитнесом в Fitness Gym
-        </h2>
-        <img src="img/smile.png" alt="">
-        <pre> ФИЗИЧЕСКАЯ АКТИВНОСТЬ                 ПОЛОЖИТЕЛЬНЫЕ ЭМОЦИИ                    ЗАРЯД ЭНЕРГИИ</pre>
-      </div>
     </div>
   </div>
 

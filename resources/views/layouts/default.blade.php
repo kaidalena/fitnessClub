@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="css/classy-nav.css">
 
   @yield('scripts')
-  
+
 </head>
 
 <body>
@@ -65,7 +65,7 @@
                       <li><a href="#">Фото залов</a></li>
                     </ul>
                   </li>
-                  <li><a href="#">Услуги</a>
+                  <li><a href="service">Услуги</a>
                     <ul class="dropdown">
                       <li><a href="#">Кардио тренировки</a></li>
                       <li><a href="#">Силовые тренировки</a></li>
