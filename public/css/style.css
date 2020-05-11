@@ -562,6 +562,22 @@ h5 {
     width: 100%;
 }
 
+.formEditData{
+    display: none;
+    /* position: absolute;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1); */
+}
+
+/* .formEditData .editData{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: lightblue;
+} */
+
 .myFoto {
     position: relative;
     width: 100%;
@@ -570,7 +586,7 @@ h5 {
     background-size: contain;
 }
 
-.infoAboutMe {
+.infoAboutMe, .formEditData{
     position: relative;
     width: 100%;
     text-align: center;

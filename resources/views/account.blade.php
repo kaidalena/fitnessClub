@@ -6,6 +6,7 @@
 
 @section('scripts')
 <script src="js/calendar.js"></script>
+<script src="js/account.js"></script>
 @endsection
 
 @section('content')
@@ -19,7 +20,7 @@
                 <ol class="itemsLena">
                     <li class="itemLena"><a href="#">Моя информация</a></li>
                     <li class="itemLena"><a href="#">Календарь</a></li>
-                    <li class="itemLena"><a href="#">Мои абонименты</a></li>
+                    <li class="itemLena"><a href="#">Мои абонементы</a></li>
                 </ol>
             </div>
         </div>
@@ -29,24 +30,45 @@
   <!-- Первая часть страницы "Основная информация" -->
   <div class="basic-infoLena" >
     <div class="containerLena">
+
         <div class="columnsLena account">
             <div class="myFoto" style="background-image: url(img/YeLs5h1hyP8.jpg);">
 
             </div>
-            <div class="infoAboutMe">
+
+            <div id="formEditData" class="formEditData">
+              <div class="editData">
+                <form action="{{ route('account-edit') }}" method="post">
+                  @csrf
+                  <input type="text" name="name" placeholder="Имя">
+                  <input type="text" name="surname" placeholder="Фамилия">
+                  <div id="calendar" >
+                    <input type="text" name="birthday" placeholder="Дата рождения">
+                  </div>
+                  <input type="email"  name="email" placeholder="Email">
+                  <input type="number" name="weight" placeholder="Вес">
+                  <input type="number" name="height" placeholder="Рост">
+                  <input type="submit" value="Сохранить"> 
+                </form>
+              </div>
+            </div>
+
+            <div id="infoAboutMe" class="infoAboutMe">
                 <div class="myData">
                     <div class="titles">
                         <h2>Возраст:</h2>
                         <h2>Вес:</h2>
                         <h2>Рост:</h2>
+                        <h2>Email:</h2>
                     </div>
                     <div class="entry">
                         <h2 class="birthday"> 27.11.1999</h2>
                         <h2 class="weight">4 кг</h2>
                         <h2 class="height">100 см</h2>
+                        <h2 class="email">email@mail.ru</h2>
                     </div>
                 </div>
-                <input type="button" class="edit" value="Редактировать">
+                <input type="button" class="edit" value="Редактировать" onclick=editData()>
             </div>
         </div>
     </div>

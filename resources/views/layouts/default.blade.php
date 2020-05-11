@@ -52,20 +52,20 @@
               <!-- Nav Start -->
               <div class="classynav">
                 <ul>
-                  <li><a href="/">Главная</a></li>
-                  <li><a href="aboutUs">О нас</a>
+                  <li><a href="{{ route('home') }}">Главная</a></li>
+                  <li><a href="{{ route('about') }}">О нас</a>
                     <ul class="dropdown">
-                      <li><a href="aboutUs">Основная информация</a></li>
+                      <li><a href="#">Основная информация</a></li>
                       <li><a href="#">Отзывы</a></li>
                     </ul>
                   </li>
-                  <li><a href="gallery">Галерея</a>
+                  <li><a href="{{ route('gallery') }}">Галерея</a>
                     <ul class="dropdown">
                       <li><a href="#">Наши тренера</a></li>
                       <li><a href="#">Фото залов</a></li>
                     </ul>
                   </li>
-                  <li><a href="service">Услуги</a>
+                  <li><a href="{{ route('service') }}">Услуги</a>
                     <ul class="dropdown">
                       <li><a href="#">Кардио тренировки</a></li>
                       <li><a href="#">Силовые тренировки</a></li>
@@ -73,13 +73,13 @@
                       <li><a href="#">Тренажерный зал</a></li>
                     </ul>
                   </li>
-                  <li><a href="schedule">Расписание</a></li>
-                  <li><a href="contact">Контакты</a></li>
+                  <li><a href="{{ route('schedule') }}">Расписание</a></li>
+                  <li><a href="{{ route('contact') }}">Контакты</a></li>
                 </ul>
 
                 <!-- Call Button -->
-                <a href="cards" class="fitness-btn menu-btn ml-30">Клубные карты</a>
-                <a href="account" class="fitness-btn menu-btn ml-30">Личный кабинет</a>
+                <a href="{{ route('cards') }}" class="fitness-btn menu-btn ml-30">Клубные карты</a>
+                <a href="{{ route('account') }}" class="fitness-btn menu-btn ml-30">Личный кабинет</a>
 
               </div>
               <!-- Nav End -->
@@ -91,6 +91,7 @@
   </header>
   <!-- ##### Header Area End ##### -->
 
+  @include('inc.messages')
 
   @yield('content')
 
