@@ -27,30 +27,15 @@
       </div>  
     </div>
 
+
   <!-- Первая часть страницы "Основная информация" -->
+  
+
   <div class="basic-infoLena" >
     <div class="containerLena">
 
         <div class="columnsLena account">
             <div class="myFoto" style="background-image: url(img/YeLs5h1hyP8.jpg);">
-
-            </div>
-
-            <div id="formEditData" class="formEditData">
-              <div class="editData">
-                <form action="{{ route('account-edit') }}" method="post">
-                  @csrf
-                  <input type="text" name="name" placeholder="Имя">
-                  <input type="text" name="surname" placeholder="Фамилия">
-                  <div id="calendar" >
-                    <input type="text" name="birthday" placeholder="Дата рождения">
-                  </div>
-                  <input type="email"  name="email" placeholder="Email">
-                  <input type="number" name="weight" placeholder="Вес">
-                  <input type="number" name="height" placeholder="Рост">
-                  <input type="submit" value="Сохранить"> 
-                </form>
-              </div>
             </div>
 
             <div id="infoAboutMe" class="infoAboutMe">
@@ -68,7 +53,7 @@
                         <h2 class="email">email@mail.ru</h2>
                     </div>
                 </div>
-                <input type="button" class="edit" value="Редактировать" onclick=editData()>
+                <a href="{{ route('account-edit') }}"><input type="button" class="edit" value="Редактировать"></a>
             </div>
         </div>
     </div>

@@ -15,8 +15,8 @@
   <link rel="icon" href="img/core-img/favicon.ico">
 
   <!-- Core Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/classy-nav.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/classy-nav.css">
 
   @yield('scripts')
 
@@ -34,7 +34,7 @@
           <nav class="classy-navbar justify-content-between" id="fitnessNav">
 
             <!-- Nav brand -->
-            <a href="index.html" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a>
+            <a href="index.html" class="nav-brand"><img src="/img/core-img/logo.png" alt=""></a>
 
             <!-- Navbar Toggler -->
             <div class="classy-navbar-toggler">
@@ -106,10 +106,10 @@
             <div class="footer_cont">
               <p> Мы в соцсетях : </p>
               <div class="footer_cont">
-                <a href="#"><img class="img_cont" src="img\core-img\Vk.png"></a>
-                <a href="#"><img class="img_cont" src="img\core-img\insta.png"></a>
-                <a href="#"><img class="img_cont" src="img\core-img\telegram.png"></a>
-                <a href="#"><img class="img_cont" src="img\core-img\Whatsapp.png"></a>
+                <a href="#"><img class="img_cont" src="\img\core-img\Vk.png"></a>
+                <a href="#"><img class="img_cont" src="\img\core-img\insta.png"></a>
+                <a href="#"><img class="img_cont" src="\img\core-img\telegram.png"></a>
+                <a href="#"><img class="img_cont" src="\img\core-img\Whatsapp.png"></a>
               </div>
             </div>
           </div>

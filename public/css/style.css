@@ -231,7 +231,7 @@ footer, header {
 }
 
 .basic-infoLena {
-    background-color: rgb(236, 236, 236);
+    /* background-color: rgb(236, 236, 236); */
     padding-top: 100px;
     padding-bottom: 100px;
     margin: 0;
@@ -560,23 +560,44 @@ h5 {
 .columnsLena.account {
     position: relative;
     width: 100%;
+    min-height: 25em;
 }
 
 .formEditData{
     display: none;
-    /* position: absolute;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.1); */
 }
 
-/* .formEditData .editData{
-    width: 50%;
-    height: 50%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    background-color: lightblue;
-} */
+.formEditData input{
+    outline: none;
+    border: none;
+    font-family: Poppins-Medium;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666666;
+    width: 45%;
+    background: #e6e6e6;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0 30px 0 30px;
+    margin-bottom: 2%;
+}
+
+.formEditData input[type="submit"]{
+    background: -webkit-linear-gradient(to right, #b6e358, #38b143);
+    background: linear-gradient(to right, #b6e358, #38b143);
+    cursor: pointer;
+    color: #101214;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+}
+
+.formEditData input[type="file"]{
+    background-color: inherit;
+    width: 75%;
+}
+
 
 .myFoto {
     position: relative;
@@ -765,6 +786,112 @@ h5 {
 .myCards .containerCards p {
     font-size: 20px;
     font-family: "Garamond";
+}
+
+/*---------- Form ---------------*/
+.container-form{
+    width: 100%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+}
+
+.container-form::after {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    content: "";
+}
+
+.block-form{
+    width: 390px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    padding-right: 55px;
+    padding-left: 55px;
+    padding-bottom: 30px;
+    padding-top: 50px;
+}
+
+.contentForm{
+    width: 100%;
+}
+
+.contentForm h1{
+    margin: 0 0 7% 0;
+    font-size: 30px;
+    font-family: "Bookman Old Style";
+    color: #101214;
+}
+
+.contentForm .input, .contentForm label{
+    font-family: "Bookman Old Style";
+    font-size: 20px;
+}
+
+.contentForm label{
+    color: black;
+    margin-left: 5%;
+}
+
+.contentForm .input{
+    height: 40px;
+    width: 100%;
+    margin-bottom: 7%;
+    padding: 5px 20px 5px 20px;
+    background: #e6e6e6;
+    color: #666;
+    border: none;
+    border-radius: 25px;
+}
+
+.contentForm input.foto{
+    font-size: 15px;
+}
+
+.contentForm input.submit{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    cursor: pointer;
+    color: #101214;
+    font-weight: 700;
+    background: #b6e358;
+    background: -webkit-linear-gradient(to right, #b6e358, #38b143);
+    background: linear-gradient(to right, #b6e358, #38b143);
+    border: none;
+    line-height: 45px;
+    text-align: center;
+    width: 100%;
+    height: 45px;
+    border-radius: 15px;
+    padding: 0 30px;
+    transition-duration: 500ms;
+    text-decoration: none;
+    outline: none;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
 }
 
 /*---------------------------------------------------*/

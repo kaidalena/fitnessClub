@@ -45,5 +45,9 @@ Route::get('/account', function () {
     return view('account');
 })->name('account');
 
-Route::post('/account', 'AccountController@load')->name('account-edit');
+Route::get('/account/edit', function () {
+    return view('accountEditForm');
+})->name('account-edit');
+
+Route::post('/account/edit', 'AccountController@load')->name('account-edit-post');
 
