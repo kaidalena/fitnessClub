@@ -833,6 +833,15 @@ h5 {
     padding-top: 50px;
 }
 
+.block-form.cards{
+    width: 750px;
+    display: flex;
+}
+
+.cards .contentForm{
+    margin-left: 5%;
+}
+
 .contentForm{
     width: 100%;
 }
@@ -867,6 +876,10 @@ h5 {
 
 .contentForm input.foto{
     font-size: 15px;
+}
+
+.contentForm .input.cards{
+    width: 48%;
 }
 
 .contentForm input.submit{

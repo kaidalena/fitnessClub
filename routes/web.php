@@ -37,6 +37,12 @@ Route::get('/cards', function () {
     return view('cards');
 })->name('cards');
 
+Route::get('/cards/buy', function () {
+    return view('cardsBuyForm');
+})->name('cards-buy');
+
+Route::post('/cards/buy', 'CardsController@load')->name('cards-buy-post');
+
 Route::get('/service', function () {
     return view('service');
 })->name('service');

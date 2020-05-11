@@ -19,6 +19,6 @@ class AccountController extends Controller{
 
         $account->save();
 
-        return redirect()->route('home')->with('success', 'Успешно');
+        return redirect()->route('account')->with('success', 'Успешно');
     }
 }
