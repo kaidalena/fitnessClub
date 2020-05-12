@@ -13,10 +13,8 @@
             <div class="titlesLena">
                 <h2>Услуги</h2>
                 <ol class="itemsLena">
-                    <li class="itemLena"><a href="#">Кардио тренировки</a></li>
-                    <li class="itemLena"><a href="#">Силовые тренировки</a></li>
-                    <li class="itemLena"><a href="#">Аэробные тренировки</a></li>
-                    <li class="itemLena"><a href="#">Тренажерный зал</a></li>
+                    <li class="itemLena"><a href="#">Услуги</a></li>
+                    <li class="itemLena"><a href="#">Преимущества</a></li>
                 </ol>
             </div>
         </div>
@@ -27,7 +25,7 @@
 <section id="services" class="scrollBlock content_section">
     <div class="wrap">
         <div class="title_parent">
-            <div class="title">Fitness Gym на Генерала острякова</div>
+            <div class="title">Fitness Gym </div>
             <div class="title_caption">Fitness Gym - это современный и качественный фитнес по самой доступной цене!
                 <br><br>
                 В нашем фитнес-клубе есть абсолютно все, для вашего активного времяпровождения!

@@ -51,6 +51,10 @@ Route::get('/account', function () {
     return view('account');
 })->name('account');
 
+Route::get('/account/login', function () {
+    return view('accountLoginForm');
+})->name('account-login');
+
 Route::get('/account/edit', function () {
     return view('accountEditForm');
 })->name('account-edit');

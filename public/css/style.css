@@ -223,7 +223,7 @@ footer, header {
 }
 
 .tabsLena .checked, .tabsLena p.input.checked:hover {
-    background-color: rgb(236, 236, 236);
+    background-color: rgb(255, 255, 255);
 }
 
 .mainTitleLena .containerLena .itemsLena li {
@@ -860,12 +860,25 @@ h5 {
 }
 
 .container-form::after {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
     z-index: -1;
     width: 100%;
     height: 100%;
     content: "";
+}
+
+.container-form.login{
+    min-height: 850px;
+}
+
+.tabsLena.login .checked,
+.tabsLena.login p.input.checked:hover{
+    background-color: rgb(211, 212, 214);
+}
+
+.container-form.login::after {
+    background-color: rgba(0, 0, 0, 0.15);
 }
 
 .block-form{
