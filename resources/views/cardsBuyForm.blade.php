@@ -37,8 +37,6 @@
 
             <form class="contentForm" action="{{ route('cards-buy-post') }}" method="post">
                 @csrf
-                <!-- <h1>Оформление абонемента</h1> -->
-
                 
 
                 <label for="name"> Имя</label>

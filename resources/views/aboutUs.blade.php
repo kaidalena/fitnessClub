@@ -55,35 +55,37 @@
         <h2>Отзывы</h2>
       </div>
 
-      <!-- вывод через цикл -->
+      <!-- вывод из БД -->
+      @foreach($comments as $elem)
       <div class="responsLena">
         <div class="avatarLena">
           <img src="img/avatar.png" alt="">
         </div>
         <div class="textLena">
-          <h3>Имя Фимилия</h3>
-          <p> комментарий</p>
+          <h3>{{$elem->persona}}</h3>
+          <p>{{ $elem->message }}</p>
         </div>
       </div>
-      <div class="responsLena">
-        <div class="avatarLena">
-          <img src="img/avatar.png" alt="">
-        </div>
-        <div class="textLena">
-          <h3>Имя Фимилия</h3>
-          <p> комментарий</p>
-        </div>
+      @endforeach
+
+      
+    </div>
+  </div>
+
+
+  <div class="basic-infoLena">
+    <div class="containerLena">
+      <div class="titleLena">
+        <h2>Оставить свой отзыв</h2>
       </div>
-      <div class="responsLena">
-        <div class="avatarLena">
-          <img src="img/avatar.png" alt="">
-        </div>
-        <div class="textLena">
-          <h3>Имя Фимилия</h3>
-          <p> комментарий</p>
-        </div>
-      </div>
-      <!-- end -->
+      <form class="responsForm" action="about-respons-post" method="post">
+        @csrf
+        <h3>Имя Фамилия</h3>
+        <br/>
+        <textarea name="message" placeholder="Ваш отзыв..."></textarea>
+        <br/>
+        <input type="submit" value="Отправить">
+      </form>
     </div>
   </div>
 

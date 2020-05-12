@@ -8,7 +8,25 @@ use App\Models\Account;
 
 class AccountController extends Controller{
 
-    public function load(AccountRequest $req){
+    public function enter(AccountRequest $req){
+
+    }
+
+    public function registration(AccountRequest $req){
+
+        $account = new Account();
+        $account->name = $req->input('name');
+        $account->surname = $req->input('surname');
+        $account->email = $req->input('email');
+        $account->weight = $req->input('weight');
+        $account->height = $req->input('height');
+
+        $account->save();
+
+        return redirect()->route('account')->with('success', 'Успешно');
+    }
+
+    public function edit(AccountRequest $req){
 
         $account = new Account();
         $account->name = $req->input('name');

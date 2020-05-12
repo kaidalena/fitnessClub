@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +18,12 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
-Route::get('/aboutUs', function () {
-    return view('aboutUs');
-})->name('about');
+Route::get('/aboutUs', 
+// function () {return view('aboutUs');}
+    'AboutController@allComments'
+)->name('about');
+
+Route::post('/aboutUs', 'AboutController@sendRespons')->name('about-respons-post');
 
 Route::get('/gallery', function () {
     return view('gallery');
@@ -55,9 +59,13 @@ Route::get('/account/login', function () {
     return view('accountLoginForm');
 })->name('account-login');
 
+Route::post('/account/login', 'AccountController@enter')->name('account-login-enter');
+
+Route::post('/account/login', 'AccountController@registration')->name('account-login-registration');
+
 Route::get('/account/edit', function () {
     return view('accountEditForm');
 })->name('account-edit');
 
-Route::post('/account/edit', 'AccountController@load')->name('account-edit-post');
+Route::post('/account/edit', 'AccountController@edit')->name('account-edit-post');
 

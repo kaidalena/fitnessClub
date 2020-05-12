@@ -41,7 +41,7 @@
 
         <div class="block-form" id="registration" style="display: none;">
             
-            <form class="contentForm" action="{{ route('account-login') }}" method="post">
+            <form class="contentForm" action="{{ route('account-login-enter') }}" method="post">
                 @csrf
                 
                 <label for="name"> Имя</label>

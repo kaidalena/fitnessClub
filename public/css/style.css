@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+input, button, textarea{
+    outline: none;
+}
+
 body {
     font-family: "Open Sans", sans-serif;
     font-size: 14px;
@@ -298,7 +302,7 @@ footer, header {
 }
 
 .commentsLena {
-    height: 500px;
+    height: auto;
     position: relative;
     z-index: 2;
     background-position: center center;
@@ -336,7 +340,7 @@ footer, header {
     display: flex;
     position: relative;
     margin-top: 40px;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .commentsLena .responsLena .avatarLena {
@@ -357,6 +361,45 @@ footer, header {
 
 .commentsLena .responsLena p {
     color: white;
+}
+
+.responsForm{
+    text-align: center;
+}
+
+.responsForm h3{
+    font-size: 30px;
+    font-style: italic;
+    margin-top: 50px;
+}
+
+.responsForm textarea{
+    width: 50%;
+    min-height: 200px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-family: Poppins-Medium;
+    padding: 30px;
+}
+
+.responsForm input{
+    margin-top: 30px;
+    border: none;
+    font-family: Poppins-Medium;
+    font-size: 15px;
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0 30px 0 30px;
+    margin-bottom: 2%;
+    background: -webkit-linear-gradient(to right, #b6e358, #38b143);
+    background: linear-gradient(to right, #b6e358, #38b143);
+    cursor: pointer;
+    color: #101214;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
 }
 
 /*--------- таблица на странице Расписание ---------*/
