@@ -62,6 +62,7 @@ footer, header {
 }
 
 .containerLena {
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
     list-style: none;
