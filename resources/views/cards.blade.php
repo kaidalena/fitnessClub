@@ -4,6 +4,7 @@
   Абонементы
 @endsection
 
+
 @section('content')
   <!-- ##### Breadcumb Area Start ##### -->
 
@@ -118,7 +119,7 @@
 
             </div>
             </div>
-            <div class="card">
+            <div class="card" id="card">
               <h3 class="titleCards">Название карты</h3>
               <div class="bar">
                 <div class="emptybar"></div>
@@ -131,8 +132,54 @@
             </div>
         </div>
 
-
     </div>
+
+    <div class="modalBack" id="modal" style="display: none">
+          <div class="window">
+            <div class="card green">
+                <h3 class="titleCards">Название карты</h3>
+                <div class="bar">
+                  <div class="emptybar"></div>
+                  <div class="filledbar"></div>
+                </div>
+            </div>
+
+            <p>
+              <h2>Оформить карту?</h2>
+              <a href="{{ route('cards-buy') }}"><input type="button" value="Да"> </a>
+              <input type="button" id="buttonNo" value="Нет" > 
+            </p>
+
+          </div>
+        </div>
+
+        <script>
+          
+          window.onload = function () {
+            let cards = document.getElementsByClassName("card");
+            console.log(cards);
+
+            function click(){
+              console.log("click on card");
+              var window = document.getElementById("modal");
+              window.style.display = "flex";
+            }
+
+            for (var i=0; i<cards.length; i++){
+              console.log("foreach ");
+              cards[i].onclick = click;
+            }
+          
+            var no = document.getElementById('buttonNo');
+            no.addEventListener('click', close);
+
+            function close(){
+                console.log("fff");
+                document.getElementById("modal").style.display = "none";
+            }
+        }
+        </script>
+        
   </div>
 
   @endsection

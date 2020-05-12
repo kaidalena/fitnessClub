@@ -235,6 +235,7 @@ footer, header {
     padding-top: 100px;
     padding-bottom: 100px;
     margin: 0;
+    position: relative;
 }
 
 .basic-infoLena .containerLena {
@@ -490,6 +491,11 @@ h5 {
     left: 0px;
 }
 
+.containerLena.cards .card:active{
+    background-color: #58ac30;
+    /* background: linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%); */
+}
+
 .card.green {
     border: 0;
     background: linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%);
@@ -555,6 +561,51 @@ h5 {
     width: 100%;
 }
 
+.basic-infoLena .modalBack{
+    display: flex;
+    align-items: center;
+    Justify-content: center;
+    background-color: rgba(30, 30, 30, 0.7);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.modalBack .window{
+    width: auto;
+    height: fit-content;
+    padding: 5%;
+    padding-bottom: 3%;
+    background-color: white;
+    border-radius: 7%;
+    text-align: center;
+    box-shadow: 0 0 3rem #000;
+}
+
+.modalBack .window h2{
+    font-size: 30px;
+    margin-top: 15%;
+}
+
+.modalBack .window input, 
+.modalBack .window button{
+    font-size: 25px;
+    margin-top: 10%;
+    width: 45%;
+    outline: none;
+    border: none;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0 30px 0 30px;
+    background: -webkit-linear-gradient(to right, #b6e358, #38b143);
+    background: linear-gradient(to right, #b6e358, #38b143);
+    cursor: pointer;
+    color: #101214;
+    font-weight: 700;
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+}
 /*---------------------------------------------------*/
 /*--------------Аккаунт------------------------------*/
 .columnsLena.account {
