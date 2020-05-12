@@ -110,24 +110,24 @@
 
 
 
-  <div class="commentsLenaR">
+  <div class="commentsLenaRa">
     <div class="containerLena">
       <div class="titleHow">
         <h2 class="titleFoto" align="center">Фото залов</h2>
       </div>
     </div>
+  </div>
 
     <!-- вывод через цикл -->
     <div class="responsLena">
       <div class="LenaBoom">
-        <img src="img\bg-img\bg-14.jpg" alt="">
-        <img src="img\bg-img\bg-2.jpg" alt="">
-        <img src="img\bg-img\bg-10.jpg" alt="">
-        <img src="img\bg-img\bg-11.jpg" alt="">
+        <img src="img\bg-img\bg-14.jpg" alt="" width="478px" >
+        <img src="img\bg-img\bg-2.jpg" alt=""  width="475px">
+        <img src="img\bg-img\bg-10.jpg" alt="" width="475px">
+        <img src="img\bg-img\bg-11.jpg" alt="" width="475px">
       </div>
     </div>
     <!-- end -->
-  </div>
 
 
 

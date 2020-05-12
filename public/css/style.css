@@ -491,7 +491,7 @@ h5 {
     left: 0px;
 }
 
-.containerLena.cards .card:active{
+.containerLena.cards .card:active {
     background-color: #58ac30;
     /* background: linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%); */
 }
@@ -561,7 +561,7 @@ h5 {
     width: 100%;
 }
 
-.basic-infoLena .modalBack{
+.basic-infoLena .modalBack {
     display: flex;
     align-items: center;
     Justify-content: center;
@@ -572,7 +572,7 @@ h5 {
     top: 0;
 }
 
-.modalBack .window{
+.modalBack .window {
     width: auto;
     height: fit-content;
     padding: 5%;
@@ -583,13 +583,13 @@ h5 {
     box-shadow: 0 0 3rem #000;
 }
 
-.modalBack .window h2{
+.modalBack .window h2 {
     font-size: 30px;
     margin-top: 15%;
 }
 
-.modalBack .window input, 
-.modalBack .window button{
+.modalBack .window input,
+.modalBack .window button {
     font-size: 25px;
     margin-top: 10%;
     width: 45%;
@@ -606,6 +606,7 @@ h5 {
     font-family: "Open Sans", sans-serif;
     text-transform: uppercase;
 }
+
 /*---------------------------------------------------*/
 /*--------------Аккаунт------------------------------*/
 .columnsLena.account {
@@ -614,11 +615,11 @@ h5 {
     min-height: 25em;
 }
 
-.formEditData{
+.formEditData {
     display: none;
 }
 
-.formEditData input{
+.formEditData input {
     outline: none;
     border: none;
     font-family: Poppins-Medium;
@@ -633,7 +634,7 @@ h5 {
     margin-bottom: 2%;
 }
 
-.formEditData input[type="submit"]{
+.formEditData input[type="submit"] {
     background: -webkit-linear-gradient(to right, #b6e358, #38b143);
     background: linear-gradient(to right, #b6e358, #38b143);
     cursor: pointer;
@@ -644,11 +645,10 @@ h5 {
     text-transform: uppercase;
 }
 
-.formEditData input[type="file"]{
+.formEditData input[type="file"] {
     background-color: inherit;
     width: 75%;
 }
-
 
 .myFoto {
     position: relative;
@@ -658,7 +658,7 @@ h5 {
     background-size: contain;
 }
 
-.infoAboutMe, .formEditData{
+.infoAboutMe, .formEditData {
     position: relative;
     width: 100%;
     text-align: center;
@@ -840,7 +840,7 @@ h5 {
 }
 
 /*---------- Form ---------------*/
-.container-form{
+.container-form {
     width: 100%;
     min-height: 100vh;
     display: -webkit-box;
@@ -868,12 +868,12 @@ h5 {
     content: "";
 }
 
-.container-form.login{
+.container-form.login {
     min-height: 850px;
 }
 
 .tabsLena.login .checked,
-.tabsLena.login p.input.checked:hover{
+.tabsLena.login p.input.checked:hover {
     background-color: rgb(211, 212, 214);
 }
 
@@ -881,7 +881,7 @@ h5 {
     background-color: rgba(0, 0, 0, 0.15);
 }
 
-.block-form{
+.block-form {
     width: 390px;
     background: rgb(255, 255, 255);
     border-radius: 10px;
@@ -897,37 +897,37 @@ h5 {
     padding-top: 50px;
 }
 
-.block-form.cards{
+.block-form.cards {
     width: 750px;
     display: flex;
 }
 
-.cards .contentForm{
+.cards .contentForm {
     margin-left: 5%;
 }
 
-.contentForm{
+.contentForm {
     width: 100%;
 }
 
-.contentForm h1{
+.contentForm h1 {
     margin: 0 0 7% 0;
     font-size: 30px;
     font-family: "Bookman Old Style";
     color: #101214;
 }
 
-.contentForm .input, .contentForm label{
+.contentForm .input, .contentForm label {
     font-family: "Bookman Old Style";
     font-size: 20px;
 }
 
-.contentForm label{
+.contentForm label {
     color: black;
     margin-left: 5%;
 }
 
-.contentForm .input{
+.contentForm .input {
     height: 40px;
     width: 100%;
     margin-bottom: 7%;
@@ -938,15 +938,15 @@ h5 {
     border-radius: 25px;
 }
 
-.contentForm input.foto{
+.contentForm input.foto {
     font-size: 15px;
 }
 
-.contentForm .input.cards{
+.contentForm .input.cards {
     width: 48%;
 }
 
-.contentForm input.submit{
+.contentForm input.submit {
     margin-left: auto;
     margin-right: auto;
     margin-top: 10%;
@@ -1120,7 +1120,9 @@ ol li {
 
 img {
     height: auto;
-    max-width: 100%;
+    line-height: 0;
+    display: block;
+    float: none;
 }
 
 /* :: 3.1.0 Spacing */
@@ -2574,6 +2576,8 @@ img {
 }
 
 .responsLena .LenaBoom {
+    display: flex;
+    justify-content: flex-end;
     bottom: 0;
 }
 
@@ -2585,6 +2589,14 @@ img {
 
 .commentsLenaR {
     height: 500px;
+    position: relative;
+    z-index: 2;
+    background-position: center center;
+    background-size: cover;
+}
+
+.commentsLenaRa {
+    height: 100px;
     position: relative;
     z-index: 2;
     background-position: center center;
