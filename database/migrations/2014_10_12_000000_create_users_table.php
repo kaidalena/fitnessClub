@@ -15,12 +15,22 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('fio');
+            $table->date('birthday');
+            $table->float('weight');
+            $table->float('height');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            // $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->rememberToken();
+            // $table->rememberToken();
+            $table->string('foto')->default('/storage/users_fotos/default.jpg');
             $table->timestamps();
+        });
+
+        Schema::create('visits', function (Blueprint $table) {
+            $table->bigInteger('user')->attributes('UNSIGNED');
+            $table->dateTime('date');
+            $table->bigInteger('training_group')->attributes('UNSIGNED');
         });
     }
 
