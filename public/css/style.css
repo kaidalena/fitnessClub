@@ -505,6 +505,7 @@ h5 {
 .containerLena.cards h4 {
     font-family: "Baskerville Old Face";
     font-size: 25px;
+    text-transform: uppercase;
 }
 
 .card h3 {

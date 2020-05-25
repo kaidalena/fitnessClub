@@ -57,7 +57,6 @@
 
       <!-- вывод из БД -->
       @foreach($comments as $elem)
-      @dd($elem)
       <div class="responsLena">
         <div class="avatarLena">
           <img src="img/avatar.png" alt="">

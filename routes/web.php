@@ -35,13 +35,9 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
-Route::get('/cards', function () {
-    return view('cards');
-})->name('cards');
+Route::get('/cards', 'CardsController@allCards')->name('cards');
 
-Route::get('/cards/buy', function () {
-    return view('cardsBuyForm');
-})->name('cards-buy');
+Route::post('/cards/buy', 'CardsController@cardsBuyForm')->name('cards_buy');
 
 Route::post('/cards/buy', 'CardsController@load')->name('cards-buy-post');
 

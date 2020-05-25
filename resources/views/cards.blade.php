@@ -26,157 +26,76 @@
   <!-- Первая часть страницы "Основная информация" -->
   <div class="basic-infoLena" >
     <div class="containerLena cards">
-      
-        <h4>ГРУППОВЫЕ ЗАНЯТИЯ</h4>
-          
-          <div class="containerCards">
-            <div class="card">
-              <h3 class="titleCards">Название карты</h3>
-              <div class="bar">
-                <div class="emptybar"></div>
-                <div class="filledbar"></div>
-              </div>
-              <!-- <div class="circle">
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-                <circle class="stroke" cx="60" cy="60" r="50"/>
-              </svg>
-              </div> -->
-            </div>
-            <div class="card">
-              <h3 class="titleCards">Стандарт</h3>
+      <?php $i = 0; ?>
+      @foreach($group as $temp)
+        <h4>{{ $temp->name }}</h4>
+        <div class="containerCards">
+        @for(; $i<=$temp->id; $i++)
+          <?php $card = $cards[$i]; ?>
+          @if( $card->card_group != $temp->id ) 
+            @break;
+          @endif
+            <div class="card" id="{{ $card->id }}" onclick="test(this)">
+              <h3 class="titleCards">{{ $card->name }}</h3>
               <div class="bar">
                 <div class="emptybar"></div>
                 <div class="filledbar"></div>
               </div>
               <div class="description">
-                
-                <h5>4 недели</h5>
-                <h5>2 занятия в неделю</h5>
+                <h5>Недель: {{ $card->number_of_weeks }}</h5>
+                <h5>Занятий в неделю: {{ $card->number_of_training }}</h5>
               </div>
             </div>
-            <div class="card">
-              <h3 class="titleCards">Название карты</h3>
-              <div class="bar">
-                <div class="emptybar"></div>
-                <div class="filledbar"></div>
-              </div>
-              <div>
-
-
-              </div>
-            </div>
-            <div class="card">
-              <h3 class="titleCards">Название карты</h3>
-              <div class="bar">
-                <div class="emptybar"></div>
-                <div class="filledbar"></div>
-              </div>
-              <div>
-
-
-              </div>
-            </div>
-          </div>
-          
-          <h4>ТРЕНАЖЕРНЫЙ ЗАЛ</h4>
-
-          <div class="containerCards">
-            <div class="card">
-              <h3 class="titleCards">Название карты</h3>
-              <div class="bar">
-                <div class="emptybar"></div>
-                <div class="filledbar"></div>
-              </div>
-              <div>
-
-
-            </div>
-            </div>
-            <div class="card">
-              <h3 class="titleCards">Название карты</h3>
-              <div class="bar">
-                <div class="emptybar"></div>
-                <div class="filledbar"></div>
-              </div>
-              <div>
-
-
-            </div>
-            </div>
+        @endfor
         </div>
-
-            <h4>БЕЗЛИМИТ</h4>
-          
-          <div class="containerCards green">
-            <div class="card">
-              <h3 class="titleCards">Название карты</h3>
-              <div class="bar">
-                <div class="emptybar"></div>
-                <div class="filledbar"></div>
-              </div>
-              <div>
-
-
-            </div>
-            </div>
-            <div class="card" id="card">
-              <h3 class="titleCards">Название карты</h3>
-              <div class="bar">
-                <div class="emptybar"></div>
-                <div class="filledbar"></div>
-              </div>
-              <div>
-
-
-            </div>
-            </div>
-        </div>
-
+      @endforeach
+      
     </div>
 
     <div class="modalBack" id="modal" style="display: none">
-          <div class="window">
-            <div class="card green">
-                <h3 class="titleCards">Название карты</h3>
-                <div class="bar">
-                  <div class="emptybar"></div>
-                  <div class="filledbar"></div>
-                </div>
-            </div>
+          <div class="window" id='window'>
 
             <p>
               <h2>Оформить карту?</h2>
-              <a href="{{ route('cards-buy') }}"><input type="button" value="Да"> </a>
-              <input type="button" id="buttonNo" value="Нет" > 
+              <form action="{{ route('cards_buy') }}" method="post">
+                @csrf
+                <!-- <input type="hidden" name="card_id" id="card_id" value=""> -->
+                <input type="submit" value="Да">
+                <input type="button" id="buttonNo" value="Нет" > 
+              </form>
             </p>
 
           </div>
         </div>
 
         <script>
-          
+          let card;
           window.onload = function () {
             let cards = document.getElementsByClassName("card");
-            console.log(cards);
-
-            function click(){
-              console.log("click on card");
-              var window = document.getElementById("modal");
-              window.style.display = "flex";
-            }
-
-            for (var i=0; i<cards.length; i++){
-              console.log("foreach ");
-              cards[i].onclick = click;
-            }
           
             var no = document.getElementById('buttonNo');
             no.addEventListener('click', close);
 
             function close(){
-                console.log("fff");
                 document.getElementById("modal").style.display = "none";
             }
+        }
+
+        function test(elem){
+          
+          card = elem;
+          console.log("test card id: ");
+          console.log(card.id);
+          var window = document.getElementById("modal");
+          window.style.display = "flex";
+          var parent = document.getElementById('window');
+          parent.insertBefore(card, parent.firstElementChild);
+          // var input = document.getElementById("card_id");
+          // input.setAttribute('value', card.id);
+        }
+
+        function getCard(){
+          return card;
         }
         </script>
         
