@@ -8,6 +8,18 @@ use App\Models\Account;
 
 class AccountController extends Controller{
 
+    public function index(){
+        return view('account');
+    }
+
+    public function login(){
+        return view('accountLoginForm');
+    }
+
+    public function edit(){
+        return view('accountEditForm');
+    }
+
     public function enter(AccountRequest $req){
 
     }
@@ -26,7 +38,7 @@ class AccountController extends Controller{
         return redirect()->route('account')->with('success', 'Успешно');
     }
 
-    public function edit(AccountRequest $req){
+    public function editPost(AccountRequest $req){
 
         $account = new Account();
         $account->name = $req->input('name');

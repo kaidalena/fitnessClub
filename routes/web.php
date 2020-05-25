@@ -14,52 +14,35 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/aboutUs', 
-// function () {return view('aboutUs');}
-    'AboutController@allComments'
-)->name('about');
+Route::get('/aboutUs', 'AboutController@allComments')->name('about');
 
 Route::post('/aboutUs', 'AboutController@sendRespons')->name('about-respons-post');
 
-Route::get('/gallery', function () {
-    return view('gallery');
-})->name('gallery');
+Route::get('/gallery', 'GalleryController@index')->name('gallery');
 
 Route::get('/schedule', 'SheduleController@getAllTrainings')->name('schedule');
 
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
+Route::get('/contact', 'ContactController@index')->name('contact');
 
 Route::get('/cards', 'CardsController@allCards')->name('cards');
 
-Route::post('/cards/buy', 'CardsController@cardsBuyForm')->name('cards_buy');
+Route::post('/cards/buy', 'CardsController@cardsBuyForm')->name('cardsBuy');
 
-Route::post('/cards/buy', 'CardsController@load')->name('cards-buy-post');
+// Route::post('/cards/buy', 'CardsController@load')->name('cards-buy-post');
 
-Route::get('/service', function () {
-    return view('service');
-})->name('service');
+Route::get('/service', 'ServiceController@index')->name('service');
 
-Route::get('/account', function () {
-    return view('account');
-})->name('account');
+Route::get('/account', 'AccountController@index')->name('account');
 
-Route::get('/account/login', function () {
-    return view('accountLoginForm');
-})->name('account-login');
+Route::get('/account/login', 'AccountController@login')->name('account-login');
 
 Route::post('/account/login', 'AccountController@enter')->name('account-login-enter');
 
 Route::post('/account/login', 'AccountController@registration')->name('account-login-registration');
 
-Route::get('/account/edit', function () {
-    return view('accountEditForm');
-})->name('account-edit');
+Route::get('/account/edit',  'AccountController@edit')->name('account-edit');
 
-Route::post('/account/edit', 'AccountController@edit')->name('account-edit-post');
+Route::post('/account/edit', 'AccountController@editPost')->name('account-edit-post');
 

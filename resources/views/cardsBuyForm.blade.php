@@ -21,21 +21,22 @@
         <div class="block-form cards">
 
             <div class="containerCards">
-                    <div class="card green">
-                    <h3 class="titleCards">Стандарт</h3>
+                <!-- <h1> {{ $group->name }} </h1> -->
+                    <div class="card {{ $group->color}}">
+                    <h3 class="titleCards">{{ $card->name }}</h3>
                     <div class="bar">
                         <div class="emptybar"></div>
                         <div class="filledbar"></div>
                     </div>
                     <div class="description">
-                        
-                        <h5>4 недели</h5>
-                        <h5>2 занятия в неделю</h5>
+                        <h5>Недель: {{ $card->number_of_weeks }}</h5>
+                        <h5>Занятий в неделю: {{ $card->number_of_training }}</h5>
+                        <h4> {{ $card->prise }} руб.</h4>
                     </div>
                     </div>
             </div>
 
-            <form class="contentForm" action="{{ route('cards-buy-post') }}" method="post">
+            <form class="contentForm" action="#" method="post">
                 @csrf
                 
 
@@ -50,7 +51,7 @@
                 <p> <input type="text"  name="dateCard" class="input cards" placeholder="Дата">
                 <input type="number"  name="cidCard" class="input cards" placeholder="CID"></p>
 
-                <input type="submit" class="submit" value="Сохранить"> 
+                <input type="submit" class="submit" value="ОформитьKs"> 
  
             </form>
         </div>                

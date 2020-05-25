@@ -8,6 +8,11 @@
 @section('content')
   <!-- ##### Breadcumb Area Start ##### -->
 
+  <?php
+    use Illuminate\Support\Facades\Route;
+    // dd(Route::getRoutes())
+    ?>
+
     <div class="mainTitleLena" style="background-image: url(img/bg-img/breadcumb.jpg);">
       <div class="brand">
         <div class="containerLena">
@@ -54,12 +59,12 @@
 
     <div class="modalBack" id="modal" style="display: none">
           <div class="window" id='window'>
-
+            <div class="card" id='insert'></div>
             <p>
               <h2>Оформить карту?</h2>
-              <form action="{{ route('cards_buy') }}" method="post">
+              <form action="{{ route('cardsBuy') }}" method="post">
                 @csrf
-                <!-- <input type="hidden" name="card_id" id="card_id" value=""> -->
+                <input type="hidden" name="card_id" id="card_id" value="">
                 <input type="submit" value="Да">
                 <input type="button" id="buttonNo" value="Нет" > 
               </form>
@@ -82,16 +87,13 @@
         }
 
         function test(elem){
-          
-          card = elem;
-          console.log("test card id: ");
-          console.log(card.id);
+          card = elem.innerHTML;
           var window = document.getElementById("modal");
           window.style.display = "flex";
           var parent = document.getElementById('window');
-          parent.insertBefore(card, parent.firstElementChild);
-          // var input = document.getElementById("card_id");
-          // input.setAttribute('value', card.id);
+          document.getElementById('insert').innerHTML = card;
+          var input = document.getElementById("card_id");
+          input.setAttribute('value', elem.id);
         }
 
         function getCard(){

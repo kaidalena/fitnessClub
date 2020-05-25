@@ -23,7 +23,8 @@ class CardsController extends Controller{
     }
     
     public function cardsBuyForm(){
-        dd($_POST);
-        return view('cardsBuyForm');
+        $id_card = $_POST['card_id'];
+        $data = $this->model->searchById($id_card);
+        return view('cardsBuyForm', $data);
     }
 }
