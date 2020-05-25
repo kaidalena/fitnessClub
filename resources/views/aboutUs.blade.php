@@ -57,12 +57,13 @@
 
       <!-- вывод из БД -->
       @foreach($comments as $elem)
+      @dd($elem)
       <div class="responsLena">
         <div class="avatarLena">
           <img src="img/avatar.png" alt="">
         </div>
         <div class="textLena">
-          <h3>{{$elem->persona}}</h3>
+          <h3>{{$elem->fio}}</h3>
           <p>{{ $elem->message }}</p>
         </div>
       </div>
@@ -78,7 +79,7 @@
       <div class="titleLena">
         <h2>Оставить свой отзыв</h2>
       </div>
-      <form class="responsForm" action="about-respons-post" method="post">
+      <form class="responsForm" action="{{ route('about-respons-post') }}" method="post">
         @csrf
         <h3>Имя Фамилия</h3>
         <br/>

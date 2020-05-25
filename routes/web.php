@@ -29,9 +29,7 @@ Route::get('/gallery', function () {
     return view('gallery');
 })->name('gallery');
 
-Route::get('/schedule', function () {
-    return view('schedule');
-})->name('schedule');
+Route::get('/schedule', 'SheduleController@getAllTrainings')->name('schedule');
 
 Route::get('/contact', function () {
     return view('contact');
