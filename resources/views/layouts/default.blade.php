@@ -52,7 +52,7 @@
               <!-- Nav Start -->
               <div class="classynav">
                 <ul>
-                  <li><a href="{{ route('home') }}">Главная</a></li>
+                  <li><a href="{{ route('index') }}">Главная</a></li>
                   <li><a href="{{ route('about') }}">О нас</a>
                     <ul class="dropdown">
                       <li><a href="#">Основная информация</a></li>
