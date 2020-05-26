@@ -26,7 +26,7 @@
 <div class="container-form login" style="background-image: url(/img/bg-img/bg-19.jpg);">
         <div class="block-form" id="enter">
             
-            <form class="contentForm"  action="{{ route('account-login') }}" method="post">
+            <form class="contentForm"  action="" method="post">
                 @csrf
                 
                 <label for="email">Email</label>
@@ -41,7 +41,7 @@
 
         <div class="block-form" id="registration" style="display: none;">
             
-            <form class="contentForm" action="{{ route('account-login-enter') }}" method="post">
+            <form class="contentForm" action="" method="post">
                 @csrf
                 
                 <label for="name"> Имя</label>
