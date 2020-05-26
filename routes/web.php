@@ -30,7 +30,7 @@ Route::get('/cards', 'CardsController@allCards')->name('cards');
 
 Route::post('/cards/buy', 'CardsController@cardsBuyForm')->name('cardsBuy');
 
-// Route::post('/cards/buy', 'CardsController@load')->name('cards-buy-post');
+Route::post('/cards', 'UserCardsController@buy')->name('cards-buy-post');
 
 Route::get('/service', 'ServiceController@index')->name('service');
 

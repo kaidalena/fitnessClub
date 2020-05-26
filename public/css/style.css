@@ -14,7 +14,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-    color: black;
+    /* color: black; */
 }
 
 p {
@@ -413,7 +413,7 @@ h1 {
 h5 {
     margin: 0 auto 2em;
     font: 400 1.3em "Georgia", sans-serif;
-    color: #f1f5f6;
+    /* color: #f1f5f6; */
     text-align: center;
 }
 
@@ -475,24 +475,34 @@ h5 {
     opacity: 1;
 }
 
+.cell.black, .card.black{
+    background-color: #17141d;
+    color: white
+}
+
 .cell.yellow, .card.yellow {
     background: linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%);
+    color: black;
 }
 
 .cell.red, .card.red {
     background: linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%);
+    color: black;
 }
 
 .cell.blue, .card.blue {
     background: linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%);
+    color: white;
 }
 
 .cell.green, .card.green {
     background: linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%);
+    color: white;
 }
 
 .cell.gray, .card.gray {
     background: linear-gradient(to bottom right, #535353 0%, #b8b7b7 100%);
+    color: white;
 }
 
 .cell.entry {
@@ -563,7 +573,6 @@ h5 {
 }
 
 .titleCards {
-    color: white;
     font-weight: 300;
     position: absolute;
     left: 10%;
@@ -602,7 +611,7 @@ h5 {
 
 .card .description {
     position: absolute;
-    top: 130px;
+    margin-top: 100px;
     width: 100%;
 }
 
@@ -947,6 +956,12 @@ h5 {
     display: flex;
 }
 
+.block-form .infoBlock h1{
+    font-size: 40px;
+    margin: 0;
+    color: black;
+}
+
 .cards .contentForm {
     margin-left: 5%;
 }
@@ -1014,6 +1029,10 @@ h5 {
     font-size: 14px;
     font-family: "Open Sans", sans-serif;
     text-transform: uppercase;
+}
+
+#pay{
+    margin-top: 20px;
 }
 
 /*---------------------------------------------------*/

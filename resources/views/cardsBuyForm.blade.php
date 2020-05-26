@@ -19,9 +19,9 @@
 
     <div class="container-form" style="background-image: url(/img/bg-img/bg-8.jpg);">
         <div class="block-form cards">
-
+          <div class='infoBlock'>
+            <h1> {{ $group->name }} </h1>
             <div class="containerCards">
-                <!-- <h1> {{ $group->name }} </h1> -->
                     <div class="card {{ $group->color}}">
                     <h3 class="titleCards">{{ $card->name }}</h3>
                     <div class="bar">
@@ -31,14 +31,16 @@
                     <div class="description">
                         <h5>Недель: {{ $card->number_of_weeks }}</h5>
                         <h5>Занятий в неделю: {{ $card->number_of_training }}</h5>
-                        <h4> {{ $card->prise }} руб.</h4>
+                        <h5> {{ $card->prise }} руб.</h5>
                     </div>
                     </div>
             </div>
+          </div>
 
-            <form class="contentForm" action="#" method="post">
+            <form class="contentForm" action="{{ route('cards-buy-post') }}" method="post">
                 @csrf
-                
+                <input type="hidden" name="card_id" value="{{ $_POST['card_id'] }}">   
+                <input type="hidden" name="user_id" value="1">                
 
                 <label for="name"> Имя</label>
                 <input type="text" name="name" class="input" placeholder="Имя"><br/>
@@ -47,11 +49,12 @@
                 <label for="email">Email</label>
                 <input type="email"  name="email" class="input" placeholder="Email"><br/>
 
+                <label for="numberCard" id="pay"> Оплата</label>
                 <input type="number"  name="numberCard" class="input" placeholder="Номер карты">
                 <p> <input type="text"  name="dateCard" class="input cards" placeholder="Дата">
                 <input type="number"  name="cidCard" class="input cards" placeholder="CID"></p>
 
-                <input type="submit" class="submit" value="ОформитьKs"> 
+                <input type="submit" class="submit" value="Оформить"> 
  
             </form>
         </div>                

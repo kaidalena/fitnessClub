@@ -40,7 +40,7 @@
           @if( $card->card_group != $temp->id ) 
             @break;
           @endif
-            <div class="card" id="{{ $card->id }}" onclick="test(this)">
+            <div class="card black" id="{{ $card->id }}" onclick="test(this)">
               <h3 class="titleCards">{{ $card->name }}</h3>
               <div class="bar">
                 <div class="emptybar"></div>
@@ -59,7 +59,7 @@
 
     <div class="modalBack" id="modal" style="display: none">
           <div class="window" id='window'>
-            <div class="card" id='insert'></div>
+            <div class="card black" id='insert'></div>
             <p>
               <h2>Оформить карту?</h2>
               <form action="{{ route('cardsBuy') }}" method="post">

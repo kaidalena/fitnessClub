@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Cards;
 use App\Models\Cards_groups;
 
+
 class CardsController extends Controller{
     
     public $model;
