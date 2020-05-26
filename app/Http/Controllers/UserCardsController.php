@@ -22,6 +22,7 @@ class UserCardsController extends Controller{
 
         $this->model->save();
 
-        return redirect()->route('home')->with('success', 'Успешно');
+        // return redirect()->route('home')->with('success', 'Успешно');
+        return redirect()->route('cards')->with('success', 'Записано в бд');
     }
 }
