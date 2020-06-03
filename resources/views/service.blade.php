@@ -38,7 +38,7 @@
         <div class="wrap">
             <div class="wrap_col wrap_col_tile_wrap">
                 <div class="col col_tile_wrap">
-                    <div class="tile cover bg" style="background-image: url('public\img\1.jpg');">
+                    <div class="tile cover bg" style="background-image: url('{{ $services[0]->img_path }}');">
                         <div class="bg_inner">
                             <div class="tile_icon">
                                 <div class="icon_svg icon_2 icon_color_2">
@@ -51,12 +51,12 @@
                             </div>
                             <div class="tile_num">01</div>
                             <div class="tile_line"></div>
-                            <div class="tile_text">Аэробные тренировки</div>
+                            <div class="tile_text">{{ $services[0]->title }}</div>
                         </div>
                     </div>
                 </div>
                 <div class="col col_tile_wrap">
-                    <div class="tile cover bg" style="background-image: url('public/img/2.jpg');">
+                    <div class="tile cover bg" style="background-image: url('{{ $services[1]->img_path }}');">
                         <div class="bg_inner">
                             <div class="tile_icon">
                                 <div class="icon_svg icon_2 icon_color_2">
@@ -69,12 +69,12 @@
                             </div>
                             <div class="tile_num">02</div>
                             <div class="tile_line"></div>
-                            <div class="tile_text">Тренажерный зал</div>
+                            <div class="tile_text">{{ $services[1]->title }}</div>
                         </div>
                     </div>
                 </div>
                 <div class="col col_tile_wrap">
-                    <div class="tile cover bg" style="background-image: url('public/img/3.jpg');">
+                    <div class="tile cover bg" style="background-image: url('{{ $services[2]->img_path}}');">
                         <div class="bg_inner">
                             <div class="tile_icon">
                                 <div class="icon_svg icon_2 icon_color_2">
@@ -106,12 +106,12 @@
                             </div>
                             <div class="tile_num">03</div>
                             <div class="tile_line"></div>
-                            <div class="tile_text">Кардио тренировки</div>
+                            <div class="tile_text">{{ $services[2]->title }}</div>
                         </div>
                     </div>
                 </div>
                 <div class="col col_tile_wrap">
-                    <div class="tile cover bg" style="background-image: url('public/img/4.jpg');">
+                    <div class="tile cover bg" style="background-image: url('{{ $services[3]->img_path }}');">
                         <div class="bg_inner">
                             <div class="tile_icon">
                                 <div class="icon_svg icon_2 icon_color_2">
@@ -127,7 +127,7 @@
                             </div>
                             <div class="tile_num">04</div>
                             <div class="tile_line"></div>
-                            <div class="tile_text">Силовые тренировки</div>
+                            <div class="tile_text">{{ $services[3]->title }}</div>
                         </div>
                     </div>
                 </div>

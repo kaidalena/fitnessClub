@@ -37,6 +37,7 @@
 
       <div class="row">
 
+
         <!-- Single Teachers -->
         <div class="col-12 col-sm-6 col-lg-3">
           <div class="single-teachers-area mb-100">
@@ -44,12 +45,12 @@
             <div class="teachers-bg-gradients"></div>
             <!-- Thumbnail -->
             <div class="teachers-thumbnail">
-              <img src="img/team-img/t1.png" alt="">
+              <img src="{{ $trainers[0]->image_path }}" alt="">
             </div>
             <!-- Meta Info -->
             <div class="teachers-info">
-              <h6>Мария Зосимова</h6>
-              <span>Персональный тренер</span>
+              <h6>{{ $trainers[0]->fio }}</h6>
+              <span>{{ $trainers[0]->position }}</span>
             </div>
           </div>
         </div>
@@ -61,12 +62,12 @@
             <div class="teachers-bg-gradients"></div>
             <!-- Thumbnail -->
             <div class="teachers-thumbnail">
-              <img src="img/team-img/t2.png" alt="">
+              <img src="{{ $trainers[1]->image_path }}" alt="">
             </div>
             <!-- Meta Info -->
             <div class="teachers-info">
-              <h6>Павел Полбицев</h6>
-              <span>Персональный тренер</span>
+              <h6>{{ $trainers[1]->fio }}</h6>
+              <span>{{ $trainers[1]->position }}</span>
             </div>
           </div>
         </div>
@@ -78,12 +79,12 @@
             <div class="teachers-bg-gradients"></div>
             <!-- Thumbnail -->
             <div class="teachers-thumbnail">
-              <img src="img/team-img/t3.png" alt="">
+              <img src="{{ $trainers[2]->image_path }}" alt="">
             </div>
             <!-- Meta Info -->
             <div class="teachers-info">
-              <h6>Юлия Гапочка</h6>
-              <span>Фитнес тренер</span>
+              <h6>{{ $trainers[2]->fio }}</h6>
+              <span>{{ $trainers[2]->position }}</span>
             </div>
           </div>
         </div>
@@ -95,12 +96,12 @@
             <div class="teachers-bg-gradients"></div>
             <!-- Thumbnail -->
             <div class="teachers-thumbnail">
-              <img src="img/team-img/t4.png" alt="">
+              <img src="{{ $trainers[3]->image_path }}" alt="">
             </div>
             <!-- Meta Info -->
             <div class="teachers-info">
-              <h6>Ринат Фатхулин</h6>
-              <span>Персональный тренер</span>
+              <h6>{{ $trainers[3]->fio }}</h6>
+              <span>{{ $trainers[3]->position }}</span>
             </div>
           </div>
         </div>
