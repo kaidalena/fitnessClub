@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'IndexController@index')->name('home');
 
 Route::get('/aboutUs', 'AboutController@allComments')->name('about');
 
@@ -46,5 +47,9 @@ Route::get('/account/edit',  'AccountController@edit')->name('account-edit');
 
 Route::post('/account/edit', 'AccountController@editPost')->name('account-edit-post');
 
-Route::get('/account/login', 'AccountController@login');
+Route::get('/account/login', 'AccountController@login')->name('auth');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

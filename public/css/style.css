@@ -23,7 +23,7 @@ p {
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-    color: #838383;
+    /* color: #838383; */
     font-size: 14px;
     line-height: 2;
     font-weight: 400;
@@ -482,12 +482,12 @@ h5 {
 
 .cell.yellow, .card.yellow {
     background: linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%);
-    color: black;
+    color: black !important;
 }
 
 .cell.red, .card.red {
     background: linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%);
-    color: black;
+    color: black !important;
 }
 
 .cell.blue, .card.blue {
@@ -706,7 +706,7 @@ h5 {
 
 .myFoto {
     position: relative;
-    width: 100%;
+    width: 60%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -878,9 +878,6 @@ h5 {
     box-shadow: -1rem 0 3rem rgb(71, 71, 71);
 }
 
-.myCards .card .description {
-    top: 30%;
-}
 
 .myCards .containerCards h4 {
     font-size: 20px;
@@ -891,6 +888,10 @@ h5 {
 .myCards .containerCards p {
     font-size: 20px;
     font-family: "Garamond";
+}
+
+.myCards .card #id{
+    margin-bottom: 0;
 }
 
 /*---------- Form ---------------*/

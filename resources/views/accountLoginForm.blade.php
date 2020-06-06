@@ -26,7 +26,7 @@
 <div class="container-form login" style="background-image: url(/img/bg-img/bg-19.jpg);">
         <div class="block-form" id="enter">
             
-            <form class="contentForm"  action="" method="post">
+            <form class="contentForm"  action="{{ route('login') }}" method="post">
                 @csrf
                 
                 <label for="email">Email</label>
@@ -41,25 +41,21 @@
 
         <div class="block-form" id="registration" style="display: none;">
             
-            <form class="contentForm" action="" method="post">
+            <form class="contentForm" action="{{ route('register') }}" method="post">
                 @csrf
                 
                 <label for="name"> Имя</label>
-                <input type="text" name="name" class="input" placeholder="Имя"><br/>
+                <input type="text" id="name" name="name" class="input" placeholder="Имя"><br/>
                 <label for="surname">Фамилия</label>
-                <input type="text" name="surname" class="input" placeholder="Фамилия"><br/>
+                <input type="text" id="surname" name="surname" class="input" placeholder="Фамилия"><br/>
                 <label for="birthday">Дата рождения</label>
-                <input type="text" name="birthday" class="input" placeholder="Дата рождения"><br/>
+                <input type="text" id="birthday" name="birthday" class="input" placeholder="Дата рождения"><br/>
                 <label for="email">Email</label>
-                <input type="email"  name="email" class="input" placeholder="Email"><br/>
-                <label for="weight">Вес</label>
-                <input type="number" name="weight" class="input" placeholder="Вес"><br/>
-                <label for="height">Рост</label>
-                <input type="number" name="height" class="input" placeholder="Рост"><br/>
+                <input type="email" id="email"  name="email" class="input" placeholder="Email"><br/>
                 <label for="password">Пароль</label>
-                <input type="password" name="password" class="input" placeholder="Пароль"><br/>
+                <input type="password" id="password" name="password" class="input" placeholder="Пароль"><br/>
                 <label for="twoPassword">Повтор пароля</label>
-                <input type="password" name="twoPassword" class="input" placeholder="Повтор пароля"><br/>
+                <input type="password" id="password-confirm" name="password_confirmation" class="input" placeholder="Повтор пароля"><br/>
                 
                 <input type="submit" class="submit" value="Зарегестрироваться"> 
  
