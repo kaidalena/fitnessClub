@@ -105,6 +105,11 @@
             </div>
           </div>
         </div>
+        <div class= "flex-wrap-news1">
+        <a href="#" class="btn fitness-btn wel-btn" data-animation="fadeInUp" data-delay="700ms">Добавить тренера</a>
+        <a href="#" class="btn fitness-btn wel-btn" data-animation="fadeInUp" data-delay="700ms">Изменить данные тренера</a>
+        <a href="#" class="btn fitness-btn wel-btn" data-animation="fadeInUp" data-delay="700ms">Удалить тренера</a>
+      </div>
       </div>
     </div>
   </section>

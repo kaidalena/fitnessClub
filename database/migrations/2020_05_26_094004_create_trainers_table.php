@@ -17,6 +17,7 @@ class CreateTrainersTable extends Migration
         $table->id();
         $table->string('image_path');
         $table->string('fio');
+        $table->string('position');
         $table->timestamps();
       });
     }
