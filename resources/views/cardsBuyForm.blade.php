@@ -43,11 +43,11 @@
                 <input type="hidden" name="user_id" value="1">                
 
                 <label for="name"> Имя</label>
-                <input type="text" name="name" class="input" placeholder="Имя"><br/>
+                <input type="text" name="name" class="input" placeholder="Имя" value="{{$user->name}}"><br/>
                 <label for="surname">Фамилия</label>
-                <input type="text" name="surname" class="input" placeholder="Фамилия"><br/>
+                <input type="text" name="surname" class="input" placeholder="Фамилия" value="{{$user->surname}}"><br/>
                 <label for="email">Email</label>
-                <input type="email"  name="email" class="input" placeholder="Email"><br/>
+                <input type="email"  name="email" class="input" placeholder="Email" value="{{$user->email}}"><br/>
 
                 <label for="numberCard" id="pay"> Оплата</label>
                 <input type="number"  name="numberCard" class="input" placeholder="Номер карты">

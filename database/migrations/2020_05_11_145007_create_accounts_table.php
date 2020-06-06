@@ -16,10 +16,11 @@ class CreateAccountsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('surname');
-            $table->string('email');
-            // $table->date('bierthday');
+            $table->dateTime('bierthday');
             $table->float('weight');
             $table->float('height');
+            $table->string('email');
+            $table->string('foto');
             $table->timestamps();
         });
     }

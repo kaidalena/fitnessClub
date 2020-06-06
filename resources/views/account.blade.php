@@ -12,11 +12,19 @@
 @section('content')
   <!-- ##### Breadcumb Area Start ##### -->
 
+<?php
+  // var_dump($user);
+  // echo "<br/>";
+  // var_dump($cards->card_group);
+  // var_dump($cards);
+  $today = date("Y-m-d H:i:s");
+?>
+
     <div class="mainTitleLena" style="background-image: url(img/bg-img/breadcumb.jpg);">
       <div class="brand">
         <div class="containerLena">
             <div class="titlesLena">
-                <h2>Кайда Елена</h2>
+                <h2>{{$user->name}} {{$user->surname}}</h2>
                 <ol class="itemsLena">
                     <li class="itemLena"><a href="#">Моя информация</a></li>
                     <li class="itemLena"><a href="#">Календарь</a></li>
@@ -41,16 +49,16 @@
             <div id="infoAboutMe" class="infoAboutMe">
                 <div class="myData">
                     <div class="titles">
-                        <h2>Возраст:</h2>
-                        <h2>Вес:</h2>
-                        <h2>Рост:</h2>
-                        <h2>Email:</h2>
+                        <h2>Дата рождения: </h2>
+                        <h2>Вес: </h2>
+                        <h2>Рост: </h2>
+                        <h2>Email: </h2>
                     </div>
                     <div class="entry">
-                        <h2 class="birthday"> 27.11.1999</h2>
-                        <h2 class="weight">4 кг</h2>
-                        <h2 class="height">100 см</h2>
-                        <h2 class="email">email@mail.ru</h2>
+                        <h2 class="birthday"> <?php echo date("m.d.Y", strtotime($user->birthday)) ?></h2>
+                        <h2 class="weight"> <?php echo (empty($user->weight)) ? "не указано" : $user->weight+"кг" ?> </h2>
+                        <h2 class="height"> <?php echo (empty($user->height)) ? "не указано" : $user->height+"см" ?> </h2>
+                        <h2 class="email">{{$user->email}}</h2>
                     </div>
                 </div>
                 <a href="{{ route('account-edit') }}"><input type="button" class="edit" value="Редактировать"></a>
@@ -79,32 +87,22 @@
             <h2>Действующие абонементы</h2>
             <div class="containerCards">
 
-              <div class="card red">
-                <h3 class="titleCards">Стандарт</h3>
-                <div class="bar">
-                  <div class="emptybar"></div>
-                  <div class="filledbar"></div>
+            @foreach($cards as $card)
+              @if (strtotime($card['expiry_date']) >= strtotime($today))
+                <div class="card {{ $card['group']->color }}" id="{{ $card['card']->id }}">
+                  <h3 class="titleCards">{{ $card['card']->name }}</h3>
+                  <div class="bar">
+                    <div class="emptybar"></div>
+                    <div class="filledbar"></div>
+                  </div>
+                  <div class="description">
+                    <h4>Действителен до <?php echo date("m.d.y", strtotime($card['expiry_date'])); ?></h5>
+                    <h4>Остаток занятий: {{ $card['remains'] }}</h4>
+                    <p>#<?php echo sprintf("%'.09d\n", $card['id']); ?></p>
+                  </div>
                 </div>
-                <div class="description">
-                  <h4>Действителен до </h4>
-                  <h4>23.05.20 </h4>
-                  <h4>Количество занятий</h4>
-                  <h4>5</h4>
-                  <p>2200 4433 9988 1177</p>
-                </div>
-              </div>
-
-              <div class="card blue">
-                <h3 class="titleCards">Название карты</h3>
-                <div class="bar">
-                  <div class="emptybar"></div>
-                  <div class="filledbar"></div>
-                </div>
-                <div>
-
-                </div>
-              </div>
-
+                @endif
+            @endforeach
             </div>
           </div>
 
@@ -114,27 +112,21 @@
             <h2>Истекшие абонементы</h2>
             <div class="containerCards">
 
-              <div class="card gray">
-                <h3 class="titleCards">Gray</h3>
-                <div class="bar">
-                  <div class="emptybar"></div>
-                  <div class="filledbar"></div>
+            @foreach($cards as $card)
+              @if (strtotime($card['expiry_date']) < strtotime($today))
+                <div class="card gray" id="{{ $card['card']->id }}">
+                  <h3 class="titleCards">{{ $card['card']->name }}</h3>
+                  <div class="bar">
+                    <div class="emptybar"></div>
+                    <div class="filledbar"></div>
+                  </div>
+                  <div class="description">
+                    <h4>Истек  <?php echo date("m.d.y", strtotime($card['expiry_date'])); ?></h5>
+                    <div id="id"><p>#<?php echo sprintf("%'.09d\n", $card['id']); ?></p></div>
+                  </div>
                 </div>
-                <div>
-
-                </div>
-              </div>
-
-              <div class="card gray">
-                <h3 class="titleCards">Название карты</h3>
-                <div class="bar">
-                  <div class="emptybar"></div>
-                  <div class="filledbar"></div>
-                </div>
-                <div>
-
-                </div>
-              </div>
+                @endif
+            @endforeach
 
             </div>
           </div>
