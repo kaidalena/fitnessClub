@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="/css/classy-nav.css">
 
   <script src="js/admin.js"></script>
+  <script src="js/jquery-2.2.3.js"></script>
   @yield('scripts')
 
 </head>

@@ -21,6 +21,8 @@ Route::get('/aboutUs', 'AboutController@allComments')->name('about');
 
 Route::post('/aboutUs', 'AboutController@sendRespons')->name('about-respons-post');
 
+Route::get('/about/getAllComments', 'AboutController@getAllComments');
+
 Route::get('/gallery', 'GalleryController@index')->name('gallery');
 
 Route::get('/schedule', 'SheduleController@getAllTrainings')->name('schedule');

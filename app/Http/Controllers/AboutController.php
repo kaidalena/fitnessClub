@@ -18,7 +18,8 @@ class AboutController extends Controller{
     public function allComments(){
         $about = $this->model->allData();
         $data = ['comments'=>$about];
-        if (Auth::check() && Auth::user()->isAdmin()) $data['forAdmin'] = $this->model->allForAdmin();
+        if (Auth::check() && Auth::user()->isAdmin()) 
+            $data['linksOnTable'] = ['/about/getAllComments'];
         return  view('aboutUs')->with($data);       
     }
 
@@ -31,5 +32,9 @@ class AboutController extends Controller{
         $this->model->save();
 
         return redirect()->route('home')->with('success', 'Успешно');
+    }
+
+    public function getAllComments(){
+        return $about = $this->model->allForAdmin();
     }
 }
