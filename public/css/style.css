@@ -1036,6 +1036,117 @@ h5 {
     margin-top: 20px;
 }
 
+/* ------- Admin table ---------*/
+#admin-btn-edit{
+    position: fixed;
+    margin: 3px;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+
+    cursor: pointer;
+    color: #101214;
+    font-weight: 700;
+    background: #b6e358;
+    background: -webkit-linear-gradient(to right, #58e3dc, #415bcc);
+    background: linear-gradient(to right,  #dd7d7d, #cc4141);
+    border: none;
+    line-height: 45px;
+    text-align: center;
+    width: 150px;
+    height: 45px;
+    border-radius: 15px;
+    padding: 0 30px;
+    transition-duration: 500ms;
+    text-decoration: none;
+    outline: none;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+}
+
+.admin-block{
+    position: fixed;
+    /* background-color: #5f5f5f67; */
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: center;
+    display: flex;
+    z-index: 1000;
+}
+
+.admin-block .admin{
+    margin: auto;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.admin-block .admin h1{
+    color: black;   
+    margin: 15px 0; 
+
+}
+
+.admin #adminTable{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+  border-collapse: collapse;
+  color: #686461;
+}
+
+.admin #adminTable th {
+    border-bottom: 3px solid #B9B29F;
+    background-color: rgb(56, 177, 67);
+    color: black;
+    padding: 10px;
+    text-align: left;
+  }
+  
+.admin #adminTable td {
+    padding: 10px;
+}
+
+.admin #adminTable tr:nth-child(odd) {
+    background: white;
+    color: black;
+}
+
+.admin #adminTable tr:nth-child(even) {
+    background: #d3d3d3;
+    color: black;
+}
+
+.admin a {
+    text-decoration: none;
+    outline: none;
+    display: inline-block;
+    width: 140px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 45px;
+    margin: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #524f4e;
+    background: white;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+    transition: .3s;
+  }
+  
+.admin a:hover {
+    background: #2EE59D;
+    box-shadow: 0 15px 20px rgba(46, 229, 157, .4);
+    color: white;
+    transform: translateY(-7px);
+  }
+
 /*---------------------------------------------------*/
 /* далее ккод Рафа */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");

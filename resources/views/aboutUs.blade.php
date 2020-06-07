@@ -5,7 +5,12 @@
   О нас
 @endsection
 
+@section('scripts')
+<script src="js/scheduleTabs.js"></script>
+@endsection
+
 @section('content')
+
   <!-- ##### Breadcumb Area Start ##### -->
 
   <div class="mainTitleLena" style="background-image: url(img/bg-img/breadcumb.jpg);">
@@ -89,9 +94,5 @@
       </form>
     </div>
   </div>
-
-  @if(Auth::check() && Auth::user()->isAdmin())
-    @include('inc.admin')
-  @endif
 
   @endsection
