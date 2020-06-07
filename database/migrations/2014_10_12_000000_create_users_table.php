@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             // $table->rememberToken();
             $table->string('foto')->default('/storage/users_fotos/default.jpg');
+            $table->boolean('is_admin')->default(0);
             $table->timestamps();
         });
 

@@ -1,3 +1,4 @@
+<?php use Illuminate\Support\Facades\Auth; ?>
 @extends ('layouts.default')
 
 @section('title-block')
@@ -89,5 +90,8 @@
     </div>
   </div>
 
+  @if(Auth::check() && Auth::user()->isAdmin())
+    @include('inc.admin')
+  @endif
 
   @endsection

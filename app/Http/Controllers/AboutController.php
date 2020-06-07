@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\About;
 use App\Http\Requests\AboutRequest;
+use Illuminate\Support\Facades\Auth;
 
 class AboutController extends Controller{
     
@@ -16,7 +17,9 @@ class AboutController extends Controller{
 
     public function allComments(){
         $about = $this->model->allData();
-        return  view('aboutUs', ['comments'=>$about]);       
+        $data = ['comments'=>$about];
+        if (Auth::check() && Auth::user()->isAdmin()) $data['forAdmin'] = $this->model->allForAdmin();
+        return  view('aboutUs')->with($data);       
     }
 
     public function sendRespons(AboutRequest $req){

@@ -19,4 +19,8 @@ class About extends Model{
     public function userInfo(){
         return $this->belongsTo('App\Models\Users', 'user', 'id');
     }
+
+    public function allForAdmin(){
+        
+    }
 }

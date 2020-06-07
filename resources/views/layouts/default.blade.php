@@ -95,8 +95,6 @@
 
   @yield('content')
 
-
-
 <!-- Copywrite Area -->
   <footer>
     <div class="bottom-footer-area">
