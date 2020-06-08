@@ -1,5 +1,6 @@
-<div class="admin-block" id="admin-block">
-    <div class="containerLena admin" id="container" style="display: none;">
+<div class="admin-block" id="admin-block" onclick="closeAdminPanel()">
+    <div class="containerLena admin" id="container">
+        <div id="icon-close" onclick="closeAdminPanel()"> </div>
         <h1>Данные для редактирования</h1>
         @foreach($linksOnTable as $linkName)
         <a href="#" onclick="getTable('<?php echo $linkName ?>')">ссылка на таблицу {{$linkName}}</a>
