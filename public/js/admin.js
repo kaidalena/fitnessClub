@@ -42,6 +42,5 @@ function openTable(){
     });
     
     // console.log("html: " + html);
-
     table.append(html);
 }

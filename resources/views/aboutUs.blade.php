@@ -11,6 +11,10 @@
 
 @section('content')
 
+@if(Auth::check() && Auth::user()->isAdmin())
+    @include('inc.admin')
+@endif
+
   <!-- ##### Breadcumb Area Start ##### -->
 
   <div class="mainTitleLena" style="background-image: url(img/bg-img/breadcumb.jpg);">

@@ -26,12 +26,12 @@ class AboutController extends Controller{
     public function sendRespons(AboutRequest $req){
 
         // $this->model->user = $req->input('user');
-        $this->model->user = 1;
+        $this->model->user = Auth::id();
         $this->model->message = $req->input('message');
 
         $this->model->save();
 
-        return redirect()->route('home')->with('success', 'Успешно');
+        return redirect()->route('aboutUs')->with('success', 'Успешно');
     }
 
     public function getAllComments(){
