@@ -9,14 +9,16 @@
         </div>
 
         <table id="adminTable">
-
         </table>
-        <div id='inputs-container'>
 
+        <div id='inputs-container'>
         </div>
-        <a class="admin-btn" href="#" id="create" onclick="onCreateRecord('{{ __($routes['create']) }}')">Добавить</a>
-        <a class="admin-btn" href="#" id="change" onclick="onChangeRecord('{{ __($routes['change']) }}')">Изменить</a>
-        <a class="admin-btn" href="#" id="delete" onclick="onDeleteRecord('{{ __($routes['delete']) }}')">Удалить</a>
+
+        <div class="admin-btn">
+            <a  href="#" id="create" onclick="onCreateRecord('{{ __($routes['create']) }}')">Добавить</a>
+            <a href="#" id="change" onclick="onChangeRecord('{{ __($routes['change']) }}')">Изменить</a>
+            <a href="#" id="delete" onclick="onDeleteRecord('{{ __($routes['delete']) }}')">Удалить</a>
+        </div>
     </div>
 </div>
 

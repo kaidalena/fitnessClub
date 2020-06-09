@@ -1108,18 +1108,26 @@ h5 {
     font-size: 30px;
 }
 
+.admin .admin-links{
+
+}
+
 .admin #adminTable{
   font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
   border-collapse: collapse;
   color: #686461;
+  width: max-content;
+  margin: 20px auto;
+  border-radius: 10px;
 }
 
 .admin #adminTable th {
     border-bottom: 3px solid #B9B29F;
-    background-color: rgb(56, 177, 67);
+    /* background-color: rgb(56, 177, 67); */
     color: black;
     padding: 10px;
-    text-align: left;
+    text-align: center;
+    background: radial-gradient( #b6e358, #38b143);
   }
   
 .admin #adminTable td {
@@ -1132,15 +1140,33 @@ h5 {
 }
 
 .admin #adminTable tr:nth-child(even) {
-    background: #d3d3d3;
+    background: #eceaea;
     color: black;
 }
 
-.admin .admin-links{
-    
+.admin #inputs-container{
+    margin: 20px auto;
 }
 
-.admin .admin-btn {
+.admin #inputs-container input{
+    height: 40px;
+    min-width: 100px;
+    width: auto;
+    margin-right: 10px;
+    padding: 10px;
+    background: #e6e6e6;
+    color: #666;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.admin .admin-btn{
+    margin: 10px auto;
+}
+
+.admin .admin-btn a{
     text-decoration: none;
     outline: none;
     display: inline-block;
@@ -1161,9 +1187,10 @@ h5 {
     transition: .3s;
   }
   
-.admin .admin-btn:hover {
-    background: #2EE59D;
-    box-shadow: 0 15px 20px rgba(46, 229, 157, .4);
+.admin .admin-btn a:hover{
+    /* background: #2EE59D; */
+    background: linear-gradient( to right, #b6e358, #38b143);
+    box-shadow: 0 15px 20px rgba(42, 209, 56, 0.4);
     color: white;
     transform: translateY(-7px);
   }
