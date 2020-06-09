@@ -8,7 +8,7 @@
             <a href="#" onclick="getTable('<?php echo $link['route'] ?>')"> 
                 {{ $link['name'] }} 
                 <div id="icon-link"></div>
-            </a>
+            </a> <br/>
             @endforeach
         </div>
 
@@ -18,13 +18,15 @@
             </table>
             <div id='inputs-container'>
             </div>
+
+            <div class="admin-btn" id="admin-btn">
+                <a  href="#" id="create" onclick="onCreateRecord('{{ __($routes['create']) }}')">Добавить</a>
+                <a href="#" id="change" onclick="onChangeRecord('{{ __($routes['change']) }}')">Изменить</a>
+                <a href="#" id="delete" onclick="onDeleteRecord('{{ __($routes['delete']) }}')">Удалить</a>
+            </div>
         </div>
 
-        <div class="admin-btn" id="admin-btn">
-            <a  href="#" id="create" onclick="onCreateRecord('{{ __($routes['create']) }}')">Добавить</a>
-            <a href="#" id="change" onclick="onChangeRecord('{{ __($routes['change']) }}')">Изменить</a>
-            <a href="#" id="delete" onclick="onDeleteRecord('{{ __($routes['delete']) }}')">Удалить</a>
-        </div>
+        
     </div>
 </div>
 

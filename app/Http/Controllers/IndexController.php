@@ -25,7 +25,7 @@ class IndexController extends Controller{
       ]);
   }
 
-  public function newsForTable() {
+  public function dataForTable() {
       $data['titles'] = ["Заголовок", "Новость"];
       $data['data'] = News::select('title', 'message', 'id')->get();
 

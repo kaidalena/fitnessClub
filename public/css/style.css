@@ -1118,6 +1118,7 @@ h5 {
 .admin #admin-links a{
     font-size: 25px;
     font: 700 "Georgia", sans-serif;
+    margin-bottom: 20px;
 }
 
 .admin #admin-links a:hover{
@@ -1203,7 +1204,7 @@ h5 {
 
 .admin .admin-btn{
     margin: 10px auto;
-    display: none;
+    /* display: none; */
 }
 
 .admin .admin-btn a{

@@ -44,7 +44,7 @@ function getTable(url){
 function openTable(){
     // console.log( dataTable);
     $("#admin-links").css("display", "none");
-    $("#admin-btn").css("display", "block");
+    // $("#admin-btn").css("display", "block");
     var divWithTable = $("#adminTable-block");
     var table = $("#adminTable");
     table.empty();
@@ -90,7 +90,7 @@ function openTable(){
 
 function closeTable(){
     $("#admin-links").css("display", "block");
-    $("#admin-btn").css("display", "none");
+    // $("#admin-btn").css("display", "none");
     $("#adminTable-block").css("display", "none");    
 }
 

@@ -10,13 +10,17 @@ class ServiceController extends Controller{
   public function index(){
     return view('service')->with([
       'services' =>  service::get(),
-      'linksOnTable' => [route('admin.service.forTable')],
+      'linksOnTable' => [
+        'servise' => [
+          'name' => "Услуги",
+          'route' => route('admin.service.forTable')
+        ]
+      ], 
       'routes' => [
         "get" => route('admin.news.forTable'),
         "change" => route('admin.service.change'),
         'create' => route('admin.service.create'),
         'delete' => route('admin.service.delete')
-
       ]
     ]);
   }
