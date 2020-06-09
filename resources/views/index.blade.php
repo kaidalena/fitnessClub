@@ -10,6 +10,9 @@
 <script src="js/active.js"></script>
 @endsection -->
 
+@if(Auth::check() && Auth::user()->isAdmin())
+    @include('inc.admin')
+@endif
 @section('content')
   <!-- ##### Hero Area Start ##### -->
   <section class="hero-area">
