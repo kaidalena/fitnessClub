@@ -20,8 +20,8 @@ function openAdminPanel(){
 }
 
 function closeAdminPanel(){
-    // $("#admin-block").css("display", "none");
-    // $("#admin-btn-edit").css("display", "block");
+    $("#admin-block").css("display", "none");
+    $("#admin-btn-edit").css("display", "block");
 }
 
 function getTable(url){
@@ -44,9 +44,11 @@ function getTable(url){
 function openTable(){
     // console.log( dataTable);
     $("#admin-links").css("display", "none");
+    $("#admin-btn").css("display", "block");
+    var divWithTable = $("#adminTable-block");
     var table = $("#adminTable");
     table.empty();
-    table.css("display", "block");
+    divWithTable.css("display", "block");
 
     let $trH = $('<tr>')
 
@@ -65,12 +67,10 @@ function openTable(){
 
         $.each( row, function( field, val ) {
             let $td = $('<td>');
-
             if (field !== 'id') {
               $td.text(val);
               $trD.append($td);
             }
-
             $trD.attr(field, val)
         });
 
@@ -85,15 +85,18 @@ function openTable(){
         })
 
     fieldsNames = Object.keys(dataTable['data'][0]);
-
     mountInputs();
+}
+
+function closeTable(){
+    $("#admin-links").css("display", "block");
+    $("#admin-btn").css("display", "none");
+    $("#adminTable-block").css("display", "none");    
 }
 
 const setValues = (event) => {
   let $el = $(event.currentTarget);
-  $selectedRow = $el
-
-
+  $selectedRow = $el;
   fieldsNames.forEach(el => {
     if (el !== 'id')
       inputs[el].val($el.attr(el))
@@ -108,9 +111,7 @@ const mountInputs = () => {
 
     const $label = $('<label>');
     const $input = $('<input>', {type: 'text'});
-
     inputs[item] = $input
-
 
     $label.append($label);
     $container.append($input);

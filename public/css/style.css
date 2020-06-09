@@ -1108,8 +1108,47 @@ h5 {
     font-size: 30px;
 }
 
-.admin .admin-links{
+.admin #admin-links{
+    text-align: center;
+    margin: 30px auto;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
+.admin #admin-links a{
+    font-size: 25px;
+    font: 700 "Georgia", sans-serif;
+}
+
+.admin #admin-links a:hover{
+    color: #38b143;
+}
+
+.admin #icon-link{
+    display: inline;
+}
+
+.admin #icon-link:after{
+    content: '\2192';
+}
+
+.admin #adminTable-block{
+    display: none;
+}
+
+.admin-block #icon-back{
+    position: relative;
+    margin: 10px auto auto 0;
+    height: auto;
+    width: min-content;
+    font-style: normal;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.admin-block #icon-back::before{
+    color: black;
+    content: '\2190';
 }
 
 .admin #adminTable{
@@ -1164,6 +1203,7 @@ h5 {
 
 .admin .admin-btn{
     margin: 10px auto;
+    display: none;
 }
 
 .admin .admin-btn a{
@@ -1193,7 +1233,7 @@ h5 {
     box-shadow: 0 15px 20px rgba(42, 209, 56, 0.4);
     color: white;
     transform: translateY(-7px);
-  }
+}
 
 /*---------------------------------------------------*/
 /* далее ккод Рафа */

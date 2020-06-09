@@ -10,13 +10,17 @@ class IndexController extends Controller{
   public function index(){
       return view('index')->with([
         'news' => News::get(),
-        'linksOnTable' => [route('admin.news.forTable')],
+        'linksOnTable' => [
+            'news' => [
+              'name' => "Новости",
+              'route' => route('admin.news.forTable')
+            ]
+        ],              
         'routes' => [
           "get" => route('admin.news.forTable'),
           "change" => route('admin.news.change'),
           'create' => route('admin.news.create'),
           'delete' => route('admin.news.delete')
-
         ]
       ]);
   }

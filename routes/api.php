@@ -25,3 +25,7 @@ Route::post('admin/news/delete', 'IndexController@delete')->name('admin.news.del
 Route::post('admin/service/create', 'ServiceController@create')->name('admin.service.create');
 Route::post('admin/service/change', 'ServiceController@change')->name('admin.service.change');
 Route::post('admin/service/delete', 'ServiceController@delete')->name('admin.service.delete');
+
+Route::post('admin/about/create', 'AboutController@create')->name('admin.about.create');
+Route::post('admin/about/change', 'AboutController@change')->name('admin.about.change');
+Route::post('admin/about/delete', 'AboutController@delete')->name('admin.about.delete');
