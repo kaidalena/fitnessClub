@@ -1,4 +1,4 @@
-<div class="admin-block" id="admin-block"">
+<div class="admin-block" id="admin-block">
     <div class="containerLena admin" id="container">
         <div id="icon-close" onclick="closeAdminPanel()"> </div>
         <h1>Данные для редактирования</h1>
