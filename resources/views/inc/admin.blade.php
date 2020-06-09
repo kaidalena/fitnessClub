@@ -1,19 +1,21 @@
 <div class="admin-block" id="admin-block">
     <div class="containerLena admin" id="container">
-        <div id="icon-close" onclick="closeAdminPanel()"> </div>
+      <div class = "icon-warp">
+        <div id="icon-back" onclick="closeTable()"> </div>
+          <div id="icon-close" onclick="closeAdminPanel()"> </div>
+      </div>
         <h1>Данные для редактирования</h1>
 
         <div id="admin-links">
             @foreach($linksOnTable as $link)
-            <a href="#" onclick="getTable('<?php echo $link['route'] ?>')"> 
-                {{ $link['name'] }} 
+            <a href="#" onclick="getTable('<?php echo $link['route'] ?>')">
+                {{ $link['name'] }}
                 <div id="icon-link"></div>
             </a> <br/>
             @endforeach
         </div>
 
         <div id="adminTable-block">
-            <div id="icon-back" onclick="closeTable()"> </div>
             <table id="adminTable">
             </table>
             <div id='inputs-container'>

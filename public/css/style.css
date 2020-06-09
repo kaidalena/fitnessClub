@@ -878,7 +878,6 @@ h5 {
     box-shadow: -1rem 0 3rem rgb(71, 71, 71);
 }
 
-
 .myCards .containerCards h4 {
     font-size: 20px;
     font-family: "Garamond";
@@ -890,7 +889,7 @@ h5 {
     font-family: "Garamond";
 }
 
-.myCards .card #id{
+.myCards .card #id {
     margin-bottom: 0;
 }
 
@@ -1037,19 +1036,18 @@ h5 {
 }
 
 /* ------- Admin table ---------*/
-#admin-btn-edit{
+#admin-btn-edit {
     position: fixed;
     margin: 3px;
     bottom: 0;
     right: 0;
     z-index: 1000;
-
     cursor: pointer;
     color: #101214;
     font-weight: 700;
     background: #b6e358;
     background: -webkit-linear-gradient(to right, #58e3dc, #415bcc);
-    background: linear-gradient(to right,  #dd7d7d, #cc4141);
+    background: linear-gradient(to right, #dd7d7d, #cc4141);
     border: none;
     line-height: 45px;
     text-align: center;
@@ -1065,7 +1063,7 @@ h5 {
     text-transform: uppercase;
 }
 
-.admin-block{
+.admin-block {
     background-color: rgba(46, 46, 46, 0.404);
     position: fixed;
     width: 100%;
@@ -1078,22 +1076,22 @@ h5 {
     transition: 2s;
 }
 
-.admin-block #icon-close{
-  position: relative;
-  margin: 10px 0 auto auto;
-  height: auto;
-  width: min-content;
-  font-style: normal;
-  font-size: 25px;
-  cursor: pointer;
+.admin-block #icon-close {
+    position: relative;
+    margin: 10px 0 auto auto;
+    height: auto;
+    width: min-content;
+    font-style: normal;
+    font-size: 25px;
+    cursor: pointer;
 }
 
-.admin-block #icon-close::before{
-        color: black;
-        content: '\2716';
+.admin-block #icon-close::before {
+    color: black;
+    content: '\2716';
 }
 
-.admin-block .admin{
+.admin-block .admin {
     margin: 1em auto;
     background-color: white;
     border-radius: 20px;
@@ -1102,42 +1100,42 @@ h5 {
     display: block;
 }
 
-.admin-block .admin h1{
-    color: black;   
-    margin: 0 0 15px 0; 
+.admin-block .admin h1 {
+    color: black;
+    margin: 0 0 15px 0;
     font-size: 30px;
 }
 
-.admin #admin-links{
+.admin #admin-links {
     text-align: center;
     margin: 30px auto;
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.admin #admin-links a{
+.admin #admin-links a {
     font-size: 25px;
     font: 700 "Georgia", sans-serif;
     margin-bottom: 20px;
 }
 
-.admin #admin-links a:hover{
+.admin #admin-links a:hover {
     color: #38b143;
 }
 
-.admin #icon-link{
+.admin #icon-link {
     display: inline;
 }
 
-.admin #icon-link:after{
+.admin #icon-link:after {
     content: '\2192';
 }
 
-.admin #adminTable-block{
+.admin #adminTable-block {
     display: none;
 }
 
-.admin-block #icon-back{
+.admin-block #icon-back {
     position: relative;
     margin: 10px auto auto 0;
     height: auto;
@@ -1147,18 +1145,19 @@ h5 {
     cursor: pointer;
 }
 
-.admin-block #icon-back::before{
+.admin-block #icon-back::before {
     color: black;
     content: '\2190';
+    top: 0;
 }
 
-.admin #adminTable{
-  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-  border-collapse: collapse;
-  color: #686461;
-  width: max-content;
-  margin: 20px auto;
-  border-radius: 10px;
+.admin #adminTable {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    border-collapse: collapse;
+    color: #686461;
+    width: max-content;
+    margin: 20px auto;
+    border-radius: 10px;
 }
 
 .admin #adminTable th {
@@ -1167,9 +1166,9 @@ h5 {
     color: black;
     padding: 10px;
     text-align: center;
-    background: radial-gradient( #b6e358, #38b143);
-  }
-  
+    background: radial-gradient(#b6e358, #38b143);
+}
+
 .admin #adminTable td {
     padding: 10px;
 }
@@ -1184,11 +1183,11 @@ h5 {
     color: black;
 }
 
-.admin #inputs-container{
+.admin #inputs-container {
     margin: 20px auto;
 }
 
-.admin #inputs-container input{
+.admin #inputs-container input {
     height: 40px;
     min-width: 100px;
     width: auto;
@@ -1202,12 +1201,12 @@ h5 {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.admin .admin-btn{
+.admin .admin-btn {
     margin: 10px auto;
     /* display: none; */
 }
 
-.admin .admin-btn a{
+.admin .admin-btn a {
     text-decoration: none;
     outline: none;
     display: inline-block;
@@ -1226,11 +1225,11 @@ h5 {
     background: white;
     box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
     transition: .3s;
-  }
-  
-.admin .admin-btn a:hover{
+}
+
+.admin .admin-btn a:hover {
     /* background: #2EE59D; */
-    background: linear-gradient( to right, #b6e358, #38b143);
+    background: linear-gradient(to right, #b6e358, #38b143);
     box-shadow: 0 15px 20px rgba(42, 209, 56, 0.4);
     color: white;
     transform: translateY(-7px);
@@ -3661,6 +3660,10 @@ select.form-control:focus::-ms-value {
     margin-top: 70px;
     width: 290px;
     height: 45px;
+}
+
+.icon-warp {
+    display: flex;
 }
 
 /* Услуги */
