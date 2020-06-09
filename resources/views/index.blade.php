@@ -13,12 +13,11 @@
 @if(Auth::check() && Auth::user()->isAdmin())
     @include('inc.admin')
 @endif
+
 @section('content')
   <!-- ##### Hero Area Start ##### -->
   <section class="hero-area">
-    <div class="hero-slides owl-carousel">
-
-
+    <div class="hero-slides owl-carousel" id="news-container">
       <div class="single-hero-slide bg-img" style="background-image: url(img/bg-img/bg-1.jpg);">
         <div class="container h-100">
           <div class="row h-100 align-items-center">

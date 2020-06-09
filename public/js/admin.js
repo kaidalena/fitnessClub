@@ -1,6 +1,18 @@
 var dataTable;
 let fieldsNames = [];
 let inputs = {};
+let getUrl
+let $selectedRow
+
+$(document).ready(function($) {
+
+    $('#admin-block').click(function(e) {
+		if ($(e.target).closest('#admin-block').length == 0) {
+			$(this).fadeOut();
+		}
+	});
+})
+
 
 function openAdminPanel(){
     $("#admin-block").css("display", "flex");
@@ -8,15 +20,17 @@ function openAdminPanel(){
 }
 
 function closeAdminPanel(){
-    $("#admin-block").css("display", "none");
-    $("#admin-btn-edit").css("display", "block");
+    // $("#admin-block").css("display", "none");
+    // $("#admin-btn-edit").css("display", "block");
 }
 
-function getTable(myUrl){
+function getTable(url){
+    if (!getUrl) getUrl = url
+
     // console.log(myUrl);
     $.ajax({
         type: 'GET', //THIS NEEDS TO BE GET
-        url: myUrl,
+        url: getUrl,
         success: function (data) {
             dataTable = data;
             openTable();
@@ -31,6 +45,7 @@ function openTable(){
     // console.log( dataTable);
     $("#admin-links").css("display", "none");
     var table = $("#adminTable");
+    table.empty();
     table.css("display", "block");
 
     let $trH = $('<tr>')
@@ -50,8 +65,12 @@ function openTable(){
 
         $.each( row, function( field, val ) {
             let $td = $('<td>');
-            $td.text(val);
-            $trD.append($td);
+
+            if (field !== 'id') {
+              $td.text(val);
+              $trD.append($td);
+            }
+
             $trD.attr(field, val)
         });
 
@@ -68,45 +87,25 @@ function openTable(){
     fieldsNames = Object.keys(dataTable['data'][0]);
 
     mountInputs();
-
-    $('#change').click(() => {
-        let body = Object.keys(inputs).reduce((acc, el) => {
-          let data = {};
-          data[el] = inputs[el].val()
-          return acc.concat([data])
-        }, [])
-
-      return;
-      $.ajax({
-          type: 'POST', //THIS NEEDS TO BE GET
-          url: myUrl,
-          body,
-          success: function (data) {
-              dataTable = data;
-              openTable();
-          },
-          error: function() {
-              console.log(data);
-          }
-      });
-    })
 }
 
 const setValues = (event) => {
   let $el = $(event.currentTarget);
+  $selectedRow = $el
 
 
   fieldsNames.forEach(el => {
-    inputs[el].val($el.attr(el))
+    if (el !== 'id')
+      inputs[el].val($el.attr(el))
   })
 }
-
 const mountInputs = () => {
   const $container = $('#inputs-container')
-
-  console.log($container)
+  $container.empty();
 
   fieldsNames.forEach(item => {
+    if (item === 'id') return
+
     const $label = $('<label>');
     const $input = $('<input>', {type: 'text'});
 
@@ -116,4 +115,63 @@ const mountInputs = () => {
     $label.append($label);
     $container.append($input);
   })
+}
+
+const onChangeRecord = (url) => {
+  let body = Object.keys(inputs).reduce((acc, el) => {
+      acc[el] = inputs[el].val()
+
+      return acc
+    }, {})
+    body['id'] = $selectedRow.attr('id');
+  fetch(url, {
+      method: 'POST',
+      headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+      body: JSON.stringify(body)
+  }).then(respons => {
+    return respons.json()
+  }).then(data => {
+    getTable()
+  });
+}
+
+const onCreateRecord = (url) => {
+    let body = Object.keys(inputs).reduce((acc, el) => {
+      acc[el] = inputs[el].val()
+
+      return acc
+    }, {})
+  fetch(url, {
+      method: 'POST',
+      headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+      body: JSON.stringify(body)
+  }).then(respons => {
+    return respons.json()
+  }).then(data => {
+    getTable()
+  });
+}
+
+const onDeleteRecord = (url) => {
+  let body = {
+    id: $selectedRow.attr('id')
+  };
+  fetch(url, {
+      method: 'POST',
+      headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+      body: JSON.stringify(body)
+  }).then(respons => {
+    return respons.json()
+  }).then(data => {
+    getTable()
+  });
 }
