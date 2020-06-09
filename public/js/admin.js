@@ -49,11 +49,8 @@ function openTable(){
 
         $.each( row, function( field, val ) {
             let $td = $('<td>');
-
             $td.text(val);
-
             $trD.append($td);
-
             $trD.attr(field, val)
         });
 
@@ -64,7 +61,6 @@ function openTable(){
 
         $('#adminTable tr').each((index, el) => {
           if(index === 0) return;
-
           $(el).click(setValues)
         })
 
@@ -73,12 +69,9 @@ function openTable(){
     mountInputs();
 
     $('#change').click(() => {
-
         let body = Object.keys(inputs).reduce((acc, el) => {
           let data = {};
-
           data[el] = inputs[el].val()
-
           return acc.concat([data])
         }, [])
 
