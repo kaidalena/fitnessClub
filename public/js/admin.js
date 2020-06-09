@@ -1,10 +1,12 @@
 var dataTable;
+let fieldsNames = [];
+let inputs = {};
 
 $(document).ready(function($) {
 
     $('#admin-block').click(function(e) {
 		if ($(e.target).closest('#admin-block').length == 0) {
-			$(this).fadeOut();					
+			$(this).fadeOut();
 		}
 	});
 })
@@ -30,7 +32,7 @@ function getTable(myUrl){
             dataTable = data;
             openTable();
         },
-        error: function() { 
+        error: function() {
             console.log(data);
         }
     });
@@ -41,20 +43,94 @@ function openTable(){
     var table = $("#adminTable");
     table.css("display", "block");
 
-    var html = "<tr>";
-    $.each( dataTable['titles'], function( i, val ) {
-        html += "<th>" + val + "</th>";
-    });
-    html += "</tr>";
+    let $trH = $('<tr>')
 
-    $.each( dataTable['data'], function( i, row ) {
-        html += "<tr>";
-        $.each( row, function( field, val ) {
-            html += "<td>" + val + "</td>";
-        });
-        html += "</tr>";
+    $.each( dataTable['titles'], function( i, val ) {
+        let $tr = $('<th>');
+
+        $tr.text(val);
+        $trH.append($tr);
     });
-    
+    table.append($trH);
+
+
+    let $trB = $('<tr>')
+    $.each( dataTable['data'], function( i, row ) {
+        let $trD = $('<tr>')
+
+        $.each( row, function( field, val ) {
+            let $td = $('<td>');
+
+            $td.text(val);
+
+            $trD.append($td);
+
+            $trD.attr(field, val)
+        });
+
+        table.append($trD);
+    });
+
     // console.log("html: " + html);
-    table.append(html);
+
+        $('#adminTable tr').each((index, el) => {
+          if(index === 0) return;
+
+          $(el).click(setValues)
+        })
+
+    fieldsNames = Object.keys(dataTable['data'][0]);
+
+    mountInputs();
+
+    $('#change').click(() => {
+
+        let body = Object.keys(inputs).reduce((acc, el) => {
+          let data = {};
+
+          data[el] = inputs[el].val()
+
+          return acc.concat([data])
+        }, [])
+
+      return;
+      $.ajax({
+          type: 'POST', //THIS NEEDS TO BE GET
+          url: myUrl,
+          body,
+          success: function (data) {
+              dataTable = data;
+              openTable();
+          },
+          error: function() {
+              console.log(data);
+          }
+      });
+    })
+}
+
+const setValues = (event) => {
+  let $el = $(event.currentTarget);
+
+
+  fieldsNames.forEach(el => {
+    inputs[el].val($el.attr(el))
+  })
+}
+
+const mountInputs = () => {
+  const $container = $('#inputs-container')
+
+  console.log($container)
+
+  fieldsNames.forEach(item => {
+    const $label = $('<label>');
+    const $input = $('<input>', {type: 'text'});
+
+    inputs[item] = $input
+
+
+    $label.append($label);
+    $container.append($input);
+  })
 }

@@ -5,11 +5,15 @@
         @foreach($linksOnTable as $linkName)
         <a href="#" onclick="getTable('<?php echo $linkName ?>')">ссылка на таблицу {{$linkName}}</a>
         @endforeach
-        
+
         <table id="adminTable">
-            
+
         </table>
-        <td><a href="">Добавить</a></td>
+        <div id='inputs-container'>
+
+        </div>
+        <a href="">Добавить</a>
+        <a href="#" id="change">Изменить</a>
     </div>
 </div>
 

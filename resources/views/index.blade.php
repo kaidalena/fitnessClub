@@ -23,12 +23,6 @@
               <div class="hero-slides-content">
                 <h2 data-animation="fadeInUp" data-delay="100ms">{{ $news[0]->title }}</h2>
                 <p data-animation="fadeInUp" data-delay="400ms">"{{ $news[0]->message }}"</p>
-                <div class= "flex-wrap-news">
-                <a href="#" class="btn fitness-btn wel-btn" data-animation="fadeInUp" data-delay="700ms">Стать членом фитнес-клуба</a>
-                <a href="#" class="btn fitness-btn wel-btn" data-animation="fadeInUp" data-delay="700ms">Добавить новость</a>
-                <a href="#" class="btn fitness-btn wel-btn" data-animation="fadeInUp" data-delay="700ms">Изменить новость</a>
-                <a href="#" class="btn fitness-btn wel-btn" data-animation="fadeInUp" data-delay="700ms">Удалить новость</a>
-              </div>
               </div>
             </div>
           </div>
@@ -43,12 +37,6 @@
                 <h2 data-animation="fadeInUp" data-delay="100ms">{{ $news[1]->title }}</h2>
                 <p data-animation="fadeInUp" data-delay="400ms">"{{ $news[1]->message }}"</p>
                 <br><br>
-                <div class= "flex-wrap-news">
-                <a href="#" class="btn fitness-btn wel-btn" data-animation="fadeInUp" data-delay="700ms">Стать членом фитнес-клуба</a>
-                <a href="#" class="btn fitness-btn wel-btn" data-animation="fadeInUp" data-delay="700ms">Добавить новость</a>
-                <a href="#" class="btn fitness-btn wel-btn" data-animation="fadeInUp" data-delay="700ms">Изменить новость</a>
-                <a href="#" class="btn fitness-btn wel-btn" data-animation="fadeInUp" data-delay="700ms">Удалить новость</a>
-              </div>
             </div>
           </div>
         </div>
@@ -62,12 +50,6 @@
               <div class="hero-slides-content">
                 <h2 data-animation="fadeInUp" data-delay="100ms">{{ $news[2]->title }}</h2>
                 <p data-animation="fadeInUp" data-delay="400ms">"{{ $news[2]->message }}"</p>
-                <div class= "flex-wrap-news">
-                <a href="#" class="btn fitness-btn wel-btn" data-animation="fadeInUp" data-delay="700ms">Стать членом фитнес-клуба</a>
-                <a href="#" class="btn fitness-btn wel-btn" data-animation="fadeInUp" data-delay="700ms">Добавить новость</a>
-                <a href="#" class="btn fitness-btn wel-btn" data-animation="fadeInUp" data-delay="700ms">Изменить новость</a>
-                <a href="#" class="btn fitness-btn wel-btn" data-animation="fadeInUp" data-delay="700ms">Удалить новость</a>
-              </div>
               </div>
             </div>
           </div>

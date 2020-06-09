@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', 'IndexController@index')->name('home');
+Route::get('admin/news-for-table', 'IndexController@newsForTable')->name('admin.news.forTable');
+Route::get('admin/service-for-table', 'ServiceController@serviceForTable')->name('admin.service.forTable');
 
 Route::get('/aboutUs', 'AboutController@allComments')->name('about');
 

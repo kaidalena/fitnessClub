@@ -131,11 +131,6 @@
                         </div>
                     </div>
                 </div>
-                <div class= "flex-wrap-news11">
-                <a href="#" class="btn fitness-btn wel-btn" data-animation="fadeInUp" data-delay="700ms">Добавить услугу</a>
-                <a href="#" class="btn fitness-btn wel-btn" data-animation="fadeInUp" data-delay="700ms">Изменить услугу</a>
-                <a href="#" class="btn fitness-btn wel-btn" data-animation="fadeInUp" data-delay="700ms">Удалить  услугу</a>
-              </div>
             </div>
         </div>
     </div>
