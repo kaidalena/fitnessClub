@@ -14,8 +14,9 @@
         <div id='inputs-container'>
 
         </div>
-        <a class="admin-btn" href="">Добавить</a>
-        <a class="admin-btn" href="#" id="change">Изменить</a>
+        <a class="admin-btn" href="#" id="create" onclick="onCreateRecord('{{ __($routes['create']) }}')">Добавить</a>
+        <a class="admin-btn" href="#" id="change" onclick="onChangeRecord('{{ __($routes['change']) }}')">Изменить</a>
+        <a class="admin-btn" href="#" id="delete" onclick="onDeleteRecord('{{ __($routes['delete']) }}')">Удалить</a>
     </div>
 </div>
 
