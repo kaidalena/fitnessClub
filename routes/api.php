@@ -17,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+
+Route::post('admin/news/create', 'IndexController@create')->name('admin.news.create');
+Route::post('admin/news/change', 'IndexController@change')->name('admin.news.change');
+Route::post('admin/news/delete', 'IndexController@delete')->name('admin.news.delete');
+
+Route::post('admin/service/create', 'ServiceController@create')->name('admin.service.create');
+Route::post('admin/service/change', 'ServiceController@change')->name('admin.service.change');
+Route::post('admin/service/delete', 'ServiceController@delete')->name('admin.service.delete');

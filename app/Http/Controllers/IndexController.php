@@ -10,21 +10,50 @@ class IndexController extends Controller{
   public function index(){
       return view('index')->with([
         'news' => News::get(),
-        'linksOnTable' => [route('admin.news.forTable')]
+        'linksOnTable' => [route('admin.news.forTable')],
+        'routes' => [
+          "get" => route('admin.news.forTable'),
+          "change" => route('admin.news.change'),
+          'create' => route('admin.news.create'),
+          'delete' => route('admin.news.delete')
+
+        ]
       ]);
   }
 
   public function newsForTable() {
       $data['titles'] = ["Заголовок", "Новость"];
-      $data['data'] = [];
-
-      foreach (News::select('title', 'message')->get() as $news) {
-          $data['data'][] = [
-            'title' => $news->title,
-            'message' => $news->message,
-          ];
-      }
+      $data['data'] = News::select('title', 'message', 'id')->get();
 
       return response()->json($data);
   }
+
+  public function create(Request $request) {
+    $news = News::create($request->all());
+
+    $news->save();
+
+    return response()->json([
+      'news' => $news
+    ]);
+  }
+
+  public function change(Request $request) {
+    $news = News::whereId($request->id)->first();
+
+    $news->fill($request->except('id'));
+
+    $news->update();
+
+    return response()->json([
+      'news' => $news
+    ]);
+  }
+
+    public function delete(Request $request) {
+      $news = News::whereId($request->id)->first();
+      $news->delete();
+
+      return response()->json();
+    }
 }
