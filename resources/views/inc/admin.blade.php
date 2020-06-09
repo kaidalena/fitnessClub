@@ -2,9 +2,11 @@
     <div class="containerLena admin" id="container">
         <div id="icon-close" onclick="closeAdminPanel()"> </div>
         <h1>Данные для редактирования</h1>
-        @foreach($linksOnTable as $linkName)
-        <a href="#" onclick="getTable('<?php echo $linkName ?>')">ссылка на таблицу {{$linkName}}</a>
-        @endforeach
+        <div id="admin-links">
+            @foreach($linksOnTable as $linkName)
+            <a href="#" onclick="getTable('<?php echo $linkName ?>')">ссылка на таблицу {{$linkName}}</a>
+            @endforeach
+        </div>
 
         <table id="adminTable">
 
@@ -12,8 +14,8 @@
         <div id='inputs-container'>
 
         </div>
-        <a href="">Добавить</a>
-        <a href="#" id="change">Изменить</a>
+        <a class="admin-btn" href="">Добавить</a>
+        <a class="admin-btn" href="#" id="change">Изменить</a>
     </div>
 </div>
 

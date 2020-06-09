@@ -29,6 +29,7 @@ function getTable(myUrl){
 
 function openTable(){
     // console.log( dataTable);
+    $("#admin-links").css("display", "none");
     var table = $("#adminTable");
     table.css("display", "block");
 
