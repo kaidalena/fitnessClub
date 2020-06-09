@@ -2,18 +2,7 @@ var dataTable;
 let fieldsNames = [];
 let inputs = {};
 
-$(document).ready(function($) {
-
-    $('#admin-block').click(function(e) {
-		if ($(e.target).closest('#admin-block').length == 0) {
-			$(this).fadeOut();
-		}
-	});
-})
-
 function openAdminPanel(){
-    // $container = document.getElementById("container");
-    // $container.style.display = "block";
     $("#admin-block").css("display", "flex");
     $("#admin-btn-edit").css("display", "none");
 }
