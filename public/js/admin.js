@@ -4,7 +4,6 @@ let inputs = {};
 let getUrl
 let $selectedRow
 
-<<<<<<< HEAD
 $(document).ready(function($) {
 
     $('#admin-block').click(function(e) {
@@ -15,8 +14,6 @@ $(document).ready(function($) {
 })
 
 
-=======
->>>>>>> 9994a5350091e6671ff6ef112a84df8e0fb84494
 function openAdminPanel(){
     $("#admin-block").css("display", "flex");
     $("#admin-btn-edit").css("display", "none");
@@ -29,8 +26,6 @@ function closeAdminPanel(){
 
 function getTable(url){
     if (!getUrl) getUrl = url
-
-    console.log($container);
 
     // console.log(myUrl);
     $.ajax({
@@ -69,17 +64,12 @@ function openTable(){
 
         $.each( row, function( field, val ) {
             let $td = $('<td>');
-<<<<<<< HEAD
 
             if (field !== 'id') {
               $td.text(val);
               $trD.append($td);
             }
 
-=======
-            $td.text(val);
-            $trD.append($td);
->>>>>>> 9994a5350091e6671ff6ef112a84df8e0fb84494
             $trD.attr(field, val)
         });
 
@@ -96,31 +86,6 @@ function openTable(){
     fieldsNames = Object.keys(dataTable['data'][0]);
 
     mountInputs();
-<<<<<<< HEAD
-=======
-
-    $('#change').click(() => {
-        let body = Object.keys(inputs).reduce((acc, el) => {
-          let data = {};
-          data[el] = inputs[el].val()
-          return acc.concat([data])
-        }, [])
-
-      return;
-      $.ajax({
-          type: 'POST', //THIS NEEDS TO BE GET
-          url: myUrl,
-          body,
-          success: function (data) {
-              dataTable = data;
-              openTable();
-          },
-          error: function() {
-              console.log(data);
-          }
-      });
-    })
->>>>>>> 9994a5350091e6671ff6ef112a84df8e0fb84494
 }
 
 const setValues = (event) => {
