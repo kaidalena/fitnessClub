@@ -1,10 +1,24 @@
 var dataTable;
 
+$(document).ready(function($) {
+
+    $('#admin-block').click(function(e) {
+		if ($(e.target).closest('#admin-block').length == 0) {
+			$(this).fadeOut();					
+		}
+	});
+})
+
 function openAdminPanel(){
-    $container = document.getElementById("container");
-    $container.style.display = "block";
-    document.getElementById("admin-block").style.background = "#5f5f5f67";
-    document.getElementById("admin-btn-edit").style.display = "none";
+    // $container = document.getElementById("container");
+    // $container.style.display = "block";
+    $("#admin-block").css("display", "flex");
+    $("#admin-btn-edit").css("display", "none");
+}
+
+function closeAdminPanel(){
+    $("#admin-block").css("display", "none");
+    $("#admin-btn-edit").css("display", "block");
 }
 
 function getTable(myUrl){

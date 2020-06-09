@@ -18,17 +18,15 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/classy-nav.css">
 
-  <script src="js/admin.js"></script>
   <script src="js/jquery-2.2.3.js"></script>
+  <script src="js/admin.js"></script>
   @yield('scripts')
 
 </head>
 
 <body>
 
-@if(Auth::check() && Auth::user()->isAdmin())
-    @include('inc.admin')
-@endif
+
 
   <!-- ##### Header Area Start ##### -->
   <header class="header-area">
