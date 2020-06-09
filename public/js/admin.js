@@ -2,6 +2,7 @@ var dataTable;
 let fieldsNames = [];
 let inputs = {};
 
+
 function openAdminPanel(){
     $("#admin-block").css("display", "flex");
     $("#admin-btn-edit").css("display", "none");
