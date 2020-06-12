@@ -1180,7 +1180,6 @@ h5 {
 .admin #adminTable tr:hover { 
     background: radial-gradient(#b6e358, #38b143);
     color: black;
-    background-color: blue;
     cursor: pointer;
 }
 
@@ -1196,6 +1195,12 @@ h5 {
 
 .admin #inputs-container {
     margin: 20px auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.admin #inputs-container label{
+    display: inline-block;
+    font-size: 16px;
 }
 
 .admin #inputs-container input, 

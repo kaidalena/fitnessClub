@@ -5,24 +5,23 @@ let getUrl
 let $selectedRow
 let keyTable;
 let routes;
-let titles = {}
 
-function saveRoutes(array) {
-    routes = array;
+function saveRoutes(array){
+  routes = array;
 }
 
-function openAdminPanel(array) {
-    if (array != null) routes = JSON.parse(array);
+function openAdminPanel(array){
+  if (array != null) routes = JSON.parse(array);
     $("#admin-block").css("display", "flex");
     $("#admin-btn-edit").css("display", "none");
 }
 
-function closeAdminPanel() {
+function closeAdminPanel(){
     $("#admin-block").css("display", "none");
     $("#admin-btn-edit").css("display", "block");
 }
 
-function getTable(myUrl, key) {
+function getTable(myUrl, key){
     if (key != null) keyTable = key;
     if (myUrl != null) getUrl = myUrl;
 
@@ -30,7 +29,8 @@ function getTable(myUrl, key) {
     $.ajax({
         type: 'GET', //THIS NEEDS TO BE GET
         url: getUrl,
-        success: function(data) {
+        success: function (data) {
+          // console.log(data);
             dataTable = data;
             openTable();
         },
@@ -40,10 +40,9 @@ function getTable(myUrl, key) {
     });
 }
 
-function openTable() {
+function openTable(){
     // console.log( dataTable);
     $("#admin-links").css("display", "none");
-    // $("#admin-btn").css("display", "block");
     var divWithTable = $("#adminTable-block");
     var table = $("#adminTable");
     table.empty();
@@ -51,7 +50,7 @@ function openTable() {
 
     let $trH = $('<tr>')
 
-    $.each(dataTable['titles'], function(i, val) {
+    $.each( dataTable['titles'], function( i, val ) {
         let $tr = $('<th>');
 
         $tr.text(val);
@@ -61,15 +60,14 @@ function openTable() {
 
 
     let $trB = $('<tr>')
-    $.each(dataTable['data'], function(i, row) {
-
+    $.each( dataTable['data'], function( i, row ) {
         let $trD = $('<tr>')
 
-        $.each(row, function(field, val) {
+        $.each( row, function( field, val ) {
             let $td = $('<td>');
             if (field !== 'id') {
-                $td.text(val);
-                $trD.append($td);
+              $td.text(val);
+              $trD.append($td);
             }
             $trD.attr(field, val)
         });
@@ -80,110 +78,142 @@ function openTable() {
     // console.log("html: " + html);
 
     $('#adminTable tr').each((index, el) => {
-        if (index === 0) return;
-        $(el).click(setValues)
+      if(index === 0) return;
+      $(el).click(setValues)
     })
 
     fieldsNames = Object.keys(dataTable['data'][0]);
-
+    // console.log(fieldsNames);
     mountInputs();
 }
 
-function closeTable() {
+function closeTable(){
     $("#admin-links").css("display", "block");
     // $("#admin-btn").css("display", "none");
-    $("#adminTable-block").css("display", "none");
+    $("#adminTable-block").css("display", "none");    
 }
 
 const setValues = (event) => {
-    let $el = $(event.currentTarget);
-    $selectedRow = $el;
-    fieldsNames.forEach(el => {
-        if (el !== 'id')
-            inputs[el].val($el.attr(el))
-    })
+  let $el = $(event.currentTarget);
+  $selectedRow = $el;
+  fieldsNames.forEach(el => {
+    if (el !== 'id'){
+
+      if (dataTable.hasOwnProperty('foreignKeys') &&
+        dataTable['foreignKeys'].hasOwnProperty(el)){
+          inputs[el].children('option[value='+$el.attr(el)+']').attr('selected', 'selected');
+      }else{
+        inputs[el].val($el.attr(el));
+      }
+    }
+  })
 }
+
 const mountInputs = () => {
-    const $container = $('#inputs-container')
-    $container.empty();
+  const $container = $('#inputs-container')
+  $container.empty();
+  var i = 0;
+  fieldsNames.forEach(item => {
+    if (item === 'id') return
 
-    fieldsNames.forEach(item => {
-        if (item === 'id') return
+    const $label = $('<label>', {
+      for: `input-${item}`,
+      text: dataTable['titles'][i++],
+    });
+    $container.append($label);
 
-        const $label = $('<label>', {
-            for: `input-${item}`,
-            text: item
+    var htmlInput;
+    if (dataTable.hasOwnProperty('foreignKeys') &&
+      dataTable['foreignKeys'].hasOwnProperty(item)){
+        const $input = $('<select>', {
+          name: `input-${item}`,
+          id: `input-${item}`
         });
-        const $input = $('<input>', {
-            type: 'text',
-            id: `input-${item}`
-        });
-        inputs[item] = $input
+        if (dataTable.hasOwnProperty('foreignKeys') &&
+            dataTable['foreignKeys'].hasOwnProperty(item)){
 
-        $container.append($label);
+              $.each(dataTable['foreignKeys'][item], function(key, foreignItem){
+                var val = Object.values(foreignItem)[0];
+                $input.append($('<option value = \''+val+'\'>'+val+'</option>'));
+              });
+        }
         $container.append($input);
-    })
+        inputs[item] = $input;
+    }else{
+      const $input =  $('<input>', {type: 'text'});
+      $container.append($input);
+      inputs[item] = $input;
+    }
+
+    
+    // $container.append($input);
+  })
+}
+
+function createOptions(){
+
 }
 
 const onChangeRecord = () => {
-    let url = routes[keyTable]['change'];
-    console.log("onChange  url=" + url);
-    let body = Object.keys(inputs).reduce((acc, el) => {
-        acc[el] = inputs[el].val()
+  let url = routes[keyTable]['change'];
+  console.log("onChange  url=" + url);
+  let body = Object.keys(inputs).reduce((acc, el) => {
+      acc[el] = inputs[el].val()
+      // console.log(acc);
 
-        return acc
+      return acc
     }, {})
     body['id'] = $selectedRow.attr('id');
-    fetch(url, {
-        method: 'POST',
-        headers: {
+  fetch(url, {
+      method: 'POST',
+      headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(body)
-    }).then(respons => {
-        return respons.json()
-    }).then(data => {
-        getTable()
-    });
+          },
+      body: JSON.stringify(body)
+  }).then(respons => {
+    return respons.json()
+  }).then(data => {
+    getTable()
+  });
 }
 
 const onCreateRecord = () => {
-    let url = routes[keyTable]['create'];
+  let url = routes[keyTable]['create'];
     let body = Object.keys(inputs).reduce((acc, el) => {
-        acc[el] = inputs[el].val()
+      acc[el] = inputs[el].val()
 
-        return acc
+      return acc
     }, {})
-    fetch(url, {
-        method: 'POST',
-        headers: {
+  fetch(url, {
+      method: 'POST',
+      headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(body)
-    }).then(respons => {
-        return respons.json()
-    }).then(data => {
-        getTable()
-    });
+          },
+      body: JSON.stringify(body)
+  }).then(respons => {
+    return respons.json()
+  }).then(data => {
+    getTable()
+  });
 }
 
 const onDeleteRecord = () => {
-    let url = routes[keyTable]['delete'];
-    let body = {
-        id: $selectedRow.attr('id')
-    };
-    fetch(url, {
-        method: 'POST',
-        headers: {
+  let url = routes[keyTable]['delete'];
+  let body = {
+    id: $selectedRow.attr('id')
+  };
+  fetch(url, {
+      method: 'POST',
+      headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(body)
-    }).then(respons => {
-        return respons.json()
-    }).then(data => {
-        getTable()
-    });
+          },
+      body: JSON.stringify(body)
+  }).then(respons => {
+    return respons.json()
+  }).then(data => {
+    getTable()
+  });
 }
