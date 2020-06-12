@@ -30,6 +30,7 @@ function getTable(myUrl, key){
         type: 'GET', //THIS NEEDS TO BE GET
         url: getUrl,
         success: function (data) {
+          // console.log(data);
             dataTable = data;
             openTable();
         },
@@ -42,7 +43,6 @@ function getTable(myUrl, key){
 function openTable(){
     // console.log( dataTable);
     $("#admin-links").css("display", "none");
-    // $("#admin-btn").css("display", "block");
     var divWithTable = $("#adminTable-block");
     var table = $("#adminTable");
     table.empty();
@@ -77,12 +77,13 @@ function openTable(){
 
     // console.log("html: " + html);
 
-        $('#adminTable tr').each((index, el) => {
-          if(index === 0) return;
-          $(el).click(setValues)
-        })
+    $('#adminTable tr').each((index, el) => {
+      if(index === 0) return;
+      $(el).click(setValues)
+    })
 
     fieldsNames = Object.keys(dataTable['data'][0]);
+    // console.log(fieldsNames);
     mountInputs();
 }
 
@@ -96,10 +97,18 @@ const setValues = (event) => {
   let $el = $(event.currentTarget);
   $selectedRow = $el;
   fieldsNames.forEach(el => {
-    if (el !== 'id')
-      inputs[el].val($el.attr(el))
+    if (el !== 'id'){
+
+      if (dataTable.hasOwnProperty('foreignKeys') &&
+        dataTable['foreignKeys'].hasOwnProperty(el)){
+          inputs[el].children('option[value='+$el.attr(el)+']').attr('selected', 'selected');
+      }else{
+        inputs[el].val($el.attr(el));
+      }
+    }
   })
 }
+
 const mountInputs = () => {
   const $container = $('#inputs-container')
   $container.empty();
@@ -108,19 +117,41 @@ const mountInputs = () => {
     if (item === 'id') return
 
     const $label = $('<label>');
-    const $input = $('<input>', {type: 'text'});
-    inputs[item] = $input
+    var htmlInput;
+    if (dataTable.hasOwnProperty('foreignKeys') &&
+      dataTable['foreignKeys'].hasOwnProperty(item)){
+        const $input = $('<select>', {name: item});
+        if (dataTable.hasOwnProperty('foreignKeys') &&
+            dataTable['foreignKeys'].hasOwnProperty(item)){
+
+              $.each(dataTable['foreignKeys'][item], function(key, foreignItem){
+                var val = Object.values(foreignItem)[0];
+                $input.append($('<option value = \''+val+'\'>'+val+'</option>'));
+              });
+        }
+        $container.append($input);
+        inputs[item] = $input;
+    }else{
+      const $input =  $('<input>', {type: 'text'});
+      $container.append($input);
+      inputs[item] = $input;
+    }
 
     $label.append($label);
-    $container.append($input);
+    // $container.append($input);
   })
+}
+
+function createOptions(){
+
 }
 
 const onChangeRecord = () => {
   let url = routes[keyTable]['change'];
-  console.log("onChange  url=" + url);
+  // console.log("onChange  url=" + url);
   let body = Object.keys(inputs).reduce((acc, el) => {
       acc[el] = inputs[el].val()
+      console.log(acc);
 
       return acc
     }, {})

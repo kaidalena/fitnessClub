@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\About;
 use App\Http\Requests\AboutRequest;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 class AboutController extends Controller{
@@ -50,7 +51,7 @@ class AboutController extends Controller{
 
         $this->model->save();
 
-        return redirect()->route('aboutUs')->with('success', 'Успешно');
+        return redirect()->route('about')->with('success', 'Успешно');
     }
 
     public function getAllComments(){
@@ -60,6 +61,9 @@ class AboutController extends Controller{
     public function dataForTable() {
         $data['titles'] = ["Пользователь", "Отзыв"];
         $data['data'] = About::select('user', 'message', 'id')->get();
+        $data['foreignKeys'] = [
+            'user' => User::select('id')->get()
+        ];
   
         return response()->json($data);
     }
