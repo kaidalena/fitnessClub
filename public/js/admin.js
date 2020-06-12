@@ -24,13 +24,13 @@ function closeAdminPanel(){
     $("#admin-btn-edit").css("display", "block");
 }
 
-function getTable(url){
-    if (!getUrl) getUrl = url
+function getTable(myUrl){
+    // if (!getUrl) getUrl = url
 
-    // console.log(myUrl);
+    console.log(myUrl);
     $.ajax({
         type: 'GET', //THIS NEEDS TO BE GET
-        url: getUrl,
+        url: myUrl,
         success: function (data) {
             dataTable = data;
             openTable();

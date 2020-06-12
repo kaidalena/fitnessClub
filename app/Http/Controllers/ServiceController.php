@@ -25,7 +25,7 @@ class ServiceController extends Controller{
     ]);
   }
 
-  public function serviceForTable() {
+  public function dataForTable() {
       $data['titles'] = ["Путь к фото", "Заголовок"];
       $data['data'] = service::select('img_path', 'title', 'id')->get();
 
