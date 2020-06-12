@@ -3,6 +3,7 @@ let fieldsNames = [];
 let inputs = {};
 let getUrl
 let $selectedRow
+let keyTable;
 
 $(document).ready(function($) {
 
@@ -24,10 +25,11 @@ function closeAdminPanel(){
     $("#admin-btn-edit").css("display", "block");
 }
 
-function getTable(myUrl){
+function getTable(myUrl, key){
+  keyTable = key;
     // if (!getUrl) getUrl = url
 
-    console.log(myUrl);
+    console.log(key);
     $.ajax({
         type: 'GET', //THIS NEEDS TO BE GET
         url: myUrl,

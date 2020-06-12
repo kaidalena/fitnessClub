@@ -7,8 +7,8 @@
         <h1>Данные для редактирования</h1>
 
         <div id="admin-links">
-            @foreach($linksOnTable as $link)
-            <a href="#" onclick="getTable('<?php echo $link['route'] ?>')">
+            @foreach($linksOnTable as $key=>$link)
+            <a href="#" onclick="getTable('<?php echo $link['route'] ?>', '{{ $key }}')">
                 {{ $link['name'] }}
                 <div id="icon-link"></div>
             </a> <br/>
