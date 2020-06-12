@@ -71,6 +71,7 @@ class SheduleController extends Controller{
     
     public function change(Request $request) {
         $data = Shedule::whereId($request->id)->first();
+        dd($data);
         $data->fill($request->except('id'));
         $data->update();
         return response()->json([
@@ -87,7 +88,7 @@ class SheduleController extends Controller{
 
     public function getRoutesForAdmin(){
         return [
-            "change" => route('admin.schedule.change'),
+            'change' => route('admin.schedule.change'),
             'create' => route('admin.schedule.create'),
             'delete' => route('admin.schedule.delete')
         ];

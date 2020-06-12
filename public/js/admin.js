@@ -148,7 +148,7 @@ function createOptions(){
 
 const onChangeRecord = () => {
   let url = routes[keyTable]['change'];
-  // console.log("onChange  url=" + url);
+  console.log("onChange  url=" + url);
   let body = Object.keys(inputs).reduce((acc, el) => {
       acc[el] = inputs[el].val()
       // console.log(acc);

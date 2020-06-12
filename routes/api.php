@@ -34,9 +34,9 @@ Route::post('admin/user/create', 'UserController@create')->name('admin.users.cre
 Route::post('admin/user/change', 'UserController@change')->name('admin.users.change');
 Route::post('admin/user/delete', 'UserController@delete')->name('admin.users.delete');
 
-Route::post('admin/schedule/create', 'ScheduleController@create')->name('admin.schedule.create');
-Route::post('admin/schedule/change', 'ScheduleController@change')->name('admin.schedule.change');
-Route::post('admin/schedule/delete', 'ScheduleController@delete')->name('admin.schedule.delete');
+Route::post('admin/schedule/create', 'SheduleController@create')->name('admin.schedule.create');
+Route::post('admin/schedule/change', 'SheduleController@change')->name('admin.schedule.change');
+Route::post('admin/schedule/delete', 'SheduleController@delete')->name('admin.schedule.delete');
 
 Route::post('admin/trainings/create', 'TrainingsController@create')->name('admin.trainings.create');
 Route::post('admin/trainings/change', 'TrainingsController@change')->name('admin.trainings.change');

@@ -25,7 +25,7 @@ class AboutController extends Controller{
         
         return view('aboutUs')->with([
             'comments' => $about,
-            'news' => $this->model::get(),
+            // 'news' => $this->model::get(),
             'linksOnTable' => [
                 'comments' => [
                   'name' => "Отзывы",
@@ -95,7 +95,7 @@ class AboutController extends Controller{
 
     public static function getRoutesForAdmin(){
         return [
-            "change" => route('admin.abouts.change'),
+            'change' => route('admin.abouts.change'),
             'create' => route('admin.abouts.create'),
             'delete' => route('admin.abouts.delete')
         ];
