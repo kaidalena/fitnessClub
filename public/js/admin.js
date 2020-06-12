@@ -22,13 +22,13 @@ function closeAdminPanel(){
 }
 
 function getTable(myUrl, key){
-  keyTable = key;
-    // if (!getUrl) getUrl = url
+    keyTable = key;
+    if (myUrl != null) getUrl = myUrl;
 
-    console.log(key);
+    console.log("getTable url=" + getUrl + "  key=" + key);
     $.ajax({
         type: 'GET', //THIS NEEDS TO BE GET
-        url: myUrl,
+        url: getUrl,
         success: function (data) {
             dataTable = data;
             openTable();
@@ -118,6 +118,7 @@ const mountInputs = () => {
 
 const onChangeRecord = () => {
   let url = routes[keyTable]['change'];
+  console.log("onChange  url=" + url);
   let body = Object.keys(inputs).reduce((acc, el) => {
       acc[el] = inputs[el].val()
 

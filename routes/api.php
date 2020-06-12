@@ -26,6 +26,10 @@ Route::post('admin/service/create', 'ServiceController@create')->name('admin.ser
 Route::post('admin/service/change', 'ServiceController@change')->name('admin.service.change');
 Route::post('admin/service/delete', 'ServiceController@delete')->name('admin.service.delete');
 
-Route::post('admin/about/create', 'AboutController@create')->name('admin.about.create');
-Route::post('admin/about/change', 'AboutController@change')->name('admin.about.change');
-Route::post('admin/about/delete', 'AboutController@delete')->name('admin.about.delete');
+Route::post('admin/about/create', 'AboutController@create')->name('admin.abouts.create');
+Route::post('admin/about/change', 'AboutController@change')->name('admin.abouts.change');
+Route::post('admin/about/delete', 'AboutController@delete')->name('admin.abouts.delete');
+
+Route::post('admin/user/create', 'UserController@create')->name('admin.users.create');
+Route::post('admin/user/change', 'UserController@change')->name('admin.users.change');
+Route::post('admin/user/delete', 'UserController@delete')->name('admin.users.delete');

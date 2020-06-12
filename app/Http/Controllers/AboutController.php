@@ -38,16 +38,11 @@ class AboutController extends Controller{
             'routes' => [
                 'comments' =>[
                     // "get" => route('admin.news.forTable'),
-                    "change" => route('admin.news.change'),
-                    'create' => route('admin.news.create'),
-                    'delete' => route('admin.news.delete')
+                    "change" => route('admin.abouts.change'),
+                    'create' => route('admin.abouts.create'),
+                    'delete' => route('admin.abouts.delete')
                 ],
-                'users' =>[
-                    // "get" => route('admin.users.forTable'),
-                    "change" => route('admin.users.change'),
-                    'create' => route('admin.users.create'),
-                    'delete' => route('admin.users.delete')
-                ]
+                'users' => UserController::getRoutesForAdmin(),
             ]
           ]);
     }
