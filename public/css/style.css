@@ -1173,6 +1173,13 @@ h5 {
     padding: 10px;
 }
 
+.admin #adminTable tr:hover { 
+    background: radial-gradient(#b6e358, #38b143);
+    color: black;
+    background-color: blue;
+    cursor: pointer;
+}
+
 .admin #adminTable tr:nth-child(odd) {
     background: white;
     color: black;

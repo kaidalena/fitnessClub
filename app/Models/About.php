@@ -6,6 +6,8 @@ use App\Models\Users;
 use Illuminate\Database\Eloquent\Model;
 
 class About extends Model{
+
+    protected $guarded = [];
     
     public function allData(){
         $rowsRespons = $this->all();

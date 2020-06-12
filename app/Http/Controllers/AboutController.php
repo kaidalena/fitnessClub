@@ -36,12 +36,7 @@ class AboutController extends Controller{
                 ]
             ],              
             'routes' => [
-                'comments' =>[
-                    // "get" => route('admin.news.forTable'),
-                    "change" => route('admin.abouts.change'),
-                    'create' => route('admin.abouts.create'),
-                    'delete' => route('admin.abouts.delete')
-                ],
+                'comments' => $this->getRoutesForAdmin(),
                 'users' => UserController::getRoutesForAdmin(),
             ]
           ]);
@@ -70,10 +65,11 @@ class AboutController extends Controller{
     }
 
     public function create(Request $request) {
-        $news = About::create($request->all());
-        $news->save();
+        // dd($request->all());
+        $data = About::create($request->all());
+        $data->save();
         return response()->json([
-          'comments' => $news
+          'comments' => $data
         ]);
       }
     
@@ -91,5 +87,13 @@ class AboutController extends Controller{
         $news->delete();
 
         return response()->json();
+    }
+
+    public function getRoutesForAdmin(){
+        return [
+            "change" => route('admin.abouts.change'),
+            'create' => route('admin.abouts.create'),
+            'delete' => route('admin.abouts.delete')
+        ];
     }
 }
