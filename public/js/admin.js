@@ -22,7 +22,7 @@ function closeAdminPanel(){
 }
 
 function getTable(myUrl, key){
-    keyTable = key;
+    if (key != null) keyTable = key;
     if (myUrl != null) getUrl = myUrl;
 
     console.log("getTable url=" + getUrl + "  key=" + key);
