@@ -18,11 +18,31 @@ class AccountController extends Controller{
         if (!$user) return redirect()->route('auth');
 
         $userCardsModel = new UserCards();
-        $data = [
+        // $data = [
+        //     'user' => $user,
+        //     'cards' => $userCardsModel->getCardsByUser($user->id)
+        // ];
+        // return view('account', $data);
+
+
+        return view('account')->with([
             'user' => $user,
-            'cards' => $userCardsModel->getCardsByUser($user->id)
-        ];
-        return view('account', $data);
+            'cards' => $userCardsModel->getCardsByUser($user->id),
+            'linksOnTable' => [
+                'users' => [
+                  'name' => "Пользователи",
+                  'route' => route('admin.users.forTable')
+                ],
+                'users_cards' => [
+                    'name' => "Абонементы пользователей",
+                    'route' => route('admin.users_cards.forTable')
+                ]
+            ],              
+            'routes' => [
+                'users' => UserController::getRoutesForAdmin(),
+                'users_cards' => UserCardsController::getRoutesForAdmin(),
+            ]
+          ]);
     }
 
     public function login(){
@@ -37,21 +57,6 @@ class AccountController extends Controller{
     public function enter(AccountRequest $req){
 
     }
-
-    // public function registration(AccountRequest $req){
-
-    //     $account = new Users();
-    //     $account->name = $req->input('name');
-    //     $account->surname = $req->input('surname');
-    //     $account->birthday = $req->input('birthday');
-    //     $account->email = $req->input('email');
-    //     $account->weight = (!empty($req->input('weight'))) ? $req->input('weight') : null;
-    //     $account->height = (!empty($req->input('height'))) ? $req->input('height') : null;
-
-    //     $account->save();
-
-    //     return redirect()->route('account')->with('success', 'Успешно');
-    // }
 
     public function editPost(AccountRequest $req){
 

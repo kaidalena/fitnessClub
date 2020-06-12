@@ -53,3 +53,7 @@ Route::post('admin/cards/delete', 'CardsController@delete')->name('admin.cards.d
 Route::post('admin/cards_groups/create', 'Cards_GroupsController@create')->name('admin.cards_groups.create');
 Route::post('admin/cards_groups/change', 'Cards_GroupsController@change')->name('admin.cards_groups.change');
 Route::post('admin/cards_groups/delete', 'Cards_GroupsController@delete')->name('admin.cards_groups.delete');
+
+Route::post('admin/users_cards/create', 'UserCardsController@create')->name('admin.users_cards.create');
+Route::post('admin/users_cards/change', 'UserCardsController@change')->name('admin.users_cards.change');
+Route::post('admin/users_cards/delete', 'UserCardsController@delete')->name('admin.users_cards.delete');

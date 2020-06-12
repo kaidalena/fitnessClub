@@ -7,6 +7,8 @@ use App\Models\Cards;
 use DateTime;
 
 class UserCards extends Model{
+
+    protected $guarded = [];
     
     public function getCardsByUser($id_user){
         $cardModel = new Cards();

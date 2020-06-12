@@ -26,6 +26,7 @@ Route::get('admin/trainings-for-table', 'TrainingsController@dataForTable')->nam
 Route::get('admin/training_groups-for-table', 'Training_GroupsController@dataForTable')->name('admin.training_groups.forTable');
 Route::get('admin/cards-for-table', 'Cards@dataForTable')->name('admin.cards.forTable');
 Route::get('admin/cards_groups-for-table', 'Cards_GroupsController@dataForTable')->name('admin.cards_groups.forTable');
+Route::get('admin/users_cards-for-table', 'UserCardsController@dataForTable')->name('admin.users_cards.forTable');
 
 
 Route::get('/aboutUs', 'AboutController@allComments')->name('about');

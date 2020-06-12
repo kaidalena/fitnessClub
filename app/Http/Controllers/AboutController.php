@@ -93,7 +93,7 @@ class AboutController extends Controller{
         return response()->json();
     }
 
-    public function getRoutesForAdmin(){
+    public static function getRoutesForAdmin(){
         return [
             "change" => route('admin.abouts.change'),
             'create' => route('admin.abouts.create'),
