@@ -120,7 +120,8 @@ const mountInputs = () => {
       for: `input-${item}`,
       text: dataTable['titles'][i++],
     });
-    $container.append($label);
+    const $div = $('<div>');
+    $div.append($label);
 
     var htmlInput;
     if (dataTable.hasOwnProperty('foreignKeys') &&
@@ -137,15 +138,15 @@ const mountInputs = () => {
                 $input.append($('<option value = \''+val+'\'>'+val+'</option>'));
               });
         }
-        $container.append($input);
+        $div.append($input);
         inputs[item] = $input;
     }else{
       const $input =  $('<input>', {type: 'text'});
-      $container.append($input);
+      $div.append($input);
       inputs[item] = $input;
     }
 
-    
+    $container.append($div);
     // $container.append($input);
   })
 }

@@ -1194,12 +1194,15 @@ h5 {
 }
 
 .admin #inputs-container {
-    margin: 20px auto;
+    margin: 25px auto;
     font-family: Arial, Helvetica, sans-serif;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .admin #inputs-container label{
-    display: inline-block;
+    display: block;
     font-size: 16px;
 }
 
@@ -1209,7 +1212,7 @@ h5 {
     height: 40px;
     min-width: 100px;
     width: auto;
-    margin: 10px 10px 0 0;
+    margin: 0 10px 10px 0;
     padding: 10px;
     background: #e6e6e6;
     color: #666;
