@@ -17,10 +17,12 @@ class IndexController extends Controller{
             ]
         ],              
         'routes' => [
-          "get" => route('admin.news.forTable'),
-          "change" => route('admin.news.change'),
-          'create' => route('admin.news.create'),
-          'delete' => route('admin.news.delete')
+          'news' => [
+            // "get" => route('admin.news.forTable'),
+            "change" => route('admin.news.change'),
+            'create' => route('admin.news.create'),
+            'delete' => route('admin.news.delete')
+          ]
         ]
       ]);
   }

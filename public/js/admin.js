@@ -4,18 +4,14 @@ let inputs = {};
 let getUrl
 let $selectedRow
 let keyTable;
+let routes;
 
-$(document).ready(function($) {
+function saveRoutes(array){
+  routes = array;
+}
 
-    $('#admin-block').click(function(e) {
-		if ($(e.target).closest('#admin-block').length == 0) {
-			$(this).fadeOut();
-		}
-	});
-})
-
-
-function openAdminPanel(){
+function openAdminPanel(array){
+  if (array != null) routes = JSON.parse(array);
     $("#admin-block").css("display", "flex");
     $("#admin-btn-edit").css("display", "none");
 }
@@ -120,7 +116,8 @@ const mountInputs = () => {
   })
 }
 
-const onChangeRecord = (url) => {
+const onChangeRecord = () => {
+  let url = routes[keyTable]['change'];
   let body = Object.keys(inputs).reduce((acc, el) => {
       acc[el] = inputs[el].val()
 
@@ -141,7 +138,8 @@ const onChangeRecord = (url) => {
   });
 }
 
-const onCreateRecord = (url) => {
+const onCreateRecord = () => {
+  let url = routes[keyTable]['create'];
     let body = Object.keys(inputs).reduce((acc, el) => {
       acc[el] = inputs[el].val()
 
@@ -161,7 +159,8 @@ const onCreateRecord = (url) => {
   });
 }
 
-const onDeleteRecord = (url) => {
+const onDeleteRecord = () => {
+  let url = routes[keyTable]['delete'];
   let body = {
     id: $selectedRow.attr('id')
   };

@@ -22,9 +22,9 @@
             </div>
 
             <div class="admin-btn" id="admin-btn">
-                <a  href="#" id="create" onclick="onCreateRecord('{{ __($routes['create']) }}')">Добавить</a>
-                <a href="#" id="change" onclick="onChangeRecord('{{ __($routes['change']) }}')">Изменить</a>
-                <a href="#" id="delete" onclick="onDeleteRecord('{{ __($routes['delete']) }}')">Удалить</a>
+                <a  href="#" id="create" onclick="onCreateRecord()">Добавить</a>
+                <a href="#" id="change" onclick="onChangeRecord()">Изменить</a>
+                <a href="#" id="delete" onclick="onDeleteRecord()">Удалить</a>
             </div>
         </div>
 
@@ -32,4 +32,4 @@
     </div>
 </div>
 
-<input id="admin-btn-edit" type="button" value="Редактор" onclick="openAdminPanel()">
+<input id="admin-btn-edit" type="button" value="Редактор" onclick="openAdminPanel('{{ json_encode($routes,TRUE) }} ')">
