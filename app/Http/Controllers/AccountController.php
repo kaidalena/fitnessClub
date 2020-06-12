@@ -18,12 +18,6 @@ class AccountController extends Controller{
         if (!$user) return redirect()->route('auth');
 
         $userCardsModel = new UserCards();
-        // $data = [
-        //     'user' => $user,
-        //     'cards' => $userCardsModel->getCardsByUser($user->id)
-        // ];
-        // return view('account', $data);
-
 
         return view('account')->with([
             'user' => $user,
