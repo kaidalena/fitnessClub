@@ -15,7 +15,7 @@ class IndexController extends Controller{
               'name' => "Новости",
               'route' => route('admin.news.forTable')
             ]
-        ],              
+        ],
         'routes' => [
           'news' => [
             // "get" => route('admin.news.forTable'),

@@ -38,7 +38,7 @@
           <nav class="classy-navbar justify-content-between" id="fitnessNav">
 
             <!-- Nav brand -->
-            <a href="index.html" class="nav-brand"><img src="/img/core-img/logo.png" alt=""></a>
+            <a href="{{ route('index') }}" class="nav-brand"><img src="/img/core-img/logo.png" alt=""></a>
 
             <!-- Navbar Toggler -->
             <div class="classy-navbar-toggler">
@@ -54,10 +54,11 @@
               </div>
 
               <!-- Nav Start -->
+              <a href="{{ route('locale', __('header')['next_locale']) }}">Язык {{ __('header')['next_locale'] }}</a>
               <div class="classynav">
                 <ul>
-                  <li><a href="{{ route('index') }}">Главная</a></li>
-                  <li><a href="{{ route('about') }}">О нас</a>
+                  <li><a href="{{ route('index') }}">{{ __('header')['main'] }}</a></li>
+                  <li><a href="{{ route('about') }}">{{ __('header')['about'] }}</a>
                     <ul class="dropdown">
                       <li><a href="#">Основная информация</a></li>
                       <li><a href="#">Отзывы</a></li>
