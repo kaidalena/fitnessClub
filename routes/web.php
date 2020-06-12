@@ -21,6 +21,10 @@ Route::get('admin/news-for-table', 'IndexController@dataForTable')->name('admin.
 Route::get('admin/service-for-table', 'ServiceController@dataForTable')->name('admin.service.forTable');
 Route::get('admin/comments-for-table', 'AboutController@dataForTable')->name('admin.comments.forTable');
 Route::get('admin/users-for-table', 'UserController@dataForTable')->name('admin.users.forTable');
+Route::get('admin/shedule-for-table', 'SheduleController@dataForTable')->name('admin.schedule.forTable');
+Route::get('admin/trainings-for-table', 'TrainingsController@dataForTable')->name('admin.trainings.forTable');
+Route::get('admin/training_groups-for-table', 'Training_GroupsController@dataForTable')->name('admin.training_groups.forTable');
+
 
 Route::get('/aboutUs', 'AboutController@allComments')->name('about');
 

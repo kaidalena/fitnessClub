@@ -8,6 +8,8 @@ use App\Models\Training_groups;
 
 class Shedule extends Model{
     
+    protected $guarded = [];
+
     public function allData(){
         $weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'satuday', 'sunday'];
         

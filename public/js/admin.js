@@ -151,7 +151,7 @@ const onChangeRecord = () => {
   // console.log("onChange  url=" + url);
   let body = Object.keys(inputs).reduce((acc, el) => {
       acc[el] = inputs[el].val()
-      console.log(acc);
+      // console.log(acc);
 
       return acc
     }, {})

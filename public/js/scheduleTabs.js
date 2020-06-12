@@ -38,10 +38,10 @@ function checkTabs(elem){
 }
 
 function saveDB(array){
-    console.log("saveDB");
+    // console.log("saveDB");
 
     for (let i=0; i<array.length; i++) {
-        console.log(array[i]);
+        // console.log(array[i]);
         for(key in array[i]) {
             if (key != "time"){
                 trainersDB.push(array[i][key]['color']);
@@ -65,5 +65,5 @@ function saveTabs(array){
     for (let i=0; i<array.length; i++) {
         colors[array[i]['id']] = array[i]['color'];
     }
-    console.log(colors);
+    // console.log(colors);
 }
