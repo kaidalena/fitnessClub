@@ -17,10 +17,12 @@ class ServiceController extends Controller{
         ]
       ], 
       'routes' => [
-        "get" => route('admin.news.forTable'),
-        "change" => route('admin.service.change'),
-        'create' => route('admin.service.create'),
-        'delete' => route('admin.service.delete')
+        'servise' =>[
+          "get" => route('admin.news.forTable'),
+          "change" => route('admin.service.change'),
+          'create' => route('admin.service.create'),
+          'delete' => route('admin.service.delete')
+        ]
       ]
     ]);
   }

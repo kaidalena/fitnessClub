@@ -25,7 +25,7 @@ function getTable(myUrl, key){
     if (key != null) keyTable = key;
     if (myUrl != null) getUrl = myUrl;
 
-    console.log("getTable url=" + getUrl + "  key=" + key);
+    console.log("getTable url=" + getUrl + "  key=" + keyTable);
     $.ajax({
         type: 'GET', //THIS NEEDS TO BE GET
         url: getUrl,
