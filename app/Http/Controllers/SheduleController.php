@@ -71,7 +71,6 @@ class SheduleController extends Controller{
     
     public function change(Request $request) {
         $data = Shedule::whereId($request->id)->first();
-        dd($data);
         $data->fill($request->except('id'));
         $data->update();
         return response()->json([

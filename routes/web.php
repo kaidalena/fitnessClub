@@ -24,7 +24,7 @@ Route::get('admin/users-for-table', 'UserController@dataForTable')->name('admin.
 Route::get('admin/shedule-for-table', 'SheduleController@dataForTable')->name('admin.schedule.forTable');
 Route::get('admin/trainings-for-table', 'TrainingsController@dataForTable')->name('admin.trainings.forTable');
 Route::get('admin/training_groups-for-table', 'Training_GroupsController@dataForTable')->name('admin.training_groups.forTable');
-Route::get('admin/cards-for-table', 'Cards@dataForTable')->name('admin.cards.forTable');
+Route::get('admin/cards-for-table', 'CardsController@dataForTable')->name('admin.cards.forTable');
 Route::get('admin/cards_groups-for-table', 'Cards_GroupsController@dataForTable')->name('admin.cards_groups.forTable');
 Route::get('admin/users_cards-for-table', 'UserCardsController@dataForTable')->name('admin.users_cards.forTable');
 
