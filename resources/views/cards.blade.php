@@ -1,3 +1,4 @@
+<?php use Illuminate\Support\Facades\Auth; ?>
 @extends ('layouts.default')
 
 @section('title-block')
@@ -6,6 +7,11 @@
 
 
 @section('content')
+
+@if(Auth::check() && Auth::user()->isAdmin())
+    @include('inc.admin')
+@endif
+
   <!-- ##### Breadcumb Area Start ##### -->
 
   <?php

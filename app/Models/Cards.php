@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Cards_groups;
 
 class Cards extends Model{
+
+    protected $guarded = [];
     
     public function allData(){
         $cards = $this->orderBy('card_group')->select()->get();

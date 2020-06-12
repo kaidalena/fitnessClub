@@ -2,7 +2,7 @@ var trainersDB = [];
 var colors = [];
 
 function checkTabs(elem){
-    console.log(trainersDB);
+    // console.log(trainersDB);
 
     var buttons = document.getElementsByClassName('input');
 
@@ -20,7 +20,7 @@ function checkTabs(elem){
         newClass = colors[elem.id];
     }
 
-    console.log("new Class=" + newClass);
+    // console.log("new Class=" + newClass);
 
     var cells = document.getElementsByClassName('cell');
     for (var i=9, q=0; i<cells.length; i++){

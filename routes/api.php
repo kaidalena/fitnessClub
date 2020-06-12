@@ -45,3 +45,11 @@ Route::post('admin/trainings/delete', 'TrainingsController@delete')->name('admin
 Route::post('admin/training_groups/create', 'Training_GroupsController@create')->name('admin.training_groups.create');
 Route::post('admin/training_groups/change', 'Training_GroupsController@change')->name('admin.training_groups.change');
 Route::post('admin/training_groups/delete', 'Training_GroupsController@delete')->name('admin.training_groups.delete');
+
+Route::post('admin/cards/create', 'CardsController@create')->name('admin.cards.create');
+Route::post('admin/cards/change', 'CardsController@change')->name('admin.cards.change');
+Route::post('admin/cards/delete', 'CardsController@delete')->name('admin.cards.delete');
+
+Route::post('admin/cards_groups/create', 'Cards_GroupsController@create')->name('admin.cards_groups.create');
+Route::post('admin/cards_groups/change', 'Cards_GroupsController@change')->name('admin.cards_groups.change');
+Route::post('admin/cards_groups/delete', 'Cards_GroupsController@delete')->name('admin.cards_groups.delete');
