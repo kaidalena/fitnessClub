@@ -4,8 +4,12 @@
     padding: 0;
 }
 
-input, button, textarea {
+input, button, textarea, select{
     outline: none;
+}
+
+select{
+    cursor: pointer;
 }
 
 body {
@@ -1194,11 +1198,13 @@ h5 {
     margin: 20px auto;
 }
 
-.admin #inputs-container input {
+.admin #inputs-container input, 
+.admin #inputs-container select{
+    outline: none;
     height: 40px;
     min-width: 100px;
     width: auto;
-    margin-right: 10px;
+    margin: 10px 10px 0 0;
     padding: 10px;
     background: #e6e6e6;
     color: #666;
