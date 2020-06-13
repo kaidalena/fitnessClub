@@ -71,8 +71,8 @@
               <form action="{{ route('cardsBuy') }}" method="post">
                 @csrf
                 <input type="hidden" name="card_id" id="card_id" value="">
-                <input type="submit" value="Да">
-                <input type="button" id="buttonNo" value="Нет" >
+                <input type="submit" value="{{ __('header')['yes'] }}">
+                <input type="button" id="buttonNo" value="{{ __('header')['no'] }}" >
               </form>
             </p>
 

@@ -4,11 +4,11 @@
     padding: 0;
 }
 
-input, button, textarea, select{
+input, button, textarea, select {
     outline: none;
 }
 
-select{
+select {
     cursor: pointer;
 }
 
@@ -1177,7 +1177,7 @@ h5 {
     padding: 10px;
 }
 
-.admin #adminTable tr:hover { 
+.admin #adminTable tr:hover {
     background: radial-gradient(#b6e358, #38b143);
     color: black;
     cursor: pointer;
@@ -1201,13 +1201,13 @@ h5 {
     justify-content: center;
 }
 
-.admin #inputs-container label{
+.admin #inputs-container label {
     display: block;
     font-size: 16px;
 }
 
-.admin #inputs-container input, 
-.admin #inputs-container select{
+.admin #inputs-container input,
+.admin #inputs-container select {
     outline: none;
     height: 40px;
     min-width: 100px;
@@ -3685,6 +3685,14 @@ select.form-control:focus::-ms-value {
 
 .icon-warp {
     display: flex;
+}
+
+.locale {
+    color: #FFF;
+}
+
+.locale:hover {
+    color: #fff;
 }
 
 /* Услуги */

@@ -11,10 +11,10 @@
     <div class="brand">
       <div class="containerLena">
         <div class="titlesLena">
-          <h2>Контакты</h2>
+          <h2>{{ __('header')['contact'] }}</h2>
           <ol class="itemsLena">
-            <li class="itemLena"><a href="#">Связаться с нами</a></li>
-            <li class="itemLena"><a href="#">Где мы находимся</a></li>
+            <li class="itemLena"><a href="#">{{ __('header')['ccn'] }}</a></li>
+            <li class="itemLena"><a href="#">{{ __('header')['gmx'] }}</a></li>
           </ol>
         </div>
       </div>
@@ -28,7 +28,7 @@
       <div class="row">
         <div class="col-12">
           <div class="contact-title">
-            <h3>Связаться с нами</h3>
+            <h3>{{ __('header')['ccn'] }}</h3>
           </div>
         </div>
       </div>
@@ -40,16 +40,16 @@
             <div class="contact-form-area">
               <form action="#" method="post">
                 <div class="form-group">
-                  <input type="text" class="form-control" id="name" placeholder="Ваше имя">
+                  <input type="text" class="form-control" id="name" placeholder="{{ __('header')['vi'] }}">
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control" id="email" placeholder="Ваш эмейл">
+                  <input type="email" class="form-control" id="email" placeholder="{{ __('header')['ve'] }}">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" id="subject" placeholder="Тема">
+                  <input type="text" class="form-control" id="subject" placeholder="{{ __('header')['tema'] }}">
                 </div>
                 <div class="form-group">
-                  <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Сообщение"></textarea>
+                  <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="{{ __('header')['message'] }}"></textarea>
                 </div>
                 <button class="btn fitness-btn btn-2 mt-30" type="submit">{{ __('header')['send'] }}</button>
               </form>

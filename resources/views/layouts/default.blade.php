@@ -54,7 +54,6 @@
               </div>
 
               <!-- Nav Start -->
-              <a href="{{ route('locale', __('header')['next_locale']) }}">Язык {{ __('header')['next_locale'] }}</a>
               <div class="classynav">
                 <ul>
                   <li><a href="{{ route('index') }}">{{ __('header')['main'] }}</a></li>
@@ -109,6 +108,7 @@
             <div class="footer_cont">
               <p> {{ __('header')['foot'] }}</p>
               <div class="footer_cont">
+                <a class="locale" href="{{ route('locale', __('header')['next_locale']) }}">Язык {{ __('header')['next_locale'] }}</a>
                 <a href="#"><img class="img_cont" src="\img\core-img\Vk.png"></a>
                 <a href="#"><img class="img_cont" src="\img\core-img\insta.png"></a>
                 <a href="#"><img class="img_cont" src="\img\core-img\telegram.png"></a>

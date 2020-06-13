@@ -88,11 +88,11 @@
       </div>
       <form class="responsForm" action="{{ route('about-respons-post') }}" method="post">
         @csrf
-        <h3>{{ __('header')['nf'] }}</h3>
+        <h3></h3>
         <br/>
-        <textarea name="message" placeholder="Ваш отзыв..."></textarea>
+        <textarea name="message" placeholder="{{ __('header')['feed'] }}"></textarea>
         <br/>
-        <input type="submit" value="Отправить">
+        <input type="submit" value="{{ __('header')['send'] }}">
       </form>
     </div>
   </div>
