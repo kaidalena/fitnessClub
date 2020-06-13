@@ -90,6 +90,10 @@ More than 350,000 people are customers of the network.",
   'register'=> "Register",
   'gmx'=> "Where are we located",
   'ccn'=> "Contact us",
+  'oform'=>"Arrange",
+  'nk'=>"Card number",
+  'data'=>"Date",
   'message'=> "Message",
+  'rub'=>"rub.",
   'next_locale' => 'ru'
 ];

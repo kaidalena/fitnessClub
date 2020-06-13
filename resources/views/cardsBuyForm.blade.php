@@ -31,7 +31,7 @@
                     <div class="description">
                         <h5>{{ __('header')['nedel'] }} {{ $card->number_of_weeks }}</h5>
                         <h5>{{ __('header')['zvn'] }} {{ $card->number_of_training }}</h5>
-                        <h5> {{ $card->prise }} руб.</h5>
+                        <h5> {{ $card->prise }} {{ __('header')['rub'] }}</h5>
                     </div>
                     </div>
             </div>
@@ -43,18 +43,18 @@
                 <input type="hidden" name="user_id" value="1">
 
                 <label for="name">{{ __('header')['name'] }} </label>
-                <input type="text" name="name" class="input" placeholder="Имя" value="{{$user->name}}"><br/>
+                <input type="text" name="name" class="input" placeholder="{{ __('header')['name'] }}" value="{{$user->name}}"><br/>
                 <label for="surname">{{ __('header')['surname'] }}</label>
-                <input type="text" name="surname" class="input" placeholder="Фамилия" value="{{$user->surname}}"><br/>
+                <input type="text" name="surname" class="input" placeholder="{{ __('header')['surname'] }}" value="{{$user->surname}}"><br/>
                 <label for="email">Email</label>
                 <input type="email"  name="email" class="input" placeholder="Email" value="{{$user->email}}"><br/>
 
                 <label for="numberCard" id="pay">{{ __('header')['order'] }}</label>
-                <input type="number"  name="numberCard" class="input" placeholder="Номер карты">
-                <p> <input type="text"  name="dateCard" class="input cards" placeholder="Дата">
+                <input type="number"  name="numberCard" class="input" placeholder="{{ __('header')['nk'] }}">
+                <p> <input type="text"  name="dateCard" class="input cards" placeholder="{{ __('header')['data'] }}">
                 <input type="number"  name="cidCard" class="input cards" placeholder="CID"></p>
 
-                <input type="submit" class="submit" value="Оформить">
+                <input type="submit" class="submit" value="{{ __('header')['oform'] }}">
 
             </form>
         </div>
