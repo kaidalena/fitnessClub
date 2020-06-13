@@ -51,7 +51,7 @@
                 <div class="form-group">
                   <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Сообщение"></textarea>
                 </div>
-                <button class="btn fitness-btn btn-2 mt-30" type="submit">Отправить</button>
+                <button class="btn fitness-btn btn-2 mt-30" type="submit">{{ __('header')['send'] }}</button>
               </form>
             </div>
           </div>

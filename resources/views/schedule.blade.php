@@ -18,13 +18,13 @@
   <!-- ##### Breadcumb Area Start ##### -->
 
     <script> saveDB(<?php echo json_encode($trainings); ?>)
-            saveTabs(<?php echo json_encode($groups); ?>) 
+            saveTabs(<?php echo json_encode($groups); ?>)
     </script>
     <div class="mainTitleLena" style="background-image: url(img/bg-img/breadcumb.jpg);">
       <div class="brand">
         <div class="containerLena">
             <div class="titlesLena tabs">
-                <h2>Расписание</h2>
+                <h2>{{ __('header')['rasp'] }}</h2>
                 <p></p>
                 <div class="tabsLena" id="divTabs">
                     @foreach($groups as $tab)
@@ -36,7 +36,7 @@
                 </div>
             </div>
         </div>
-      </div>  
+      </div>
     </div>
 
   <!-- Первая часть страницы "Основная информация" -->
@@ -48,25 +48,25 @@
         <div class="cell entry"></div>
 
         <div class="cell entry">
-            <div class="mark">Понедельник</div>
+            <div class="mark">{{ __('header')['pon'] }}</div>
         </div>
         <div class="cell entry">
-            <div class="mark">Вторник</div>
+            <div class="mark">{{ __('header')['vt'] }}</div>
         </div>
         <div class="cell entry">
-            <div class="mark">Среда</div>
+            <div class="mark">{{ __('header')['cr'] }}</div>
         </div>
         <div class="cell entry">
-            <div class="mark">Четверг</div>
+            <div class="mark">{{ __('header')['chet'] }}</div>
         </div>
         <div class="cell entry">
-            <div class="mark">Пятница</div>
+            <div class="mark">{{ __('header')['pt'] }}</div>
         </div>
         <div class="cell entry">
-            <div class="mark">Суббота</div>
+            <div class="mark">{{ __('header')['sb'] }}</div>
         </div>
         <div class="cell entry">
-            <div class="mark">Воскресенье</div>
+            <div class="mark">{{ __('header')['vs'] }}</div>
         </div>
 
 
@@ -97,7 +97,7 @@
                 <div class="cell {{ $temp['sunday']['color'] }}">
                     <div class="info">{{ $temp['sunday']['name'] }}</div>
                 </div>
-                    
+
             @endforeach
         @endif
 
@@ -106,4 +106,3 @@
     </div>
   </div>
   @endsection
-

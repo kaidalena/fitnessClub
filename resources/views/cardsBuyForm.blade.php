@@ -11,10 +11,10 @@
       <div class="brand">
         <div class="containerLena">
             <div class="titlesLena">
-                <h2>Оформление абонемента</h2>
+                <h2>{{ __('header')['oa'] }}</h2>
             </div>
         </div>
-      </div>  
+      </div>
 </div>
 
     <div class="container-form" style="background-image: url(/img/bg-img/bg-8.jpg);">
@@ -29,8 +29,8 @@
                         <div class="filledbar"></div>
                     </div>
                     <div class="description">
-                        <h5>Недель: {{ $card->number_of_weeks }}</h5>
-                        <h5>Занятий в неделю: {{ $card->number_of_training }}</h5>
+                        <h5>{{ __('header')['nedel'] }} {{ $card->number_of_weeks }}</h5>
+                        <h5>{{ __('header')['zvn'] }} {{ $card->number_of_training }}</h5>
                         <h5> {{ $card->prise }} руб.</h5>
                     </div>
                     </div>
@@ -39,25 +39,25 @@
 
             <form class="contentForm" action="{{ route('cards-buy-post') }}" method="post">
                 @csrf
-                <input type="hidden" name="card_id" value="{{ $_POST['card_id'] }}">   
-                <input type="hidden" name="user_id" value="1">                
+                <input type="hidden" name="card_id" value="{{ $_POST['card_id'] }}">
+                <input type="hidden" name="user_id" value="1">
 
-                <label for="name"> Имя</label>
+                <label for="name">{{ __('header')['name'] }} </label>
                 <input type="text" name="name" class="input" placeholder="Имя" value="{{$user->name}}"><br/>
-                <label for="surname">Фамилия</label>
+                <label for="surname">{{ __('header')['surname'] }}</label>
                 <input type="text" name="surname" class="input" placeholder="Фамилия" value="{{$user->surname}}"><br/>
                 <label for="email">Email</label>
                 <input type="email"  name="email" class="input" placeholder="Email" value="{{$user->email}}"><br/>
 
-                <label for="numberCard" id="pay"> Оплата</label>
+                <label for="numberCard" id="pay">{{ __('header')['order'] }}</label>
                 <input type="number"  name="numberCard" class="input" placeholder="Номер карты">
                 <p> <input type="text"  name="dateCard" class="input cards" placeholder="Дата">
                 <input type="number"  name="cidCard" class="input cards" placeholder="CID"></p>
 
-                <input type="submit" class="submit" value="Оформить"> 
- 
+                <input type="submit" class="submit" value="Оформить">
+
             </form>
-        </div>                
+        </div>
     </div>
 
     @endsection

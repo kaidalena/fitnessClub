@@ -60,31 +60,31 @@
                   <li><a href="{{ route('index') }}">{{ __('header')['main'] }}</a></li>
                   <li><a href="{{ route('about') }}">{{ __('header')['about'] }}</a>
                     <ul class="dropdown">
-                      <li><a href="#">Основная информация</a></li>
-                      <li><a href="#">Отзывы</a></li>
+                      <li><a href="#">{{ __('header')['Basic_information'] }}</a></li>
+                      <li><a href="#">{{ __('header')['reviews'] }}</a></li>
                     </ul>
                   </li>
-                  <li><a href="{{ route('gallery') }}">Галерея</a>
+                  <li><a href="{{ route('gallery') }}">{{ __('header')['gallary'] }}</a>
                     <ul class="dropdown">
-                      <li><a href="#">Наши тренера</a></li>
-                      <li><a href="#">Фото залов</a></li>
+                      <li><a href="#">{{ __('header')['trainers'] }} </a></li>
+                      <li><a href="#">{{ __('header')['foto'] }} </a></li>
                     </ul>
                   </li>
-                  <li><a href="{{ route('service') }}">Услуги</a>
+                  <li><a href="{{ route('service') }}">{{ __('header')['service'] }}</a>
                     <ul class="dropdown">
-                      <li><a href="#">Кардио тренировки</a></li>
-                      <li><a href="#">Силовые тренировки</a></li>
-                      <li><a href="#">Аэробные тренировки</a></li>
-                      <li><a href="#">Тренажерный зал</a></li>
+                      <li><a href="#">{{ __('header')['cardio'] }}</a></li>
+                      <li><a href="#">{{ __('header')['sila'] }}</a></li>
+                      <li><a href="#">{{ __('header')['aero'] }}</a></li>
+                      <li><a href="#">{{ __('header')['tranaj'] }}</a></li>
                     </ul>
                   </li>
-                  <li><a href="{{ route('schedule') }}">Расписание</a></li>
-                  <li><a href="{{ route('contact') }}">Контакты</a></li>
+                  <li><a href="{{ route('schedule') }}">{{ __('header')['rasp'] }}</a></li>
+                  <li><a href="{{ route('contact') }}">{{ __('header')['contact'] }}</a></li>
                 </ul>
 
                 <!-- Call Button -->
-                <a href="{{ route('cards') }}" class="fitness-btn menu-btn ml-30">Клубные карты</a>
-                <a href="{{ route('account') }}" class="fitness-btn menu-btn ml-30">Личный кабинет</a>
+                <a href="{{ route('cards') }}" class="fitness-btn menu-btn ml-30">{{ __('header')['cards'] }}</a>
+                <a href="{{ route('account') }}" class="fitness-btn menu-btn ml-30">{{ __('header')['cabinet'] }}</a>
 
               </div>
               <!-- Nav End -->
@@ -107,7 +107,7 @@
         <div class="row">
           <div class="col-12">
             <div class="footer_cont">
-              <p> Мы в соцсетях : </p>
+              <p> {{ __('header')['foot'] }}</p>
               <div class="footer_cont">
                 <a href="#"><img class="img_cont" src="\img\core-img\Vk.png"></a>
                 <a href="#"><img class="img_cont" src="\img\core-img\insta.png"></a>

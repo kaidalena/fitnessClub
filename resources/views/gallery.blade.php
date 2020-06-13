@@ -13,10 +13,10 @@
     <div class="brand">
       <div class="containerLena">
         <div class="titlesLena">
-          <h2>Галерея</h2>
+          <h2>{{ __('header')['gallary'] }}</h2>
           <ol class="itemsLena">
-            <li class="itemLena"><a href="#">Наши тренера</a></li>
-            <li class="itemLena"><a href="#">Фото залов</a></li>
+            <li class="itemLena"><a href="#">{{ __('header')['trainers'] }}</a></li>
+            <li class="itemLena"><a href="#">{{ __('header')['foto'] }}</a></li>
           </ol>
         </div>
       </div>
@@ -30,7 +30,7 @@
         <div class="col-12">
           <div class="section-heading">
             <h6>Fitness Gym</h6>
-            <h2>Наши тренера</h2>
+            <h2>{{ __('header')['trainers'] }}</h2>
           </div>
         </div>
       </div>
@@ -114,7 +114,7 @@
   <div class="commentsLenaRa">
     <div class="containerLena">
       <div class="titleHow">
-        <h2 class="titleFoto" align="center">Фото залов</h2>
+        <h2 class="titleFoto" align="center">{{ __('header')['foto'] }}</h2>
       </div>
     </div>
   </div>

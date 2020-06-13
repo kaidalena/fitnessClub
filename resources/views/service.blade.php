@@ -14,10 +14,10 @@
     <div class="brand">
         <div class="containerLena">
             <div class="titlesLena">
-                <h2>Услуги</h2>
+                <h2>{{ __('header')['service'] }}</h2>
                 <ol class="itemsLena">
-                    <li class="itemLena"><a href="#">Услуги</a></li>
-                    <li class="itemLena"><a href="#">Преимущества</a></li>
+                    <li class="itemLena"><a href="#">{{ __('header')['service'] }}</a></li>
+                    <li class="itemLena"><a href="#">{{ __('header')['prem'] }}</a></li>
                 </ol>
             </div>
         </div>
@@ -29,11 +29,11 @@
     <div class="wrap">
         <div class="title_parent">
             <div class="title">Fitness Gym </div>
-            <div class="title_caption">Fitness Gym - это современный и качественный фитнес по самой доступной цене!
+            <div class="title_caption">{{ __('header')['text1'] }}
                 <br><br>
-                В нашем фитнес-клубе есть абсолютно все, для вашего активного времяпровождения!
+                {{ __('header')['text2'] }}
                 <br>
-                Воспользуйтесь всеми нашими услугами:
+                {{ __('header')['text3'] }}
             </div>
         </div>
     </div>
@@ -141,7 +141,7 @@
 
 <section class="advantage content_section">
         <div class="title_parent">
-            <div class="title title_dark">Наши преимущества</div>
+            <div class="title title_dark">{{ __('header')['np'] }}</div>
             <!--      <div class="title_caption title_caption_dark">Мы новейший фитнес-клуб бизнес класса общей площадью 2100 кв.м. на северо-востоке Москвы.</div>-->
         </div>
         <div class="">

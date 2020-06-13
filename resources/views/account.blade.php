@@ -32,18 +32,18 @@
             <div class="titlesLena">
                 <h2>{{$user->name}} {{$user->surname}}</h2>
                 <ol class="itemsLena">
-                    <li class="itemLena"><a href="#">Моя информация</a></li>
-                    <li class="itemLena"><a href="#">Календарь</a></li>
-                    <li class="itemLena"><a href="#">Мои абонементы</a></li>
+                    <li class="itemLena"><a href="#">{{ __('header')['myinf'] }}</a></li>
+                    <li class="itemLena"><a href="#">{{ __('header')['calendar'] }}</a></li>
+                    <li class="itemLena"><a href="#">{{ __('header')['my_abonoment'] }}</a></li>
                 </ol>
             </div>
         </div>
-      </div>  
+      </div>
     </div>
 
 
   <!-- Первая часть страницы "Основная информация" -->
-  
+
 
   <div class="basic-infoLena" >
     <div class="containerLena">
@@ -55,9 +55,9 @@
             <div id="infoAboutMe" class="infoAboutMe">
                 <div class="myData">
                     <div class="titles">
-                        <h2>Дата рождения: </h2>
-                        <h2>Вес: </h2>
-                        <h2>Рост: </h2>
+                        <h2>{{ __('header')['dr'] }}</h2>
+                        <h2>{{ __('header')['height'] }}</h2>
+                        <h2>{{ __('header')['rost'] }}</h2>
                         <h2>Email: </h2>
                     </div>
                     <div class="entry">
@@ -78,7 +78,7 @@
       <div class="containerLena" >
         <div class="border" id="show">
           <div class="infoDate" id="infoDate">
-            
+
           </div>
           <script>show(this)</script>
         </div>
@@ -90,7 +90,7 @@
         <div class="containerLena">
 
           <div class="currentCards">
-            <h2>Действующие абонементы</h2>
+            <h2>{{ __('header')['da'] }}</h2>
             <div class="containerCards">
 
             @foreach($cards as $card)
@@ -102,8 +102,8 @@
                     <div class="filledbar"></div>
                   </div>
                   <div class="description">
-                    <h4>Действителен до <?php echo date("m.d.y", strtotime($card['expiry_date'])); ?></h5>
-                    <h4>Остаток занятий: {{ $card['remains'] }}</h4>
+                    <h4>{{ __('header')['dd'] }}<?php echo date("m.d.y", strtotime($card['expiry_date'])); ?></h5>
+                    <h4>{{ __('header')['oz'] }} {{ $card['remains'] }}</h4>
                     <p>#<?php echo sprintf("%'.09d\n", $card['id']); ?></p>
                   </div>
                 </div>
@@ -115,7 +115,7 @@
 
 
           <div class="usedCards">
-            <h2>Истекшие абонементы</h2>
+            <h2>{{ __('header')['ia'] }}</h2>
             <div class="containerCards">
 
             @foreach($cards as $card)
@@ -127,7 +127,7 @@
                     <div class="filledbar"></div>
                   </div>
                   <div class="description">
-                    <h4>Истек  <?php echo date("m.d.y", strtotime($card['expiry_date'])); ?></h5>
+                    <h4>{{ __('header')['istek'] }} <?php echo date("m.d.y", strtotime($card['expiry_date'])); ?></h5>
                     <div id="id"><p>#<?php echo sprintf("%'.09d\n", $card['id']); ?></p></div>
                   </div>
                 </div>

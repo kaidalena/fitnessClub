@@ -23,8 +23,8 @@
         <div class="titlesLena">
             <h2>О нас</h2>
             <ol class="itemsLena">
-                <li class="itemLena"><a href="#">Основная информация</a></li>
-                <li class="itemLena"><a href="#">Отзывы</a></li>
+                <li class="itemLena"><a href="#">{{ __('header')['Basic_information'] }}</a></li>
+                <li class="itemLena"><a href="#">{{ __('header')['reviews'] }}</a></li>
             </ol>
         </div>
       </div>
@@ -39,13 +39,11 @@
         <div class="all-textLena">
           <div class="titleLena">
             <h6>Fitness Gym</h6>
-            <h2>Почему стоит выбрать Fitness Gym?</h2>
+            <h2>{{ __('header')['ty'] }}</h2>
           </div>
           <div class="about-textLena">
-            <p>Fitness Gym – самая разветвленная сеть фитнес-клубов России: в сети более 90 клубов. С нами вы можете быть уверены в безопасности своего здоровья – дипломированный тренерский состав всегда к вашим услугам. Наши клиенты весьма
-              разноплановые люди: профессиональные спортсмены, медийные персоны, менеджеры высшего и среднего звена, творческие личности и домохозяйки – и к каждому из них у нас индивидуальный подход, соответствующий самым требовательным запросам.
-              Свыше 350 000 человек являются клиентами сети. </p>
-            <p> Приобщиться к миру спорта и здорового образа жизни просто — достаточно найти ближайший к вам клуб Fitness Gym.</p>
+            <p>{{ __('header')['tyy'] }} </p>
+            <p>{{ __('header')['tyyy'] }}</p>
           </div>
         </div>
 
@@ -62,7 +60,7 @@
   <div class="commentsLena" style="background-image: url(img/bg-img/bg-13.jpg);">
     <div class="containerLena">
       <div class="titleLena">
-        <h2>Отзывы</h2>
+        <h2>{{ __('header')['reviews'] }}</h2>
       </div>
 
       <!-- вывод из БД -->
@@ -78,7 +76,7 @@
       </div>
       @endforeach
 
-      
+
     </div>
   </div>
 
@@ -86,11 +84,11 @@
   <div class="basic-infoLena">
     <div class="containerLena">
       <div class="titleLena">
-        <h2>Оставить свой отзыв</h2>
+        <h2>{{ __('header')['reviewsO'] }}</h2>
       </div>
       <form class="responsForm" action="{{ route('about-respons-post') }}" method="post">
         @csrf
-        <h3>Имя Фамилия</h3>
+        <h3>{{ __('header')['nf'] }}</h3>
         <br/>
         <textarea name="message" placeholder="Ваш отзыв..."></textarea>
         <br/>

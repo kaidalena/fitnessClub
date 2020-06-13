@@ -20,47 +20,47 @@
                 </div>
             </div>
         </div>
-      </div>  
+      </div>
 </div>
 
 <div class="container-form login" style="background-image: url(/img/bg-img/bg-19.jpg);">
         <div class="block-form" id="enter">
-            
+
             <form class="contentForm"  action="{{ route('login') }}" method="post">
                 @csrf
-                
+
                 <label for="email">Email</label>
                 <input type="email"  name="email" class="input" placeholder="Email"><br/>
-                <label for="password">Пароль</label>
+                <label for="password">{{ __('header')['password'] }}</label>
                 <input type="password" name="password" class="input" placeholder="Пароль"><br/>
-                
-                <input type="submit" class="submit" value="Войти"> 
- 
+
+                <input type="submit" class="submit" value="Войти">
+
             </form>
-        </div>       
+        </div>
 
         <div class="block-form" id="registration" style="display: none;">
-            
+
             <form class="contentForm" action="{{ route('register') }}" method="post">
                 @csrf
-                
+
                 <label for="name"> Имя</label>
                 <input type="text" id="name" name="name" class="input" placeholder="Имя"><br/>
-                <label for="surname">Фамилия</label>
+                <label for="surname">{{ __('header')['surname'] }}</label>
                 <input type="text" id="surname" name="surname" class="input" placeholder="Фамилия"><br/>
-                <label for="birthday">Дата рождения</label>
+                <label for="birthday">{{ __('header')['dr'] }}</label>
                 <input type="text" id="birthday" name="birthday" class="input" placeholder="Дата рождения"><br/>
                 <label for="email">Email</label>
                 <input type="email" id="email"  name="email" class="input" placeholder="Email"><br/>
-                <label for="password">Пароль</label>
+                <label for="password">{{ __('header')['password'] }}</label>
                 <input type="password" id="password" name="password" class="input" placeholder="Пароль"><br/>
-                <label for="twoPassword">Повтор пароля</label>
+                <label for="twoPassword">{{ __('header')['passwordd'] }}я</label>
                 <input type="password" id="password-confirm" name="password_confirmation" class="input" placeholder="Повтор пароля"><br/>
-                
-                <input type="submit" class="submit" value="Зарегестрироваться"> 
- 
+
+                <input type="submit" class="submit" value="Зарегестрироваться">
+
             </form>
-        </div>                
+        </div>
     </div>
 
     @endsection
