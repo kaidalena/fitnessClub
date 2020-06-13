@@ -15,7 +15,7 @@ return [
   'tranaj'=>"Gym",
   'rasp'=>"Schedule",
   'contact'=>"Contacts",
-  'cards'=>"Club card",
+  'cards'=>"Club cards",
   'cabinet'=>"Personal account",
   'foot'=>"We are in social networks:",
   'ty'=>"Why choose a Fitness Gym?",
