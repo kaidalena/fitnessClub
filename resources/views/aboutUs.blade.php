@@ -21,7 +21,7 @@
     <div class="brand">
       <div class="containerLena">
         <div class="titlesLena">
-            <h2>О нас</h2>
+            <h2>{{ __('header')['about'] }}О нас</h2>
             <ol class="itemsLena">
                 <li class="itemLena"><a href="#">{{ __('header')['Basic_information'] }}</a></li>
                 <li class="itemLena"><a href="#">{{ __('header')['reviews'] }}</a></li>
