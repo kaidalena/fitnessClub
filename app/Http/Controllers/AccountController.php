@@ -57,7 +57,7 @@ class AccountController extends Controller{
         $account = new Users();
         $name = $req->input('name');
         $surname = $req->input('surname');
-        $birthday = date("Y-m-d H:i:s", strtotime($req->input('birthday')));
+        $birthday = date("Y-m-d", strtotime($req->input('birthday')));
         $email = $req->input('email');
         $weight = (!empty($req->input('weight'))) ? $req->input('weight') : 'null';
         $height = (!empty($req->input('height'))) ? $req->input('height') : 'null';

@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class AccountRequest extends FormRequest
 {
@@ -21,18 +22,27 @@ class AccountRequest extends FormRequest
      * @return array
      */
     public function rules(){
+        $id = Auth::id();
         return [
-            'name'=> 'required|min:3',
-            'email' => 'required|email'
+            'name' => ['required', 'string', 'max:255'],
+            'surname' => ['required', 'string', 'max:255'],
+            'birthday' => ['required','date', 'date_format:Y-m-d', 'before:'.date("Y-m-d")], //date, date_format:format
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,'.$id],
         ];
     }
 
     public function messages(){
         
         return [
-            'name.required' => 'Поле Имя является обязательным',
+            'name.required' => 'Поле Имя не должно быть пустым',
+            'surname.required' => 'Поле Фамилия не должно быть пустым',
+            'birthday.required' => 'Поле Дата рождения не должно быть пустым',
+            'birthday.date' => 'Формат даты рождения должно быть: дд.мм.гггг',
+            'birthday.before' => 'Дата рождения должна быть ранее чем '.date("d.m.Y"),
+            'email.email' => 'Некорректный Email',
+            'email.unique' => 'Такой Email уже зарегестрирован',
             'email.required' => 'Поле Email является обязательным',
-            'email.email' => 'Некорректный Email'
+
         ];
     }
 }
