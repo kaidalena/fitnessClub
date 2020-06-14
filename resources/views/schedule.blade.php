@@ -106,4 +106,7 @@
       </div>
     </div>
   </div>
+  <script>
+                        $("#0").click();
+                    </script>
   @endsection

@@ -232,7 +232,7 @@ footer, header {
 }
 
 .tabsLena .checked, .tabsLena p.input.checked:hover {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(73, 78, 96);
 }
 
 .mainTitleLena .containerLena .itemsLena li {
@@ -240,11 +240,15 @@ footer, header {
 }
 
 .basic-infoLena {
-    /* background-color: rgb(236, 236, 236); */
+    /* background-color: rgb(73, 78, 96); */
     padding-top: 100px;
     padding-bottom: 100px;
     margin: 0;
     position: relative;
+}
+
+.basic-infoLena.table {
+    background-color: rgb(73, 78, 96);
 }
 
 .basic-infoLena .containerLena {
@@ -454,6 +458,8 @@ h5 {
     cursor: default;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
+    justify-content: center;
+    display: flex;
 }
 
 .cell .mark {
@@ -469,9 +475,9 @@ h5 {
 .cell .info {
     font: 700 20px/1.3 "Poppins", sans-serif;
     text-align: center;
-    margin: 0.3em 0 0;
     -webkit-transition: 0.8s ease 600ms;
     transition: 0.8s ease 600ms;
+    margin: auto 0;
 }
 
 .cell:hover {
@@ -1241,6 +1247,7 @@ h5 {
 .admin #adminTable tr:nth-child(even) {
     background: #eceaea;
     color: black;
+    height: 50px;
 }
 
 .admin #inputs-container {
