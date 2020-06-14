@@ -49,7 +49,7 @@
     <div class="containerLena">
 
         <div class="columnsLena account">
-            <div class="myFoto" style="background-image: url(img/YeLs5h1hyP8.jpg);">
+            <div class="myFoto" style="background-image: url(img/avatar.png);">
             </div>
 
             <div id="infoAboutMe" class="infoAboutMe">
@@ -88,13 +88,16 @@
 
     <div class="myCards">
         <div class="containerLena">
-
+          <?php $i=0; $t=0 ?>
           <div class="currentCards">
             <h2>{{ __('header')['da'] }}</h2>
             <div class="containerCards">
-
+            
             @foreach($cards as $card)
               @if (strtotime($card['expiry_date']) >= strtotime($today))
+              @if($i%2 === 0 && $i!==0)
+              </div> <div class="containerCards">
+              @endif
                 <div class="card {{ $card['group']->color }}" id="{{ $card['card']->id }}">
                   <h3 class="titleCards">{{ $card['card']->name }}</h3>
                   <div class="bar">
@@ -107,6 +110,7 @@
                     <p>#<?php echo sprintf("%'.09d\n", $card['id']); ?></p>
                   </div>
                 </div>
+                <?php $i++;?>
                 @endif
             @endforeach
             </div>
@@ -120,6 +124,9 @@
 
             @foreach($cards as $card)
               @if (strtotime($card['expiry_date']) < strtotime($today))
+              @if($t%2 === 0 && $t!==0)
+              </div> <div class="containerCards">
+              @endif
                 <div class="card gray" id="{{ $card['card']->id }}">
                   <h3 class="titleCards">{{ $card['card']->name }}</h3>
                   <div class="bar">
@@ -131,6 +138,7 @@
                     <div id="id"><p>#<?php echo sprintf("%'.09d\n", $card['id']); ?></p></div>
                   </div>
                 </div>
+                <?php $t++; ?>
                 @endif
             @endforeach
 

@@ -46,6 +46,9 @@
           @if( $card->card_group != $temp->id )
             @break;
           @endif
+          @if($i%3 === 0 && $i!==0)
+          </div> <div class="containerCards">
+          @endif
             <div class="card black" id="{{ $card->id }}" onclick="test(this)">
               <h3 class="titleCards">{{ $card->name }}</h3>
               <div class="bar">
