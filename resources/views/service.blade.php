@@ -1,3 +1,5 @@
+<?php use Illuminate\Support\Facades\Auth; ?>
+@php($noDropdown = true)
 @extends ('layouts.default')
 
 @section('title-block')

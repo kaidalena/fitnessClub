@@ -63,7 +63,7 @@
                     @if(!$noDropdown)
                     <ul class="dropdown">
                       <li><a href="{{ route('about') . '#t1' }}">{{ __('header')['Basic_information'] }}</a></li>
-                      <li><a href="#">{{ __('header')['reviews'] }}</a></li>
+                      <li><a href="{{ route('about') . '#t2' }}">{{ __('header')['reviews'] }}</a></li>
                     </ul>
                     @endif
                   </li>
@@ -71,18 +71,18 @@
                   <li><a href="{{ route('gallery') }}">{{ __('header')['gallary'] }}</a>
                     @if(!$noDropdown)
                     <ul class="dropdown">
-                      <li><a href="#">{{ __('header')['trainers'] }} </a></li>
-                      <li><a href="#">{{ __('header')['foto'] }} </a></li>
+                      <li><a href="{{ route('gallery') . '#t3' }}">{{ __('header')['trainers'] }} </a></li>
+                      <li><a href="{{ route('gallery') . '#t4' }}">{{ __('header')['foto'] }} </a></li>
                     </ul>
                       @endif
                   </li>
                   <li><a href="{{ route('service') }}">{{ __('header')['service'] }}</a>
                     @if(!$noDropdown)
                     <ul class="dropdown">
-                      <li><a href="#">{{ __('header')['cardio'] }}</a></li>
-                      <li><a href="#">{{ __('header')['sila'] }}</a></li>
-                      <li><a href="#">{{ __('header')['aero'] }}</a></li>
-                      <li><a href="#">{{ __('header')['tranaj'] }}</a></li>
+                      <li><a href="{{ route('service'). '#t5' }}">{{ __('header')['cardio'] }}</a></li>
+                      <li><a href="{{ route('service') . '#t5'}}">{{ __('header')['sila'] }}</a></li>
+                      <li><a href="{{ route('service'). '#t5' }}">{{ __('header')['aero'] }}</a></li>
+                      <li><a href="{{ route('service') . '#t5'}}">{{ __('header')['tranaj'] }}</a></li>
                     </ul>
                     @endif
                   </li>

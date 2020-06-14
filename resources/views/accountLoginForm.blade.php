@@ -1,3 +1,5 @@
+<?php use Illuminate\Support\Facades\Auth; ?>
+@php($noDropdown = true)
 @extends ('layouts.default')
 
 @section('title-block')
@@ -24,7 +26,7 @@
 </div>
 
 <div class="container-form login" style="background-image: url(/img/bg-img/bg-19.jpg);">
-    
+
         <div class="block-form" id="enter">
 
             @include('inc.messages')
