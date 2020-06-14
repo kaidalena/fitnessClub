@@ -37,18 +37,19 @@
 
   <!-- Первая часть страницы "Основная информация" -->
   <div class="basic-infoLena" >
-    <div class="containerLena cards" id="t9">
-      <?php $i = 0; ?>
+    <div class="containerLena cards">
+      <?php $i = 0; $count=0;?>
       @foreach($group as $temp)
         <h4>{{ $temp->name }}</h4>
-        <div class="containerCards" id="t10">
-        @for(; isset($cards[$i]) && $cards[$i]->card_group<=$temp->id; $i++)
+        <div class="containerCards">
+        @for(; isset($cards[$i]) && $cards[$i]->card_group<=$temp->id; $i++, $count++)
           <?php $card = $cards[$i]; ?>
           @if( $card->card_group != $temp->id )
             @break;
           @endif
-          @if($i%3 === 0 && $i!==0)
-        </div> <div class="containerCards" id="t11">
+          @if($count === 3)
+          </div> <div class="containerCards">
+            <?php $count = 0; ?>
           @endif
             <div class="card black" id="{{ $card->id }}" onclick="test(this)">
               <h3 class="titleCards">{{ $card->name }}</h3>

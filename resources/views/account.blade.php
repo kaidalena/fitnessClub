@@ -81,7 +81,7 @@
           <div class="infoDate" id="infoDate">
 
           </div>
-          <script>show(this)</script>
+          <script>start(this)</script>
         </div>
       </div>
   </div>
