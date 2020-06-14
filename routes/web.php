@@ -51,6 +51,7 @@ Route::middleware('locale')->group(function() {
     Route::get('admin/cards_groups-for-table', 'Cards_GroupsController@dataForTable')->name('admin.cards_groups.forTable');
     Route::get('admin/users_cards-for-table', 'UserCardsController@dataForTable')->name('admin.users_cards.forTable');
 
+    Route::get('/exit', 'Controller@exit')->name('exit');
 
     Route::get('/aboutUs', 'AboutController@allComments')->name('about');
 

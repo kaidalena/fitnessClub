@@ -1,3 +1,4 @@
+<?php use Illuminate\Support\Facades\Auth; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -84,7 +85,9 @@
                 <!-- Call Button -->
                 <a href="{{ route('cards') }}" class="fitness-btn menu-btn ml-30">{{ __('header')['cards'] }}</a>
                 <a href="{{ route('account') }}" class="fitness-btn menu-btn ml-30">{{ __('header')['cabinet'] }}</a>
-
+                @if(Auth::check())
+                <a id="menu-exit" href="{{ route('exit') }}"><img src="/img/exit.png"></a>
+                @endif
               </div>
               <!-- Nav End -->
             </div>

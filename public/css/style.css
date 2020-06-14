@@ -1412,7 +1412,7 @@ img {
 
 /* :: 3.1.0 Spacing */
 .ml-30 {
-    margin-left: 30px !important;
+    margin-left: 15px !important;
 }
 
 @media only screen and (max-width: 767px) {
@@ -1583,6 +1583,17 @@ img {
     color: #fff;
 }
 
+.classy-nav-container .classynav #menu-exit{
+    color: white;
+    width: 45px;
+    margin: 0 0 0 10px;
+}
+
+.classy-nav-container .classynav #menu-exit:hover{
+    filter: brightness(1.5);
+    filter: 
+}
+
 .header-area .fitness-main-menu .classy-nav-container {
     background-color: transparent;
 }
@@ -1684,7 +1695,7 @@ img {
     font-weight: 500;
     color: #565656;
     display: inline-block;
-    margin-right: 30px;
+    margin-right: 10px;
 }
 
 .classy-navbar .nav-brand:focus, .classy-navbar .nav-brand:hover {
