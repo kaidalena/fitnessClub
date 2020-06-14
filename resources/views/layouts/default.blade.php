@@ -98,8 +98,6 @@
   </header>
   <!-- ##### Header Area End ##### -->
 
-  @include('inc.messages')
-
   @yield('content')
 
 <!-- Copywrite Area -->

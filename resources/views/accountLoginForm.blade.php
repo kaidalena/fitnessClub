@@ -24,7 +24,10 @@
 </div>
 
 <div class="container-form login" style="background-image: url(/img/bg-img/bg-19.jpg);">
+    
         <div class="block-form" id="enter">
+
+            @include('inc.messages')
 
             <form class="contentForm"  action="{{ route('login') }}" method="post">
                 @csrf
@@ -34,12 +37,16 @@
                 <label for="password">{{ __('header')['password'] }}</label>
                 <input type="password" name="password" class="input" placeholder="{{ __('header')['password'] }}"><br/>
 
-                <input type="submit" class="submit" value="{{ __('header')['e'] }}">
+                <div style="text-align: center;">
+                    <input type="submit" class="submit" value="{{ __('header')['e'] }}">
+                </div>
 
             </form>
         </div>
 
         <div class="block-form" id="registration" style="display: none;">
+
+            @include('inc.messages')
 
             <form class="contentForm" action="{{ route('register') }}" method="post">
                 @csrf
@@ -49,15 +56,17 @@
                 <label for="surname">{{ __('header')['surname'] }}</label>
                 <input type="text" id="surname" name="surname" class="input" placeholder="{{ __('header')['surname']}}"><br/>
                 <label for="birthday">{{ __('header')['dr'] }}</label>
-                <input type="text" id="birthday" name="birthday" class="input" placeholder="{{ __('header')['dr']}} "><br/>
+                <input type="date" id="birthday" name="birthday" class="input" placeholder="{{ __('header')['dr']}} "><br/>
                 <label for="email">Email</label>
                 <input type="email" id="email"  name="email" class="input" placeholder="Email"><br/>
                 <label for="password">{{ __('header')['password'] }}</label>
                 <input type="password" id="password" name="password" class="input" placeholder="{{ __('header')['password']}}"><br/>
-                <label for="twoPassword">{{ __('header')['passwordd'] }}я</label>
+                <label for="twoPassword">{{ __('header')['passwordd'] }}</label>
                 <input type="password" id="password-confirm" name="password_confirmation" class="input" placeholder="{{ __('header')['passwordd'] }}"><br/>
 
-                <input type="submit" class="submit" value="{{ __('header')['register'] }}">
+                <div style="text-align: center;">
+                    <input type="submit" class="submit" value="{{ __('header')['register'] }}">
+                </div>
 
             </form>
         </div>

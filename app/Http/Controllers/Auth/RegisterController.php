@@ -29,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/account';
 
     /**
      * Create a new controller instance.
@@ -49,16 +49,24 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        // dd($data);
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'surname' => ['required', 'string', 'max:255'],
-            'birthday' => ['required','date', 'date_format:d.m.Y'], //date, date_format:format
+            'birthday' => ['required','date', 'date_format:Y-m-d', 'before:'.date("Y-m-d")], //date, date_format:format
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ],[
+            'name.required' => 'Поле Имя не должно быть пустым',
+            'surname.required' => 'Поле Фамилия не должно быть пустым',
+            'birthday.required' => 'Поле Дата рождения не должно быть пустым',
+            'birthday.date' => 'Формат даты рождения должно быть: дд.мм.гггг',
+            'birthday.before' => 'Дата рождения должна быть ранее чем '.date("d.m.Y"),
             'email.email' => 'Некорректный Email',
+            'email.unique' => 'Такой Email уже зарегестрирован',
             'email.required' => 'Поле Email является обязательным',
-            'password.required' => 'Поле Пароль является обязательным'
+            'password.required' => 'Поле Пароль является обязательным',
+            'password.min' => 'Пароль должен содержать не менее 8 символов'
         ]
     );
     }

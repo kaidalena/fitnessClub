@@ -1,5 +1,5 @@
 @if ($errors->any())
-<div class="errors" style="background-color: indianred">
+<div class="msg-err" id="msg-err">
     <ul>
         @foreach($errors->all() as $error)
         <li> {{$error}} </li>
