@@ -102,7 +102,7 @@
                     <div class="filledbar"></div>
                   </div>
                   <div class="description">
-                    <h4>{{ __('header')['dd'] }}<?php echo date("m.d.y", strtotime($card['expiry_date'])); ?></h5>
+                    <h4>{{ __('header')['dd'] }}<?php echo " ".date("m.d.y", strtotime($card['expiry_date'])); ?></h5>
                     <h4>{{ __('header')['oz'] }} {{ $card['remains'] }}</h4>
                     <p>#<?php echo sprintf("%'.09d\n", $card['id']); ?></p>
                   </div>

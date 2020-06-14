@@ -20,7 +20,7 @@
     <div class="container-form" style="background-image: url(/img/bg-img/bg-8.jpg);">
         <div class="block-form cards">
           <div class='infoBlock'>
-            <h1> {{ $group->name }} </h1>
+            <h1 style="margin-bottom: 30px;"> {{ $group->name }} </h1>
             <div class="containerCards">
                     <div class="card {{ $group->color}}">
                     <h3 class="titleCards">{{ $card->name }}</h3>
@@ -37,24 +37,24 @@
             </div>
           </div>
 
-            <form class="contentForm" action="{{ route('cards-buy-post') }}" method="post">
+            <form class="contentForm" id="pay-card" action="{{ route('cards-buy-post') }}" method="post">
                 @csrf
                 <input type="hidden" name="card_id" value="{{ $_POST['card_id'] }}">
-                <input type="hidden" name="user_id" value="1">
+                <input type="hidden" name="user_id" value="{{ Auth::id()}}">
 
-                <label for="name">{{ __('header')['name'] }} </label>
-                <input type="text" name="name" class="input" placeholder="{{ __('header')['name'] }}" value="{{$user->name}}"><br/>
-                <label for="surname">{{ __('header')['surname'] }}</label>
-                <input type="text" name="surname" class="input" placeholder="{{ __('header')['surname'] }}" value="{{$user->surname}}"><br/>
-                <label for="email">Email</label>
-                <input type="email"  name="email" class="input" placeholder="Email" value="{{$user->email}}"><br/>
+                <h2> Карта будет оформлена на: </h2>
+                <h3> {{$user->surname}} {{$user->name}} </h3>
+                <h3> {{$user->email}} </h3>
 
-                <label for="numberCard" id="pay">{{ __('header')['order'] }}</label>
+                <h2 style="margin-top: 60px;"> {{ __('header')['order'] }} </h2>
+                <!-- <label for="numberCard" id="pay">{{ __('header')['order'] }}</label> -->
                 <input type="number"  name="numberCard" class="input" placeholder="{{ __('header')['nk'] }}">
                 <p> <input type="text"  name="dateCard" class="input cards" placeholder="{{ __('header')['data'] }}">
                 <input type="number"  name="cidCard" class="input cards" placeholder="CID"></p>
 
-                <input type="submit" class="submit" value="{{ __('header')['oform'] }}">
+                <div style="text-align: center;">
+                  <input type="submit" class="submit" value="{{ __('header')['oform'] }}">
+                </div>
 
             </form>
         </div>

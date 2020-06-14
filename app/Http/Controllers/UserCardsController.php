@@ -10,19 +10,27 @@ use App\User;
 
 class UserCardsController extends Controller{
     
-    public $model;
 
     public function __construct(){
-        $this->model = new UserCards();
+        
     }
 
     public function buy(CardRequest $req){
         // validation
-        
-        $this->model->user = $req->input('user_id');
-        $this->model->card = $req->input('card_id');
+        $weeks = Cards::select("number_of_weeks")->where('id', $req->input('card_id'))->first()->number_of_weeks;
+        $inWeek = Cards::select("number_of_training")->where('id', $req->input('card_id'))->first()->number_of_training;
+        $days = $weeks*7;
+        $date = date('Y-m-d H:i:s');
+        $expiry_date = date('Y-m-d', strtotime("$date +$days days"));
 
-        $this->model->save();
+        $model = new UserCards();
+        
+        $model->user = $req->input('user_id');
+        $model->card = $req->input('card_id');
+        $model->remains = ($weeks*$inWeek);
+        $model->expiry_date = $expiry_date;
+
+        $model->save();
 
         // return redirect()->route('home')->with('success', 'Успешно');
         return redirect()->route('cards')->with('success', 'Записано в бд');

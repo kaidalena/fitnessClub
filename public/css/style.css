@@ -382,7 +382,7 @@ footer, header {
     text-align: center;
 }
 
-.responsForm h3#not-auth {
+#not-auth {
     text-align: center;
     font-size: 25px;
     margin-top: 20px;
@@ -644,11 +644,12 @@ h5 {
 
 .modalBack .window {
     width: auto;
+    max-width: 700px;
     height: fit-content;
-    padding: 5%;
+    padding: 50px;
     padding-bottom: 3%;
     background-color: white;
-    border-radius: 7%;
+    border-radius: 20px;
     text-align: center;
     box-shadow: 0 0 3rem #000;
 }
@@ -656,6 +657,7 @@ h5 {
 .modalBack .window h2 {
     font-size: 30px;
     margin-top: 15%;
+    word-break: break-word;
 }
 
 .modalBack .window input,
@@ -969,7 +971,7 @@ h5 {
 }
 
 .block-form.cards {
-    width: 750px;
+    max-width: 900px;
     display: flex;
 }
 
@@ -1002,6 +1004,23 @@ h5 {
 .contentForm label {
     color: black;
     margin-left: 5%;
+}
+
+.contentForm#pay-card{
+    font-family: auto;
+}
+
+.contentForm#pay-card h2{
+    margin-bottom: 10px;
+    font: 700 3em "Georgia", sans-serif;
+    text-align: center;
+}
+
+.contentForm#pay-card h3{
+    margin-top: 15px;
+    font-size: 25px;
+    font-style: italic;
+    text-align: center;
 }
 
 .contentForm .input {

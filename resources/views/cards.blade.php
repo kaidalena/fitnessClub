@@ -55,6 +55,7 @@
               <div class="description">
                 <h5>{{ __('header')['nedel'] }} {{ $card->number_of_weeks }}</h5>
                 <h5>{{ __('header')['zvn'] }} {{ $card->number_of_training }}</h5>
+                <h5>{{ $card->prise }} руб.</h5>
               </div>
             </div>
         @endfor
@@ -65,6 +66,7 @@
 
     <div class="modalBack" id="modal" style="display: none">
           <div class="window" id='window'>
+            @if(Auth::check())
             <div class="card black" id='insert'></div>
             <p>
               <h2>{{ __('header')['ok'] }}</h2>
@@ -76,6 +78,9 @@
               </form>
             </p>
 
+            @else
+            <h2 id="not-auth" style="margin-top: 3%;">Для оформления абонемента авторезируйтесь в личном кабинете</h2>
+            @endif
           </div>
         </div>
 
