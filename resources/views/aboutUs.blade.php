@@ -83,17 +83,21 @@
 
   <div class="basic-infoLena">
     <div class="containerLena">
-      <div class="titleLena">
+      <div class="titleLena" id="respons">
         <h2>{{ __('header')['reviewsO'] }}</h2>
       </div>
+      @if(Auth::check())
       <form class="responsForm" action="{{ route('about-respons-post') }}" method="post">
         @csrf
-        <h3></h3>
+        <h3>{{ Auth::user()->surname }} {{ Auth::user()->name }}</h3>
         <br/>
         <textarea name="message" placeholder="{{ __('header')['feed'] }}"></textarea>
         <br/>
         <input type="submit" value="{{ __('header')['send'] }}">
       </form>
+      @else
+      <h3 id="not-auth">Комментирование доступно только авторезированным пользователям </h3>
+      @endif
     </div>
   </div>
 

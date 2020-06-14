@@ -287,6 +287,10 @@ footer, header {
     margin-bottom: 0;
 }
 
+.basic-infoLena .titleLena#respons{
+    text-align: center;
+}
+
 .basic-infoLena .columnsLena .about-fotoLena {
     flex: 0 0 41%;
     max-width: 41%;
@@ -375,6 +379,14 @@ footer, header {
     font-size: 30px;
     font-style: italic;
     margin-top: 50px;
+    text-align: center;
+}
+
+.responsForm h3#not-auth {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 20px;
+    color: #902020;
 }
 
 .responsForm textarea {
