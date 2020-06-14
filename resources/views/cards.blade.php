@@ -16,7 +16,7 @@
 
   <?php
     use Illuminate\Support\Facades\Route;
-    // dd(Route::getRoutes())
+    // dd($cards);
     ?>
 
     <div class="mainTitleLena" style="background-image: url(img/bg-img/breadcumb.jpg);">
@@ -41,7 +41,7 @@
       @foreach($group as $temp)
         <h4>{{ $temp->name }}</h4>
         <div class="containerCards">
-        @for(; $i<=$temp->id; $i++)
+        @for(; isset($cards[$i]) && $cards[$i]->card_group<=$temp->id; $i++)
           <?php $card = $cards[$i]; ?>
           @if( $card->card_group != $temp->id )
             @break;
