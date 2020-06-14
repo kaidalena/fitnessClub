@@ -40,6 +40,7 @@
     <div class="containerLena cards">
       <?php $i = 0; $count=0;?>
       @foreach($group as $temp)
+      <?php $count=0;?>
         <h4>{{ $temp->name }}</h4>
         <div class="containerCards">
         @for(; isset($cards[$i]) && $cards[$i]->card_group<=$temp->id; $i++, $count++)
