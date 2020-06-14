@@ -62,8 +62,8 @@
                     </div>
                     <div class="entry">
                         <h2 class="birthday"> <?php echo date("m.d.Y", strtotime($user->birthday)) ?></h2>
-                        <h2 class="weight"> <?php echo (empty($user->weight)) ? "не указано" : $user->weight+"кг" ?> </h2>
-                        <h2 class="height"> <?php echo (empty($user->height)) ? "не указано" : $user->height+"см" ?> </h2>
+                        <h2 class="weight"> <?php echo (empty($user->weight)) ? "не указано" : $user->weight."кг" ?> </h2>
+                        <h2 class="height"> <?php echo (empty($user->height)) ? "не указано" : $user->height."см" ?> </h2>
                         <h2 class="email">{{$user->email}}</h2>
                     </div>
                 </div>
