@@ -75,18 +75,13 @@ Route::middleware('locale')->group(function() {
 
     Route::get('/account', 'AccountController@index')->name('account');
 
-    // Route::get('/account/login', 'AccountController@login')->name('account-login');
-
-    // Route::post('/account/login', 'AccountController@enter')->name('account-login-enter');
-
-    // Route::post('/account/login', 'AccountController@registration')->name('account-login-registration');
-
     Route::get('/account/edit',  'AccountController@edit')->name('account-edit');
 
     Route::post('/account/edit', 'AccountController@editPost')->name('account-edit-post');
 
     Route::get('/account/login', 'AccountController@login')->name('auth');
 
+    Route::get('/visits', 'VisitController@index')->name('visits');
 
     Auth::routes();
 

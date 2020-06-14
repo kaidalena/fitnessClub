@@ -1,6 +1,10 @@
+var visits;
+var groups;
 var pole;
 var monthA = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
 function show(){
+  // console.log("show()");
+  // getVisits();
   // pole = p;
   // console.log(p);
   // if (pole.className == "notFocus"){
@@ -52,6 +56,7 @@ function show(){
 }
 
 function setMonth(){
+  // console.log("setMonth()");
     var year = document.getElementById("year").value;
     var month = document.getElementById("month").value;
     var elem = document.getElementById("days");
@@ -59,6 +64,24 @@ function setMonth(){
 }
 
 function createCalendar(elem, year, month) {
+      // console.log("createCalendar()  month=" + month);
+      // console.log(month + "  " + year);
+      var vis = [];
+      var i=0;
+      // console.log(visits);
+      if (visits != null){
+        // console.log("start search visuts");
+        visits.forEach(element => {
+          if ((new Date(element['created_at']).getMonth() == month)){
+            // console.log("found "+ (new Date(element['created_at']).getDay()) );
+            vis[i] = [];
+            vis[i]['day'] = (new Date(element['created_at']).getDate());
+            vis[i]['group'] = element['training_group'];
+            i++;
+          }
+        });
+        console.log(vis);
+      }
       var mon = month;
       var d = new Date(year, mon);
 
@@ -70,7 +93,16 @@ function createCalendar(elem, year, month) {
       }
 
       while (d.getMonth() == mon) {     //заполняем днями
-        table += "<td class='numb' onclick=getDate(this) >" + d.getDate() + "</td>";
+        // console.log(d.getDate());
+        table += "<td class='numb";
+        vis.forEach(el =>{
+          if (el['day'] === d.getDate()) {
+            table += " trainingDay' id_group='" + el['group'];
+            // console.log('found  '+ el['day']);
+          }
+        });
+        
+        table += "' onclick=getDate(this) >" + d.getDate() + "</td>";
 
         if (getDay(d) % 7 == 6) {     //переход на новую неделю
           table += "</tr><tr>";
@@ -91,13 +123,15 @@ function createCalendar(elem, year, month) {
       }
 
 function getDay(date) {     //проиндексируем дни недели по русски
+  // console.log("getDay()");
     var day = date.getDay();
     if (day == 0) day = 7;
     return day - 1;
 }
 
 function getDate(tbElem){
-    tbElem.className = "selectDay";
+  // console.log("getDate()");
+    // tbElem.className += " selectDay";
     var day = tbElem.innerHTML;
     if (day < 10) day = "0" + day;
     var year = document.getElementById("year").value;
@@ -106,35 +140,87 @@ function getDate(tbElem){
     // if (month < 10) month = "0" + month;
     // var birth =   month+ "/" + day + "/" + year;
     var string = "<h1>" + monthA[month] + "</h1><h1>" + day + "</h1>";
-    if (tbElem.className != "selectDay") string += "<h3 class=\"trainingDate\">Близжайшая планируемая тренировка:</h3>" 
+    if (tbElem.className.indexOf("trainingDay") >=0 ){
+      string += "<h3 class=\"trainingDate\">В этот день вы воспользовались услугой:</h3>" ;
+      // console.log(tbElem.getAttribute('id_group'));
+      var i=0;
+      while (i < groups.length){
+        if (groups[i]['id'] == tbElem.getAttribute('id_group')){
+          string += "<h3 class='servise'>" + groups[i]['name']
+          if (groups[i]['id'] > 1) string += " занятия";
+          string += "</h3>";
+        }
+        i++;
+      }
+    }
+    
     document.getElementById("infoDate").innerHTML = string;
-    changeTD(tbElem, "selectDay");
+    changeTD(tbElem);
 }
 
 function hide(){
+  // console.log("hide()");
     pole.className = "notFocus";
     var elem = document.getElementById("dataDiv");
     document.getElementById("calendar").removeChild(elem);
 }
 
 function writeDate(day){
-  console.log(day);
+  // console.log("writeDate()");
+  // console.log(day);
     createCalendar(document.getElementById("days"), day.getFullYear(), day.getMonth());
     document.getElementById("month").options[day.getMonth()].selected = true;
     document.getElementById("year").options[day.getFullYear()-1970].selected = true;
-    changeTD(null, "selectDay", day.getDate());
+
+    var string = "<h1>" + monthA[day.getMonth()] + "</h1><h1>" + day.getDate() + "</h1>";
+    document.getElementById("infoDate").innerHTML = string;
+
+    changeTD(null, day.getDate());
   
 }
 
-function changeTD(td, name, day){
-  
+function changeTD(td, day){
+  // console.log("changeTD()");
   if (td !== null) td = td.innerHTML; 
   else td = day;
-  // console.log("td: " + td.innerHTML);
+  console.log("td: " + td);
   var arr = document.getElementsByTagName('td');
   for (var i=0; i<arr.length; i++){
     // console.log("innerHtml "+arr[i].innerHTML);
-    if (arr[i].className != "weekday") arr[i].className = "numb";
-    if (arr[i].innerHTML == td) arr[i].className = name;
+    var index = arr[i].className.indexOf("selectDay");
+    if (index>=0){
+      // console.log(i + " before substring  " + arr[i].className);
+      arr[i].className = arr[i].className.substring(0, index);
+      // console.log(i + " after substring  " + arr[i].className);
+    }
+    if (arr[i].innerHTML == td){
+      // console.log(arr[i].className);
+      var icls = arr[i].className;
+      arr[i].className = icls.concat(" selectDay");
+      // console.log("concat  " + arr[i].className);
+    }
   }
+}
+
+function start(elem){
+
+  fetch('/visits')
+  .then(
+    function(respons){
+      if(respons.status !== 200){
+        console.log('Looks');
+        return
+      }
+      respons.json().then(function(data){
+        // console.log(data['visits'][0]['created_at']);
+        // console.log(new Date(data['visits'][0]['created_at']).getDay());
+        // console.log(new Date(data['visits'][0]['created_at']).getMonth());
+        // console.log(new Date(data['visits'][0]['created_at']).getFullYear());
+        visits = data['visits'];
+        groups = data['groups'];
+        console.log(visits);
+        show(elem);
+      })
+    }
+  );
 }
