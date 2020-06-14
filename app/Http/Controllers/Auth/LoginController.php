@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -37,5 +38,16 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    protected function validateLogin(Request $request){
+        $request->validate([
+            $this->username() => 'required|string|email',
+            'password' => 'required|string',
+        ], [
+            'email.email' => 'Некорректный Email',
+            'email.required' => 'Поле Email является обязательным',
+            'password.required' => 'Поле Пароль является обязательным'
+        ]);
     }
 }

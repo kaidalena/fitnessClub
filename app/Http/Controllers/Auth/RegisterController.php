@@ -55,7 +55,12 @@ class RegisterController extends Controller
             'birthday' => ['required'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+        ],[
+            'email.email' => 'Некорректный Email',
+            'email.required' => 'Поле Email является обязательным',
+            'password.required' => 'Поле Пароль является обязательным'
+        ]
+    );
     }
 
     /**
