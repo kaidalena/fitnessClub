@@ -32,9 +32,9 @@
             <div class="titlesLena">
                 <h2>{{$user->name}} {{$user->surname}}</h2>
                 <ol class="itemsLena">
-                    <li class="itemLena"><a href="#">{{ __('header')['myinf'] }}</a></li>
-                    <li class="itemLena"><a href="#">{{ __('header')['calendar'] }}</a></li>
-                    <li class="itemLena"><a href="#">{{ __('header')['my_abonoment'] }}</a></li>
+                    <li class="itemLena"><a href="#t12">{{ __('header')['myinf'] }}</a></li>
+                    <li class="itemLena"><a href="#t13">{{ __('header')['calendar'] }}</a></li>
+                    <li class="itemLena"><a href="#t14">{{ __('header')['my_abonoment'] }}</a></li>
                 </ol>
             </div>
         </div>
@@ -55,7 +55,7 @@
             <div id="infoAboutMe" class="infoAboutMe">
                 <div class="myData">
                     <div class="titles">
-                        <h2>{{ __('header')['dr'] }}</h2>
+                        <h2 id="t12">{{ __('header')['dr'] }}</h2>
                         <h2>{{ __('header')['height'] }}</h2>
                         <h2>{{ __('header')['rost'] }}</h2>
                         <h2>Email: </h2>
@@ -74,7 +74,7 @@
   </div>
 
 
-  <div class="timetableBlock" style="background-image: url(img/bg-img/bg-11.jpg);">
+  <div class="timetableBlock" id="t13" style="background-image: url(img/bg-img/bg-11.jpg);">
       <div class="containerLena" >
         <div class="border" id="show">
           <div class="infoDate" id="infoDate">
@@ -92,7 +92,7 @@
           <div class="currentCards">
             <h2>{{ __('header')['da'] }}</h2>
             <div class="containerCards">
-            
+
             @foreach($cards as $card)
               @if (strtotime($card['expiry_date']) >= strtotime($today))
               @if($i%2 === 0 && $i!==0)
@@ -120,12 +120,12 @@
 
           <div class="usedCards">
             <h2>{{ __('header')['ia'] }}</h2>
-            <div class="containerCards">
+            <div  id="t14" class="containerCards">
 
             @foreach($cards as $card)
               @if (strtotime($card['expiry_date']) < strtotime($today))
               @if($t%2 === 0 && $t!==0)
-              </div> <div class="containerCards">
+            </div> <div class="containerCards">
               @endif
                 <div class="card gray" id="{{ $card['card']->id }}">
                   <h3 class="titleCards">{{ $card['card']->name }}</h3>

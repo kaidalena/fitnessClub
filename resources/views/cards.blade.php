@@ -25,9 +25,9 @@
             <div class="titlesLena">
                 <h2>{{ __('header')['abon'] }}</h2>
                 <ol class="itemsLena">
-                    <li class="itemLena"><a href="#">{{ __('header')['groops'] }}</a></li>
-                    <li class="itemLena"><a href="#">{{ __('header')['zal'] }}</a></li>
-                    <li class="itemLena"><a href="#">{{ __('header')['bezlimit'] }}</a></li>
+                    <li class="itemLena"><a href="#t9">{{ __('header')['groops'] }}</a></li>
+                    <li class="itemLena"><a href="#t10">{{ __('header')['zal'] }}</a></li>
+                    <li class="itemLena"><a href="#t11">{{ __('header')['bezlimit'] }}</a></li>
                 </ol>
             </div>
         </div>
@@ -36,18 +36,18 @@
 
   <!-- Первая часть страницы "Основная информация" -->
   <div class="basic-infoLena" >
-    <div class="containerLena cards">
+    <div class="containerLena cards" id="t9">
       <?php $i = 0; ?>
       @foreach($group as $temp)
         <h4>{{ $temp->name }}</h4>
-        <div class="containerCards">
+        <div class="containerCards" id="t10">
         @for(; isset($cards[$i]) && $cards[$i]->card_group<=$temp->id; $i++)
           <?php $card = $cards[$i]; ?>
           @if( $card->card_group != $temp->id )
             @break;
           @endif
           @if($i%3 === 0 && $i!==0)
-          </div> <div class="containerCards">
+        </div> <div class="containerCards" id="t11">
           @endif
             <div class="card black" id="{{ $card->id }}" onclick="test(this)">
               <h3 class="titleCards">{{ $card->name }}</h3>

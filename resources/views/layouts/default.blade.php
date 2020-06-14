@@ -55,28 +55,36 @@
               </div>
 
               <!-- Nav Start -->
+              @php($noDropdown = $noDropdown?? false)
               <div class="classynav">
                 <ul>
                   <li><a href="{{ route('index') }}">{{ __('header')['main'] }}</a></li>
                   <li><a href="{{ route('about') }}">{{ __('header')['about'] }}</a>
+                    @if(!$noDropdown)
                     <ul class="dropdown">
-                      <li><a href="#">{{ __('header')['Basic_information'] }}</a></li>
+                      <li><a href="{{ route('about') . '#t1' }}">{{ __('header')['Basic_information'] }}</a></li>
                       <li><a href="#">{{ __('header')['reviews'] }}</a></li>
                     </ul>
+                    @endif
                   </li>
+
                   <li><a href="{{ route('gallery') }}">{{ __('header')['gallary'] }}</a>
+                    @if(!$noDropdown)
                     <ul class="dropdown">
                       <li><a href="#">{{ __('header')['trainers'] }} </a></li>
                       <li><a href="#">{{ __('header')['foto'] }} </a></li>
                     </ul>
+                      @endif
                   </li>
                   <li><a href="{{ route('service') }}">{{ __('header')['service'] }}</a>
+                    @if(!$noDropdown)
                     <ul class="dropdown">
                       <li><a href="#">{{ __('header')['cardio'] }}</a></li>
                       <li><a href="#">{{ __('header')['sila'] }}</a></li>
                       <li><a href="#">{{ __('header')['aero'] }}</a></li>
                       <li><a href="#">{{ __('header')['tranaj'] }}</a></li>
                     </ul>
+                    @endif
                   </li>
                   <li><a href="{{ route('schedule') }}">{{ __('header')['rasp'] }}</a></li>
                   <li><a href="{{ route('contact') }}">{{ __('header')['contact'] }}</a></li>
@@ -109,12 +117,23 @@
             <div class="footer_cont">
               <p> {{ __('header')['foot'] }}</p>
               <div class="footer_cont">
-                <a class="locale" href="{{ route('locale', __('header')['next_locale']) }}">Язык {{ __('header')['next_locale'] }}</a>
                 <a href="#"><img class="img_cont" src="\img\core-img\Vk.png"></a>
                 <a href="#"><img class="img_cont" src="\img\core-img\insta.png"></a>
                 <a href="#"><img class="img_cont" src="\img\core-img\telegram.png"></a>
                 <a href="#"><img class="img_cont" src="\img\core-img\Whatsapp.png"></a>
               </div>
+              <div class="footer_cont">
+                <div class="">
+                  <span style="color: white;">Язык</span>
+                  <div class="">
+                    <a class="locale" href="{{ route('locale', 'ru') }}">ru</a>
+                    <span style="color: white;">|</span>
+                    <a class="locale" href="{{ route('locale','en') }}">en</a>
+                  </div>
+
+                </div>
+
+
             </div>
           </div>
         </div>

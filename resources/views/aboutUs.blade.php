@@ -1,4 +1,5 @@
 <?php use Illuminate\Support\Facades\Auth; ?>
+@php($noDropdown = true)
 @extends ('layouts.default')
 
 @section('title-block')
@@ -23,8 +24,8 @@
         <div class="titlesLena">
             <h2>{{ __('header')['about'] }}</h2>
             <ol class="itemsLena">
-                <li class="itemLena"><a href="#">{{ __('header')['Basic_information'] }}</a></li>
-                <li class="itemLena"><a href="#">{{ __('header')['reviews'] }}</a></li>
+                <li class="itemLena"><a href="#t1">{{ __('header')['Basic_information'] }}</a></li>
+                <li class="itemLena"><a href="#t2">{{ __('header')['reviews'] }}</a></li>
             </ol>
         </div>
       </div>
@@ -39,7 +40,7 @@
         <div class="all-textLena">
           <div class="titleLena">
             <h6>Fitness Gym</h6>
-            <h2>{{ __('header')['ty'] }}</h2>
+            <h2 id="t1">{{ __('header')['ty'] }}</h2>
           </div>
           <div class="about-textLena">
             <p>{{ __('header')['tyy'] }} </p>
@@ -60,7 +61,7 @@
   <div class="commentsLena" style="background-image: url(img/bg-img/bg-13.jpg);">
     <div class="containerLena">
       <div class="titleLena">
-        <h2>{{ __('header')['reviews'] }}</h2>
+        <h2 id="t2">{{ __('header')['reviews'] }}</h2>
       </div>
 
       <!-- вывод из БД -->

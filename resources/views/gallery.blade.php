@@ -15,8 +15,8 @@
         <div class="titlesLena">
           <h2>{{ __('header')['gallary'] }}</h2>
           <ol class="itemsLena">
-            <li class="itemLena"><a href="#">{{ __('header')['trainers'] }}</a></li>
-            <li class="itemLena"><a href="#">{{ __('header')['foto'] }}</a></li>
+            <li class="itemLena"><a href="#t3">{{ __('header')['trainers'] }}</a></li>
+            <li class="itemLena"><a href="#t4">{{ __('header')['foto'] }}</a></li>
           </ol>
         </div>
       </div>
@@ -30,7 +30,7 @@
         <div class="col-12">
           <div class="section-heading">
             <h6>Fitness Gym</h6>
-            <h2>{{ __('header')['trainers'] }}</h2>
+            <h2 id="t3">{{ __('header')['trainers'] }}</h2>
           </div>
         </div>
       </div>
@@ -114,7 +114,7 @@
   <div class="commentsLenaRa">
     <div class="containerLena">
       <div class="titleHow">
-        <h2 class="titleFoto" align="center">{{ __('header')['foto'] }}</h2>
+        <h2 id="t4" class="titleFoto" align="center">{{ __('header')['foto'] }}</h2>
       </div>
     </div>
   </div>

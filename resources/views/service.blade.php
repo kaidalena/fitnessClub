@@ -16,8 +16,8 @@
             <div class="titlesLena">
                 <h2>{{ __('header')['service'] }}</h2>
                 <ol class="itemsLena">
-                    <li class="itemLena"><a href="#">{{ __('header')['service'] }}</a></li>
-                    <li class="itemLena"><a href="#">{{ __('header')['prem'] }}</a></li>
+                    <li class="itemLena"><a href="#t5">{{ __('header')['service'] }}</a></li>
+                    <li class="itemLena"><a href="#t6">{{ __('header')['prem'] }}</a></li>
                 </ol>
             </div>
         </div>
@@ -28,7 +28,7 @@
 <section id="services" class="scrollBlock content_section">
     <div class="wrap">
         <div class="title_parent">
-            <div class="title">Fitness Gym </div>
+            <div class="title" id="t5">Fitness Gym </div>
             <div class="title_caption">{{ __('header')['text1'] }}
                 <br><br>
                 {{ __('header')['text2'] }}
@@ -141,7 +141,7 @@
 
 <section class="advantage content_section">
         <div class="title_parent">
-            <div class="title title_dark">{{ __('header')['np'] }}</div>
+            <div class="title title_dark" id="t6">{{ __('header')['np'] }}</div>
             <!--      <div class="title_caption title_caption_dark">Мы новейший фитнес-клуб бизнес класса общей площадью 2100 кв.м. на северо-востоке Москвы.</div>-->
         </div>
         <div class="">
