@@ -44,11 +44,15 @@ Route::middleware('locale')->group(function() {
 
     Route::get('/exit', 'Controller@exit')->name('exit');
 
+    Route::middleware('check')->group(function() {
+        Route::post('/aboutUs-post', 'AboutController@sendRespons')->name('about-respons-post');
+        Route::get('/about/getAllComments', 'AboutController@getAllComments');
+        Route::post('/cards/buy', 'CardsController@cardsBuyForm')->name('cardsBuy');
+        Route::get('/account/edit',  'AccountController@edit')->name('account-edit');
+        Route::post('/account/edit-post', 'AccountController@editPost')->name('account-edit-post');
+    });
+
     Route::get('/aboutUs', 'AboutController@allComments')->name('about');
-
-    Route::post('/aboutUs', 'AboutController@sendRespons')->name('about-respons-post');
-
-    Route::get('/about/getAllComments', 'AboutController@getAllComments');
 
     Route::get('/gallery', 'GalleryController@index')->name('gallery');
 
@@ -58,17 +62,11 @@ Route::middleware('locale')->group(function() {
 
     Route::get('/cards', 'CardsController@allCards')->name('cards');
 
-    Route::post('/cards/buy', 'CardsController@cardsBuyForm')->name('cardsBuy');
-
     Route::post('/cards', 'UserCardsController@buy')->name('cards-buy-post');
 
     Route::get('/service', 'ServiceController@index')->name('service');
 
     Route::get('/account', 'AccountController@index')->name('account');
-
-    Route::get('/account/edit',  'AccountController@edit')->name('account-edit');
-
-    Route::post('/account/edit', 'AccountController@editPost')->name('account-edit-post');
 
     Route::get('/account/login', 'AccountController@login')->name('auth');
 
