@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 class check
 {
     private $routes = [
-        '/about/getAllComments' => '',
+        // '/about/getAllComments' => '',
         '/cards/buy' => '/cards',
         '/account/edit-post' => '/account/edit',
         '/account/edit' => '/account',

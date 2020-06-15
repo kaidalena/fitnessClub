@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Shedule;
 use App\Models\Training_groups;
 use App\Models\trainings;
+use Illuminate\Support\Facades\Log;
 
 class SheduleController extends Controller{
     
@@ -18,6 +19,7 @@ class SheduleController extends Controller{
     public function getAllTrainings(){
         $trainings = $this->model->allData();
         $groups = Training_groups::all();
+        // dd(Training_groups::whereId(1)->first());
 
         return view('schedule')->with([
             'trainings'=>$trainings, 
@@ -70,11 +72,21 @@ class SheduleController extends Controller{
     }
     
     public function change(Request $request) {
+        // dd($request);
         $data = Shedule::whereId($request->id)->first();
-        $data->fill($request->except('id'));
-        $data->update();
+        // $data->fill($request->except('id'));
+        $data->time = $request->time;
+        // $data->time = "12:40:00";
+        $data->monday = $request->monday;
+        $data->tuesday = $request->tuesday;
+        $data->wednesday = $request->wednesday;
+        $data->thursday = $request->thursday;
+        $data->friday = $request->friday;
+        $data->satuday = $request->satuday;
+        $data->sunday = $request->sunday;
+        Log::info('update: '.$data->update());
         return response()->json([
-            'schedule' => $data
+            'trainings' => $data
         ]);
     }
 

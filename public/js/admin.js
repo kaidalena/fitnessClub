@@ -82,6 +82,8 @@ function openTable(){
       $(el).click(setValues)
     })
 
+    console.log(dataTable['data']);
+    fieldsNames = [];
     fieldsNames = Object.keys(dataTable['data'][0]);
     // console.log(fieldsNames);
     mountInputs();
@@ -110,6 +112,7 @@ const setValues = (event) => {
 }
 
 const mountInputs = () => {
+  inputs = [];
   const $container = $('#inputs-container')
   $container.empty();
   var i = 0;
@@ -157,14 +160,16 @@ function createOptions(){
 
 const onChangeRecord = () => {
   let url = routes[keyTable]['change'];
+  console.log(inputs);
   console.log("onChange  url=" + url);
   let body = Object.keys(inputs).reduce((acc, el) => {
       acc[el] = inputs[el].val()
-      console.log(acc);
+      // console.log(acc);
 
       return acc
     }, {})
     body['id'] = $selectedRow.attr('id');
+    console.log(body);
   fetch(url, {
       method: 'POST',
       headers: {
